@@ -98,7 +98,7 @@ Commit and push on your feature branch:
 git add .github/workflows/ci.yml
 git commit -m "ci: clarify CI job display name
 
-Refs #<issue#>"
+Refs #<issue-number>"
 git push
 ```
 

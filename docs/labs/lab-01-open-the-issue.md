@@ -41,13 +41,13 @@ EOF
 ```
 
 `gh` prints the new issue's URL and number — **write the number down** (e.g., `#1`). We'll
-call it **`<issue#>`** for the rest of the workshop.
+call it **`<issue-number>`** for the rest of the workshop.
 
 ### 2. Confirm it exists
 
 ```bash
 gh issue list
-gh issue view <issue#>
+gh issue view <issue-number>
 ```
 
 You should see your issue with the `enhancement` label and the acceptance-criteria
@@ -61,7 +61,7 @@ checklist.
 
 ## ✅ Checkpoint
 
-- [ ] `gh issue view <issue#>` shows your issue.
+- [ ] `gh issue view <issue-number>` shows your issue.
 - [ ] It has the `enhancement` label and the acceptance-criteria checklist.
 - [ ] You've noted the issue number.
 

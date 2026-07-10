@@ -78,7 +78,7 @@ Compress by trimming demos and running some labs in pairs:
 
 ### Module 2 — Branching & Commits
 - Watch for commits on `main`; the [Solution Key](solution-key.md) has the recovery steps.
-- Reinforce the branch name `feature/<issue#>-schedule-inspection`.
+- Reinforce the branch name `feature/<issue-number>-schedule-inspection`.
 
 ### Module 3 — PRs & Review (Labs 03–05)
 - Lab 03 is the longest hands-on. Set a hard time box; anyone stuck copies from

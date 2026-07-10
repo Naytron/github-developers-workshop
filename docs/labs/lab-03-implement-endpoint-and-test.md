@@ -9,7 +9,7 @@ title: "Lab 03 — Implement the Endpoint & Test"
 **Goal:** implement `POST /permits/{id}/inspections` and prove it works with an xUnit test.
 
 > This is the **Commit** step where the actual feature lands. Work on your
-> `feature/<issue#>-schedule-inspection` branch from Lab 02.
+> `feature/<issue-number>-schedule-inspection` branch from Lab 02.
 
 Stuck? The full answer is in [`solutions/`](../../solutions/README.md) — but try it first.
 
@@ -195,7 +195,7 @@ git commit -m "feat: add schedule-inspection endpoint and tests
 Adds POST /permits/{id}/inspections with 201/400/404 behavior and
 xUnit coverage.
 
-Refs #<issue#>"
+Refs #<issue-number>"
 git push
 ```
 

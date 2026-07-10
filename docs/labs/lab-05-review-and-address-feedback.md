@@ -40,7 +40,7 @@ gh pr view <their-PR#> --web
 
 On the **Files changed** tab, click a line's **+** to comment. Consider suggesting:
 
-- *"Should `ScheduledFor` in the past be rejected? Out of scope for #<issue#>, just noting."*
+- *"Should `ScheduledFor` in the past be rejected? Out of scope for #<issue-number>, just noting."*
 - *"Consider a comment on why we return 404 before validating the body."*
 
 Mark clearly which comments are **blocking** vs. **nits**.
@@ -76,7 +76,7 @@ git commit -m "docs: clarify 404-before-validation ordering
 
 Addresses review feedback on PR.
 
-Refs #<issue#>"
+Refs #<issue-number>"
 git push
 ```
 

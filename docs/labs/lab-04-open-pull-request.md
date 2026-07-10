@@ -16,7 +16,7 @@ the repository's PR template and linking the issue.
 ### 1. Make sure your branch is pushed
 
 ```bash
-git status         # should be "up to date with origin/feature/<issue#>-schedule-inspection"
+git status         # should be "up to date with origin/feature/<issue-number>-schedule-inspection"
 ```
 
 If not: `git push`.
@@ -32,7 +32,7 @@ gh pr create \
 Adds POST /permits/{id}/inspections so staff can schedule an inspection for an
 existing permit.
 
-Closes #<issue#>
+Closes #<issue-number>
 
 ## Changes
 - New Inspection model + ScheduleInspectionRequest
@@ -56,7 +56,7 @@ EOF
 
 `gh` prints the PR URL. Note the **PR number** (e.g., `#2`).
 
-> The `Closes #<issue#>` line means merging this PR will **automatically close** your issue
+> The `Closes #<issue-number>` line means merging this PR will **automatically close** your issue
 > from Lab 01.
 
 ### 3. Look at your PR
@@ -83,7 +83,7 @@ gh pr checks
 ## ✅ Checkpoint
 
 - [ ] `gh pr view` shows your PR targeting `main`.
-- [ ] The PR body links the issue with `Closes #<issue#>`.
+- [ ] The PR body links the issue with `Closes #<issue-number>`.
 - [ ] The diff contains only your intended changes.
 
 ## Troubleshooting

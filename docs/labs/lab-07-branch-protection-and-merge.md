@@ -89,10 +89,10 @@ Lab 08). Confirm.
 
 ### 3. Confirm the issue closed
 
-Because your PR said `Closes #<issue#>`, merging closes it:
+Because your PR said `Closes #<issue-number>`, merging closes it:
 
 ```bash
-gh issue view <issue#>    # State: CLOSED
+gh issue view <issue-number>    # State: CLOSED
 ```
 
 ### 4. Sync your local `main`
@@ -107,7 +107,7 @@ git pull
 - [ ] Direct pushes to `main` are blocked.
 - [ ] **Build & Test** is a required check.
 - [ ] Your PR merged via **squash**, and the branch was deleted.
-- [ ] Issue `#<issue#>` is **closed**.
+- [ ] Issue `#<issue-number>` is **closed**.
 - [ ] Local `main` contains your feature (`git log --oneline -3`).
 
 ## Troubleshooting

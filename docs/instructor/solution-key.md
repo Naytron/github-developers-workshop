@@ -116,10 +116,10 @@ dotnet test
 ### "I committed on `main`"
 
 ```bash
-git switch -c feature/<issue#>-schedule-inspection   # keep the commit on a branch
+git switch -c feature/<issue-number>-schedule-inspection   # keep the commit on a branch
 git switch main
 git reset --hard origin/main                          # restore main
-git switch feature/<issue#>-schedule-inspection       # continue here
+git switch feature/<issue-number>-schedule-inspection       # continue here
 ```
 
 ### "My push was rejected (protected branch)"

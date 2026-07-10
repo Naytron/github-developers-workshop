@@ -24,7 +24,7 @@ git pull
 Use the issue number from Lab 01:
 
 ```bash
-git switch -c feature/<issue#>-schedule-inspection
+git switch -c feature/<issue-number>-schedule-inspection
 git branch --show-current
 ```
 
@@ -35,7 +35,7 @@ We'll leave a clear marker for the feature so the branch has a real commit. Open
 Update it to record that work has started:
 
 ```csharp
-// Feature (#<issue#>): schedule an inspection for an existing permit.
+// Feature (#<issue-number>): schedule an inspection for an existing permit.
 //   POST /permits/{id}/inspections
 // Endpoint and test are added in Lab 03.
 ```
@@ -56,13 +56,13 @@ git commit -m "chore: start schedule-inspection feature
 Marks the feature entry point in Program.cs so the branch has a
 compiling starting point.
 
-Refs #<issue#>"
+Refs #<issue-number>"
 ```
 
 ### 5. Push the branch
 
 ```bash
-git push -u origin feature/<issue#>-schedule-inspection
+git push -u origin feature/<issue-number>-schedule-inspection
 ```
 
 The `-u` links your local branch to the remote so future `git push`/`git pull` need no
@@ -70,7 +70,7 @@ arguments. `gh` prints a URL to open a PR — we'll do that in Lab 04.
 
 ## ✅ Checkpoint
 
-- [ ] `git branch --show-current` shows `feature/<issue#>-schedule-inspection`.
+- [ ] `git branch --show-current` shows `feature/<issue-number>-schedule-inspection`.
 - [ ] `git log --oneline -1` shows your commit.
 - [ ] `dotnet build` succeeds.
 - [ ] The branch is pushed (visible with `git status` → "up to date with origin/...").

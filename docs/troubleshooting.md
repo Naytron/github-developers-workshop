@@ -70,10 +70,10 @@ Then use HTTPS remotes (the default with `gh repo clone`).
 Move the commit to a branch and restore `main`:
 
 ```bash
-git switch -c feature/<issue#>-schedule-inspection
+git switch -c feature/<issue-number>-schedule-inspection
 git switch main
 git reset --hard origin/main
-git switch feature/<issue#>-schedule-inspection
+git switch feature/<issue-number>-schedule-inspection
 ```
 
 ### `git push` says "no upstream branch"
@@ -81,7 +81,7 @@ git switch feature/<issue#>-schedule-inspection
 First push needs `-u`:
 
 ```bash
-git push -u origin feature/<issue#>-schedule-inspection
+git push -u origin feature/<issue-number>-schedule-inspection
 ```
 
 ### My PR shows files I didn't mean to change
@@ -154,7 +154,7 @@ Pin the SDK line:
 - "**Require up to date**" is on — update your branch from `main`:
 
 ```bash
-git switch feature/<issue#>-schedule-inspection
+git switch feature/<issue-number>-schedule-inspection
 git fetch origin
 git merge origin/main       # resolve any conflicts, commit, push
 ```
