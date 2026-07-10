@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "ms-dotnettools.csdevkit",
+    "github.vscode-pull-request-github",
+    "github.vscode-github-actions"
+  ]
+}

@@ -1,0 +1,61 @@
+---
+title: "Module 8 — Wrap-up & Next Steps"
+---
+
+# Module 8 — Wrap-up & Next Steps
+
+⏱️ **15 minutes** · [← Home](../index.md)
+
+## What you did today
+
+You took a single feature — **"schedule an inspection for a permit"** — through the entire
+professional GitHub workflow:
+
+```
+Issue → Branch → Commit → Pull Request → Review → Workflow → Merge → Release
+```
+
+Along the way you:
+
+- Opened a well-formed **issue** from a template.
+- Created a **branch** and made clear **commits**.
+- Implemented an endpoint and an **xUnit test** on CivicPermit.
+- Opened a **pull request** and ran a **code review**.
+- Authored a **CI workflow** with only GitHub-owned actions.
+- Protected `main` with a **required status check** and **merged**.
+- Cut a **release** with the GitHub CLI.
+- Enabled **Dependabot, secret scanning, and code scanning**.
+
+## Bring it home — a starter checklist for your repos
+
+- [ ] Add a CI workflow (start from our [`ci.yml`](04-github-actions-ci.md)).
+- [ ] Protect the default branch; require the CI check and at least one review.
+- [ ] Add issue and PR templates and a `CODEOWNERS` file.
+- [ ] Turn on Dependabot, secret scanning, and code scanning.
+- [ ] Adopt a branch-naming and commit convention.
+
+## Keep practicing
+
+Repeat the loop with a second small feature (ideas on the
+[After the Workshop](../after.md) page). Repetition is what turns this from "a class you
+took" into "how you work."
+
+## Official documentation
+
+- **GitHub docs:** <https://docs.github.com>
+- **GitHub Actions:** <https://docs.github.com/actions>
+- **Repository security:** <https://docs.github.com/code-security>
+- **GitHub CLI manual:** <https://cli.github.com/manual/>
+- **.NET CLI:** <https://learn.microsoft.com/dotnet/core/tools/>
+
+## Your next workshop: GitHub Copilot
+
+Throughout today you saw **💡 Copilot Connection** notes at each place Copilot naturally
+helps — commit messages, PR descriptions, code review, writing tests, and authoring
+workflow YAML. The follow-up **GitHub Copilot** workshop goes deep on each. You now have
+the fundamentals that make Copilot's suggestions easy to evaluate and trust.
+
+---
+
+Thank you! Please share feedback with your instructor, and keep the
+[cheat sheets](../index.md#reference) handy.

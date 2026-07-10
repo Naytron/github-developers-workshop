@@ -1,0 +1,16 @@
+# CODEOWNERS — automatically requests review from the listed owners.
+# Replace the placeholder team/user with your own before running the workshop.
+# See Lab 05 and Lab 07 for how CODEOWNERS pairs with branch protection.
+
+# Default owners for everything in the repo.
+*                       @your-org/workshop-maintainers
+
+# The sample application and its tests.
+/src/                   @your-org/workshop-maintainers
+/tests/                 @your-org/workshop-maintainers
+
+# CI/CD and repository automation.
+/.github/               @your-org/workshop-maintainers
+
+# The GitHub Pages website and workshop content.
+/docs/                  @your-org/workshop-maintainers

@@ -1,0 +1,53 @@
+name: Feature request
+description: Request a new capability for CivicPermit (used in Lab 01).
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a feature request! During the workshop you'll use this
+        template to open the issue that starts our story:
+        **"Add the ability to schedule an inspection for an existing permit."**
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are we solving?
+      description: Describe the user need in one or two sentences.
+      placeholder: Permit staff need to schedule an inspection once a permit is under review.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should the API do?
+      placeholder: |
+        Add POST /permits/{id}/inspections that records a scheduled inspection
+        (type + date) for an existing permit and returns 201 Created.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will we know it's done?
+      value: |
+        - [ ] POST /permits/{id}/inspections creates an inspection for an existing permit
+        - [ ] Returns 404 when the permit does not exist
+        - [ ] Returns 400 when the request is missing required fields
+        - [ ] Covered by an xUnit test
+        - [ ] CI is green
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - API
+        - Tests
+        - CI/CD
+        - Documentation
+    validations:
+      required: true

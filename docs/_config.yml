@@ -1,0 +1,19 @@
+title: GitHub for Developers
+description: >-
+  A 6-hour, instructor-led workshop that teaches enterprise development teams the
+  everyday GitHub workflow on GitHub Enterprise, using one running story and a small
+  .NET 10 sample app (CivicPermit).
+
+# GitHub-supported theme. No plugin gems are added; GitHub Pages provides the theme
+# and its default helpers when the site is built by the pages.yml workflow.
+theme: jekyll-theme-cayman
+
+# Show a link back to the repository from the themed header.
+# Replace <your-org> with your organization before running the workshop, or leave as-is.
+show_downloads: false
+
+# Content that is not part of the published site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

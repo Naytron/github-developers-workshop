@@ -1,0 +1,47 @@
+name: Release
+
+# Publishes a GitHub Release whenever a SemVer tag (e.g. v1.1.0) is pushed.
+# Releases are created with the GitHub CLI (gh) — which is pre-installed on
+# GitHub-hosted runners — instead of any third-party release action.
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+# gh release create needs write access to create the release and upload assets.
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & publish release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up the .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Publish the API
+        run: >
+          dotnet publish src/CivicPermit.Api
+          --configuration Release
+          --output ./publish
+
+      - name: Package the published output
+        run: |
+          cd publish
+          zip -r "../CivicPermit.Api-${GITHUB_REF_NAME}.zip" .
+
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release create "${GITHUB_REF_NAME}"
+          "CivicPermit.Api-${GITHUB_REF_NAME}.zip"
+          --title "CivicPermit ${GITHUB_REF_NAME}"
+          --generate-notes
