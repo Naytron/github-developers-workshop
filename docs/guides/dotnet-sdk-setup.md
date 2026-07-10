@@ -69,11 +69,11 @@ org uses a private NuGet feed or proxy and restore fails, see the NuGet section 
 dotnet run --project src/CivicPermit.Api
 ```
 
-Watch the console for a line like `Now listening on: http://localhost:5000`. Then, in a
+Watch the console for a line like `Now listening on: http://localhost:5150`. Then, in a
 second terminal:
 
 ```bash
-curl http://localhost:5000/permits
+curl http://localhost:5150/permits
 ```
 
 Press `Ctrl+C` to stop.

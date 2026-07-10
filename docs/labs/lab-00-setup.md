@@ -73,10 +73,10 @@ Passed!  - Failed:     0, Passed:     5, Skipped:     0, Total:     5
 dotnet run --project src/CivicPermit.Api
 ```
 
-Note the URL it prints (e.g., `http://localhost:5000`). In another terminal:
+Note the URL it prints (e.g., `http://localhost:5150`). In another terminal:
 
 ```bash
-curl http://localhost:5000/permits
+curl http://localhost:5150/permits
 ```
 
 You'll see the two seeded permits as JSON. Press `Ctrl+C` to stop the app.

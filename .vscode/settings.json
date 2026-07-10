@@ -1,0 +1,6 @@
+{
+    // Don't use preview tab when opening from Quick Open (Ctrl+P)
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    // Don't use preview tab when navigating code (e.g. Go to Definition)
+    "workbench.editor.enablePreviewFromCodeNavigation": false
+}

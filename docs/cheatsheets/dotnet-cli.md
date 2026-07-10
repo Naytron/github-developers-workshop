@@ -30,7 +30,7 @@ dotnet test -c Release --no-build       # reuse a prior build
 
 ```bash
 dotnet run --project src/CivicPermit.Api
-# Watch the console for: Now listening on: http://localhost:5000
+# Watch the console for: Now listening on: http://localhost:5150
 ```
 
 Hot reload during development:
@@ -42,12 +42,12 @@ dotnet watch --project src/CivicPermit.Api run
 ## Try the endpoints
 
 ```bash
-curl http://localhost:5000/permits
-curl http://localhost:5000/permits/1
-curl -X POST http://localhost:5000/permits \
+curl http://localhost:5150/permits
+curl http://localhost:5150/permits/1
+curl -X POST http://localhost:5150/permits \
   -H "Content-Type: application/json" \
   -d '{"applicantName":"A. Carpenter","address":"42 Oak Ave","permitType":"Deck"}'
-curl -X POST http://localhost:5000/permits/1/inspections \
+curl -X POST http://localhost:5150/permits/1/inspections \
   -H "Content-Type: application/json" \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
 ```

@@ -109,7 +109,7 @@ Ensure `bin/` and `obj/` are ignored — they are, via [.gitignore](../.gitignor
 Send JSON with the right content type:
 
 ```bash
-curl -X POST http://localhost:5000/permits/1/inspections \
+curl -X POST http://localhost:5150/permits/1/inspections \
   -H "Content-Type: application/json" \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
 ```

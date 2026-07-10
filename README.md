@@ -74,10 +74,10 @@ dotnet test
 dotnet run --project src/CivicPermit.Api
 
 # 4. In another terminal, try it out
-curl http://localhost:5000/permits
+curl http://localhost:5150/permits
 ```
 
-The port is printed on startup (typically `http://localhost:5000`).
+The port is printed on startup (typically `http://localhost:5150`).
 
 ---
 

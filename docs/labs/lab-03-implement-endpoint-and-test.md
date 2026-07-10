@@ -179,7 +179,7 @@ You should now see **8 passing tests** (the original 5 plus your 3).
 ```bash
 dotnet run --project src/CivicPermit.Api
 # In another terminal:
-curl -X POST http://localhost:5000/permits/1/inspections \
+curl -X POST http://localhost:5150/permits/1/inspections \
   -H "Content-Type: application/json" \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
 ```
