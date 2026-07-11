@@ -47,7 +47,7 @@ Refs #42
 ```
 
 ```
-ci: clarify CI job display name
+ci: clarify the test step name
 
 Refs #42
 ```
