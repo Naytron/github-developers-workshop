@@ -53,6 +53,10 @@ gh issue view <issue-number>
 You should see your issue with the `enhancement` label and the acceptance-criteria
 checklist.
 
+> 💡 **CLI tip:** Prefer a web form? `gh issue create --web` opens the browser template.
+> `gh issue list --assignee @me` shows just your issues, and `gh browse <issue-number>`
+> jumps straight to one in the browser.
+
 ## What just happened?
 
 - You captured **intent** — the *why* — before touching code.

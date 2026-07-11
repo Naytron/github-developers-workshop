@@ -68,6 +68,11 @@ git push -u origin feature/<issue-number>-schedule-inspection
 The `-u` links your local branch to the remote so future `git push`/`git pull` need no
 arguments. `gh` prints a URL to open a PR — we'll do that in Lab 04.
 
+> 💡 **CLI tip:** `gh issue develop <issue-number> --checkout` creates a branch **already
+> linked to the issue** and switches to it — the one-command version of steps 1–2 above.
+> `gh browse` opens the repo at your current branch, and `git switch -` toggles back to the
+> branch you were just on.
+
 ## ✅ Checkpoint
 
 - [ ] `git branch --show-current` shows `feature/<issue-number>-schedule-inspection`.

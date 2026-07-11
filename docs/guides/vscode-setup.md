@@ -49,6 +49,26 @@ The **Source Control** panel (the branch icon) lets you stage, commit, and push 
 the terminal. The **GitHub Pull Requests** extension adds a panel to create and review PRs
 in-editor — a nice complement to the `gh` commands in the labs.
 
+## Keyboard shortcuts worth knowing
+
+A few shortcuts speed up the whole loop (Windows/Linux shown; on macOS swap `Ctrl`→`Cmd`):
+
+| Shortcut | Does |
+| --- | --- |
+| `Ctrl+C` *(in the terminal)* | **Stop** a running process — `dotnet run`, `dotnet watch`, `gh run watch`. |
+| `Ctrl+Shift+V` | Open a **Markdown preview** of the current `.md` file. |
+| `Ctrl+K V` | Open the Markdown preview **to the side** (edit and preview together). |
+| `` Ctrl+` `` | Toggle the integrated **terminal**. |
+| `Ctrl+Shift+P` | **Command Palette** — run any VS Code command by name. |
+| `Ctrl+P` | **Quick Open** — jump to a file by typing its name. |
+| `Ctrl+Shift+B` | Run the **build** task. |
+| `F5` | **Run/Debug** the API (uses `.vscode/launch.json`). |
+| `Ctrl+Shift+G` | Open the **Source Control** panel. |
+| `↑` *(in the terminal)* | Recall your **previous command** — great for re-running `dotnet test`. |
+
+> ⌨️ If a terminal command seems "stuck" (often a server still running), that's your cue
+> to press **`Ctrl+C`** to stop it and get your prompt back.
+
 ## If you prefer the terminal
 
 Totally fine. Every lab lists the exact `git`, `gh`, and `dotnet` commands, so you can do

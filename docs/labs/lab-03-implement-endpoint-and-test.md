@@ -174,6 +174,9 @@ dotnet test
 
 You should now see **8 passing tests** (the original 5 plus your 3).
 
+> 💡 **CLI tip:** `dotnet watch test` re-runs the tests every time you save a file. To run
+> only your new ones: `dotnet test --filter FullyQualifiedName~Inspections`.
+
 ## Step 6 — Try it live (optional)
 
 ```bash
@@ -185,6 +188,9 @@ curl -X POST http://localhost:5150/permits/1/inspections \
 ```
 
 You'll get a `201 Created` with the new inspection JSON.
+
+> ⌨️ **Hotkey:** Press **`Ctrl+C`** in the terminal running the API to stop it when you're
+> done trying it out.
 
 ## Step 7 — Commit your work
 

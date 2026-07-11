@@ -81,6 +81,13 @@ curl http://localhost:5150/permits
 
 You'll see the two seeded permits as JSON. Press `Ctrl+C` to stop the app.
 
+> 💡 **CLI tip:** `gh browse` opens this repo in your browser at the current branch — no
+> hunting for the URL. Set up conveniences once: `gh config set editor "code --wait"` and
+> `gh alias set co 'pr checkout'` (then you can type `gh co <number>`).
+
+> ⌨️ **Hotkey:** In the terminal, **`Ctrl+C`** stops a running process — you'll use it to
+> stop `dotnet run` and `dotnet watch` throughout the workshop.
+
 ## ✅ Checkpoint
 
 - [ ] `git`, `dotnet` (10.x), and `gh` all report versions.

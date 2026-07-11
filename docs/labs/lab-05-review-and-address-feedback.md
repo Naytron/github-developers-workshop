@@ -54,6 +54,9 @@ Mark clearly which comments are **blocking** vs. **nits**.
 gh pr review <their-PR#> --approve --body "LGTM — tests cover the key paths."
 ```
 
+> 💡 **CLI tip:** `gh pr diff <their-PR#>` reviews the diff right in the terminal, and
+> `gh pr comment <their-PR#> --body "..."` drops a quick note without opening the browser.
+
 ## Part B — Address feedback on your PR
 
 Back on your own branch:

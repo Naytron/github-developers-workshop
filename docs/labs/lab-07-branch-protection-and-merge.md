@@ -98,6 +98,9 @@ gh pr merge --squash --delete-branch
 `gh` opens the squash commit message — make it meaningful (it feeds release notes in
 Lab 08). Confirm.
 
+> 💡 **CLI tip:** `gh pr merge --auto --squash --delete-branch` turns on **auto-merge** —
+> the PR merges itself the moment required checks pass, so you don't have to babysit it.
+
 ### 3. Confirm the issue closed
 
 Because your PR said `Closes #<issue-number>`, merging closes it:

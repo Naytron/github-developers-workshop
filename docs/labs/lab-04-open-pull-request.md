@@ -56,6 +56,10 @@ EOF
 
 `gh` prints the PR URL. Note the **PR number** (e.g., `#2`).
 
+> 💡 **CLI tip:** `gh pr create --fill` drafts the title and body straight from your
+> commits. `gh pr checks --watch` live-follows the checks, and `gh pr status` lists all
+> your open PRs.
+
 > The `Closes #<issue-number>` line means merging this PR will **automatically close** your issue
 > from Lab 01.
 

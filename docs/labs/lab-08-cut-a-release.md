@@ -74,6 +74,9 @@ CivicPermit v1.1.0  Latest  v1.1.0    about 1 minute ago
 You should see **CivicPermit v1.1.0** with auto-generated notes (and your asset, if you
 uploaded one).
 
+> 💡 **CLI tip:** `gh browse --releases` opens the Releases page in your browser, and
+> `gh release view v1.1.0 --web` jumps straight to this specific release.
+
 ## Step 5 — (Optional) See release automation
 
 The repo also ships `.github/workflows/release.yml`, which does all of the above whenever

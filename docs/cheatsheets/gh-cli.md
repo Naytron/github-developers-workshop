@@ -67,6 +67,29 @@ gh release view v1.1.0 [--web]
 gh release list
 ```
 
+## Handy shortcuts
+
+```bash
+gh browse                                  # open the repo in the browser at the current branch
+gh browse -b main                          # ...at a specific branch
+gh browse src/CivicPermit.Api/Program.cs   # open a specific file
+gh browse <number>                         # open issue/PR #<number>
+gh browse --settings                       # jump to repo Settings
+gh browse --releases                       # jump to the Releases page
+
+gh issue develop <number> --checkout       # create a branch linked to an issue and switch to it
+
+gh pr create --fill                        # draft title/body from your commits
+gh pr checks --watch                       # live-follow checks until they finish
+gh pr status                               # your PRs at a glance
+gh pr merge --auto --squash --delete-branch  # auto-merge when required checks pass
+
+gh run rerun --failed                      # re-run only the failed jobs
+
+gh alias set co 'pr checkout'              # then: gh co <number>
+gh config set editor "code --wait"         # use VS Code for gh drafts
+```
+
 ## Raw API (for settings not yet in gh subcommands)
 
 ```bash

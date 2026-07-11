@@ -132,6 +132,9 @@ Great way to see CI earn its keep:
 gh run view --log-failed   # jump straight to the failing log
 ```
 
+> 💡 **CLI tip:** `gh run rerun --failed` re-runs only the failed jobs, and
+> `gh workflow view CI --web` opens the workflow's run history in the browser.
+
 ## ✅ Checkpoint
 
 - [ ] Actions is enabled and `gh workflow list` shows the **CI** workflow.
