@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build-and-test:
-    name: Build & Test
+    name: Build & Test (CivicPermit)
     runs-on: ubuntu-latest
 
     steps:

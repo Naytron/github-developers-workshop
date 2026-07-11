@@ -33,6 +33,17 @@ Go to **Settings → Rules → Rulesets → New branch ruleset**:
 - Optionally **Require review from Code Owners** (uses `.github/CODEOWNERS`).
 - Set **Enforcement status** to **Active** and **Create**.
 
+> ⚠️ **The check name must match exactly.** The required check is the workflow **job
+> name** — `Build & Test (CivicPermit)`. It only appears in the picker after that job has
+> reported on at least one PR, so open your PR (Lab 04) and let CI run first. If you ever
+> rename the job, update the required check to match or every PR will wait forever.
+
+> **Solo, or on a personal fork?** You can't approve your own PR, and the `@your-org/...`
+> team in [`.github/CODEOWNERS`](../../.github/CODEOWNERS) won't resolve on a fork — so
+> **Require review from Code Owners** can't be satisfied there. Either set **Required
+> approvals** to `0` and leave Code Owners review **off**, or have your instructor approve.
+> (Point CODEOWNERS at your own username if you want to watch it work.)
+
 ### Option 2 — Classic protection, via the GitHub CLI
 
 You can enable a required status check with the API through `gh`:
@@ -69,7 +80,7 @@ Back on your feature PR:
 ### 1. Confirm the gate is green
 
 ```bash
-gh pr checks       # Build & Test must be ✅
+gh pr checks       # Build & Test (CivicPermit) must be ✅
 gh pr view         # shows required reviews / mergeability
 ```
 
@@ -105,7 +116,7 @@ git pull
 ## ✅ Checkpoint
 
 - [ ] Direct pushes to `main` are blocked.
-- [ ] **Build & Test** is a required check.
+- [ ] **Build & Test (CivicPermit)** is a required check.
 - [ ] Your PR merged via **squash**, and the branch was deleted.
 - [ ] Issue `#<issue-number>` is **closed**.
 - [ ] Local `main` contains your feature (`git log --oneline -3`).

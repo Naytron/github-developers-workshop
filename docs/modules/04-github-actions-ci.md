@@ -52,7 +52,7 @@ concurrency:              # cancel superseded runs on the same ref
 
 jobs:
   build-and-test:
-    name: Build & Test
+    name: Build & Test (CivicPermit)
     runs-on: ubuntu-latest        # WHERE it runs
     steps:
       - uses: actions/checkout@v4         # get the code

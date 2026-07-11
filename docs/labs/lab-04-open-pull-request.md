@@ -73,7 +73,7 @@ diff first; it's the fastest way to catch a stray change.
 
 ### 4. Watch the checks (preview of Module 4)
 
-If CI is already configured you'll see a **Build & Test** check start. If it isn't yet,
+If CI is already configured you'll see a **Build & Test (CivicPermit)** check start. If it isn't yet,
 you'll add it in [Lab 06](lab-06-author-ci-workflow.md) and it will appear here.
 
 ```bash

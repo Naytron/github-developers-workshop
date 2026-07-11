@@ -1,6 +1,10 @@
 # CODEOWNERS — automatically requests review from the listed owners.
 # Replace the placeholder team/user with your own before running the workshop.
 # See Lab 05 and Lab 07 for how CODEOWNERS pairs with branch protection.
+#
+# NOTE: On a personal fork, an org team like the one below won't resolve, so a
+# "Require review from Code Owners" rule can't be satisfied. Solo/fork learners
+# should point these at their own @username, or skip the Code Owners rule (Lab 07).
 
 # Default owners for everything in the repo.
 *                       @your-org/workshop-maintainers

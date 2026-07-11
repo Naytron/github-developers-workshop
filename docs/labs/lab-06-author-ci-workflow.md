@@ -49,7 +49,7 @@ concurrency:
 
 jobs:
   build-and-test:
-    name: Build & Test
+    name: Build & Test (CivicPermit)
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
@@ -85,18 +85,22 @@ jobs:
 
 ## Step 2 — Make a deliberate change and watch CI run
 
-Let's make the job name clearer so we can see a fresh run. Edit `.github/workflows/ci.yml`
-and change the job's display name:
+Let's make a small, safe change so we can watch a fresh run — we'll rename a **step**
+(not the job). Edit `.github/workflows/ci.yml` and change the test step's display name:
 
 ```yaml
-    name: Build & Test (CivicPermit)
+      - name: Run the tests
 ```
+
+> ⚠️ **Don't rename the job.** The job's `name:` (`Build & Test (CivicPermit)`) is the
+> **status-check name** you'll require in Lab 07. Renaming the job creates a *new* check
+> context and can strand the required check on every open PR. Renaming a **step** is safe.
 
 Commit and push on your feature branch:
 
 ```bash
 git add .github/workflows/ci.yml
-git commit -m "ci: clarify CI job display name
+git commit -m "ci: clarify the test step name
 
 Refs #<issue-number>"
 git push
@@ -132,7 +136,7 @@ gh run view --log-failed   # jump straight to the failing log
 
 - [ ] Actions is enabled and `gh workflow list` shows the **CI** workflow.
 - [ ] Your push triggered a run (`gh run list`).
-- [ ] `gh pr checks` shows **Build & Test** with a status.
+- [ ] `gh pr checks` shows **Build & Test (CivicPermit)** with a status.
 - [ ] You can open the run and read a step's log.
 
 ## Troubleshooting

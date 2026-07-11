@@ -143,7 +143,7 @@ Pin the SDK line:
 
 - The workflow must trigger on `pull_request` (ours does).
 - The **required check name** must match the job's display name exactly
-  (**Build & Test (CivicPermit)** after Lab 06).
+  (**Build & Test (CivicPermit)**).
 
 ## Merging & protection
 

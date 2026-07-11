@@ -45,6 +45,15 @@ cd publish && zip -r ../CivicPermit.Api-v1.1.0.zip . && cd ..
 gh release upload v1.1.0 CivicPermit.Api-v1.1.0.zip
 ```
 
+> **On Windows?** `zip` isn't installed by default. Use PowerShell's `Compress-Archive`
+> in place of the `zip` line:
+>
+> ```powershell
+> dotnet publish src/CivicPermit.Api -c Release -o ./publish
+> Compress-Archive -Path ./publish/* -DestinationPath CivicPermit.Api-v1.1.0.zip
+> gh release upload v1.1.0 CivicPermit.Api-v1.1.0.zip
+> ```
+
 (Or attach it at creation time by adding the zip path to `gh release create`.)
 
 ## Step 4 — Verify the release

@@ -19,7 +19,7 @@ protection (or a **ruleset**) turns your team's good intentions into **enforced 
 
 - Require a pull request before merging.
 - Require **approvals** (e.g., at least one).
-- Require **status checks** to pass (our `Build & Test` job).
+- Require **status checks** to pass (our `Build & Test (CivicPermit)` job).
 - Require branches to be **up to date** before merging.
 - Optionally require **CODEOWNERS** review, signed commits, or linear history.
 
@@ -36,7 +36,7 @@ manage at org scale; the lab shows both entry points.
 ## Required status checks
 
 A **required status check** is a workflow result that *must* be green before merge. We'll
-require our CI job by name (**Build & Test**). After that:
+require our CI job by name (**Build & Test (CivicPermit)**). After that:
 
 - A red CI run **blocks** the merge button.
 - Pushing a fix re-runs CI; green unblocks the merge.
