@@ -42,6 +42,11 @@ This repo pins the SDK band in `global.json`:
 That means: use the latest installed **10.0.x** SDK, and don't fall back to a preview. If
 you only have a preview installed, install a stable 10.0.x SDK.
 
+> ⚠️ **You need at least `10.0.100`.** `rollForward: latestFeature` only rolls *up* to a
+> newer 10.0.x feature band — never down. An older SDK (e.g. `10.0.050`) makes `dotnet
+> restore`/`build` fail with an SDK-resolution error. Check with `dotnet --list-sdks` and
+> install a `10.0.1xx` (or later) build if yours is lower.
+
 ## The commands you'll use
 
 Run these from the repository root:

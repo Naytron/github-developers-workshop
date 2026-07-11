@@ -82,6 +82,14 @@ doesn't have it yet, the check appears once you add it there.
 gh pr checks
 ```
 
+A passing run looks like:
+
+```text
+Build & Test (CivicPermit)   pass   1m23s   https://github.com/.../actions/runs/123
+```
+
+(While it's still running you'll see `pending`; a failure shows `fail`.)
+
 ## ✅ Checkpoint
 
 - [ ] `gh pr view` shows your PR targeting `main`.

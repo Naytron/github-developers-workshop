@@ -36,6 +36,26 @@ release. The muscle memory is the point.
 - [Markdown & PR cheat sheet](cheatsheets/markdown-and-pr.md)
 - [Actions YAML cheat sheet](cheatsheets/actions-yaml.md)
 
+## Clean up (optional)
+
+If you worked in a throwaway fork or training repo, leave your account tidy:
+
+```bash
+# Remove the local build artifacts from Lab 08
+rm -rf ./publish ./CivicPermit.Api-*.zip
+
+# Delete the test tag you pushed in Lab 08 (local + remote)
+git tag -d v1.1.1
+git push origin :refs/tags/v1.1.1
+
+# If you no longer need your fork, delete it (irreversible)
+gh repo delete <your-org>/github-developers-workshop --yes
+```
+
+> On Windows PowerShell, use `Remove-Item -Recurse -Force ./publish, ./CivicPermit.Api-*.zip`
+> in place of `rm -rf`. Deleting a repo needs the `delete_repo` scope — run
+> `gh auth refresh -s delete_repo` first.
+
 ## Keep learning
 
 - [Wrap-up & next steps](modules/08-wrap-up-and-next-steps.md) — curated links to official docs.

@@ -64,6 +64,13 @@ gh release view v1.1.0 --web
 gh release list
 ```
 
+`gh release list` shows something like:
+
+```text
+TITLE               TYPE    TAG NAME  PUBLISHED
+CivicPermit v1.1.0  Latest  v1.1.0    about 1 minute ago
+```
+
 You should see **CivicPermit v1.1.0** with auto-generated notes (and your asset, if you
 uploaded one).
 

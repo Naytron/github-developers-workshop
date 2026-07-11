@@ -8,6 +8,15 @@ title: "Troubleshooting"
 
 Common problems, with copy-paste fixes. Grouped by phase.
 
+## Fell behind?
+
+Don't debug under time pressure — resync to a known-good point and keep going:
+
+- Copy the reference files from [`solutions/`](../solutions/README.md) to reach the
+  post-Lab-03 state, then re-run `dotnet test`.
+- If your instructor pushed **checkpoint tags**, jump to the lab you're about to start:
+  `git switch -c catchup checkpoint/lab-03` (swap in the right lab number).
+
 ## Setup & tooling
 
 ### `dotnet --version` isn't 10.x
@@ -21,6 +30,10 @@ dotnet --list-sdks     # confirm a 10.0.x SDK is listed
 
 If only a **preview** SDK is installed, install a stable 10.0.x — this repo's `global.json`
 sets `allowPrerelease: false` and will refuse a preview.
+
+Have a 10.x but still see an SDK-resolution error? Your SDK may be **older than `10.0.100`**.
+`global.json` uses `rollForward: latestFeature`, which rolls *up* only — install a `10.0.1xx`
+(or later) build.
 
 ### `dotnet restore` hangs or fails (corporate proxy / private feed)
 

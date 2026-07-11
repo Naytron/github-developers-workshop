@@ -25,7 +25,9 @@ delivery.
 - [ ] Dry-run the [Demo Script](demo-script.md) on the exact environment you'll teach on.
 - [ ] Confirm **Actions** and (for Module 7) **security features** are available on the
       plan; if not, plan those as demos.
-- [ ] Have the [Solution Key](solution-key.md) open in a private window for quick unblUocking.
+- [ ] Have the [Solution Key](solution-key.md) open in a private window for quick unblocking.
+- [ ] (Optional) Pre-create **catch-up checkpoints** so stragglers can resync between labs —
+      see [Catch-up checkpoints](#catch-up-checkpoints-optional) below.
 
 ## Repo model — pick one
 
@@ -37,6 +39,26 @@ delivery.
 
 > The labs are written for the **fork** model but call out where shared-repo attendees do a
 > lab as a demo instead.
+
+## Catch-up checkpoints (optional)
+
+If an attendee falls behind, the fastest recovery is to jump to a known-good starting point
+rather than debug live. Two options:
+
+- **Reference solution (always available).** The finished feature lives in
+  [`solutions/`](../../solutions/README.md); copy those files over the starters to reach the
+  post-Lab-03 state (see the copy commands in that README).
+- **Per-lab checkpoint tags (recommended prep).** Before the day, walk the labs once on a
+  clean clone and tag the *end state* of each lab, then push the tags to the shared repo:
+
+  ```bash
+  # after finishing each lab on your prep clone:
+  git tag checkpoint/lab-02      # ...through checkpoint/lab-08
+  git push origin --tags
+  ```
+
+  A lagging attendee resyncs with `git switch -c catchup checkpoint/lab-03` (or the lab they
+  need) and continues from there. Point them at the tag for the lab **they're about to start**.
 
 ## Timing — two deliveries
 
