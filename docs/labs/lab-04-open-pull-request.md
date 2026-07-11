@@ -73,8 +73,10 @@ diff first; it's the fastest way to catch a stray change.
 
 ### 4. Watch the checks (preview of Module 4)
 
-If CI is already configured you'll see a **Build & Test (CivicPermit)** check start. If it isn't yet,
-you'll add it in [Lab 06](lab-06-author-ci-workflow.md) and it will appear here.
+This repo **ships the CI workflow pre-built** ([.github/workflows/ci.yml](../../.github/workflows/ci.yml)),
+so you'll see a **Build & Test (CivicPermit)** check start right away. You'll read and
+modify that workflow yourself in [Lab 06](lab-06-author-ci-workflow.md). If your repo
+doesn't have it yet, the check appears once you add it there.
 
 ```bash
 gh pr checks

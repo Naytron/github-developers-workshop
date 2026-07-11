@@ -12,6 +12,10 @@ request all the way from an idea to a shipped release — on a small, self-conta
 > **One story, start to finish:**
 > **Issue → Branch → Commit → Pull Request → Review → Workflow → Merge → Release**
 
+> ⏱️ **On timing:** "6-hour" is the **teaching time** (modules + labs). With two breaks
+> and lunch, plan a **~7.75-hour calendar day**. See the [agenda](agenda.md) for the full
+> schedule and compressed-timing options.
+
 ---
 
 ## Start here
