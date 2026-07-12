@@ -1,0 +1,175 @@
+<!--
+  Dark-mode toggle for the Cayman theme.
+
+  Cayman's default layout includes this file inside <head>, so with no theme
+  override, no Jekyll plugin, and no Marketplace action we:
+    1) apply the saved (or OS-preferred) theme immediately to avoid a flash, and
+    2) inject a floating toggle button once the page has loaded.
+  The choice is remembered in localStorage per browser.
+-->
+<style>
+  /* Floating toggle button */
+  #theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+  #theme-toggle:hover { background: rgba(0, 0, 0, 0.4); }
+  #theme-toggle:focus-visible { outline: 2px solid #58a6ff; outline-offset: 2px; }
+
+  /* ---- Dark theme overrides for Cayman ---- */
+  html[data-theme="dark"] body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+  }
+  html[data-theme="dark"] .main-content { color: #c9d1d9; }
+  html[data-theme="dark"] .main-content h1,
+  html[data-theme="dark"] .main-content h2,
+  html[data-theme="dark"] .main-content h3,
+  html[data-theme="dark"] .main-content h4,
+  html[data-theme="dark"] .main-content h5,
+  html[data-theme="dark"] .main-content h6 { color: #7ee2b8; }
+  html[data-theme="dark"] .main-content a { color: #58a6ff; }
+  html[data-theme="dark"] .page-header {
+    background-color: #0b3a66;
+    background-image: linear-gradient(120deg, #0b3a66, #0f7a5a);
+  }
+
+  /* Inline code and code blocks */
+  html[data-theme="dark"] .main-content code {
+    background-color: #161b22;
+    color: #d6dee6;
+  }
+  html[data-theme="dark"] .main-content pre {
+    background-color: #161b22;
+    color: #d6dee6;
+    border: 1px solid #30363d;
+  }
+  html[data-theme="dark"] .main-content pre > code {
+    background-color: transparent;
+    color: inherit;
+  }
+  html[data-theme="dark"] .main-content .highlight { background-color: #161b22; }
+
+  /* Rouge syntax tokens (GitHub-dark-ish) for readable code blocks */
+  html[data-theme="dark"] .highlight .c,
+  html[data-theme="dark"] .highlight .c1,
+  html[data-theme="dark"] .highlight .cm,
+  html[data-theme="dark"] .highlight .cd,
+  html[data-theme="dark"] .highlight .cs { color: #8b949e; font-style: italic; }
+  html[data-theme="dark"] .highlight .k,
+  html[data-theme="dark"] .highlight .kd,
+  html[data-theme="dark"] .highlight .kn,
+  html[data-theme="dark"] .highlight .kp,
+  html[data-theme="dark"] .highlight .kr,
+  html[data-theme="dark"] .highlight .kt,
+  html[data-theme="dark"] .highlight .kc { color: #ff7b72; }
+  html[data-theme="dark"] .highlight .s,
+  html[data-theme="dark"] .highlight .s1,
+  html[data-theme="dark"] .highlight .s2,
+  html[data-theme="dark"] .highlight .sb,
+  html[data-theme="dark"] .highlight .sc,
+  html[data-theme="dark"] .highlight .sd,
+  html[data-theme="dark"] .highlight .se,
+  html[data-theme="dark"] .highlight .sh,
+  html[data-theme="dark"] .highlight .si,
+  html[data-theme="dark"] .highlight .sx,
+  html[data-theme="dark"] .highlight .dl { color: #a5d6ff; }
+  html[data-theme="dark"] .highlight .m,
+  html[data-theme="dark"] .highlight .mi,
+  html[data-theme="dark"] .highlight .mf,
+  html[data-theme="dark"] .highlight .mh,
+  html[data-theme="dark"] .highlight .il { color: #79c0ff; }
+  html[data-theme="dark"] .highlight .nf,
+  html[data-theme="dark"] .highlight .na { color: #d2a8ff; }
+  html[data-theme="dark"] .highlight .nt { color: #7ee787; }
+  html[data-theme="dark"] .highlight .nv,
+  html[data-theme="dark"] .highlight .vg,
+  html[data-theme="dark"] .highlight .vi { color: #ffa657; }
+
+  /* Quotes, tables, rules, footer, buttons */
+  html[data-theme="dark"] .main-content blockquote {
+    color: #9aa7b1;
+    border-left-color: #30363d;
+  }
+  html[data-theme="dark"] .main-content table th,
+  html[data-theme="dark"] .main-content table td { border-color: #30363d; }
+  html[data-theme="dark"] .main-content table tr {
+    background-color: #0d1117;
+    border-top-color: #30363d;
+  }
+  html[data-theme="dark"] .main-content table tr:nth-child(2n) { background-color: #161b22; }
+  html[data-theme="dark"] .main-content hr { background-color: #30363d; }
+  html[data-theme="dark"] .site-footer {
+    color: #8b949e;
+    border-top-color: #30363d;
+  }
+  html[data-theme="dark"] .site-footer-owner a,
+  html[data-theme="dark"] .site-footer-credits a { color: #58a6ff; }
+  html[data-theme="dark"] .btn {
+    color: #c9d1d9;
+    border-color: rgba(201, 209, 217, 0.3);
+  }
+  html[data-theme="dark"] .btn:hover {
+    background-color: rgba(201, 209, 217, 0.15);
+    border-color: rgba(201, 209, 217, 0.6);
+  }
+</style>
+
+<script>
+  (function () {
+    // 1) Apply the theme as early as possible to avoid a flash of the wrong colors.
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    var prefersDark = window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+
+    // 2) Once the DOM is ready, add the floating toggle button.
+    function addToggle() {
+      if (document.getElementById('theme-toggle')) return;
+      var btn = document.createElement('button');
+      btn.id = 'theme-toggle';
+      btn.type = 'button';
+
+      function render() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        btn.textContent = dark ? '\u2600\uFE0F' : '\uD83C\uDF19';
+        var label = dark ? 'Switch to light theme' : 'Switch to dark theme';
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+      }
+
+      btn.addEventListener('click', function () {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        var next = dark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        render();
+      });
+
+      render();
+      document.body.appendChild(btn);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', addToggle);
+    } else {
+      addToggle();
+    }
+  })();
+</script>
