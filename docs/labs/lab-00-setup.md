@@ -64,7 +64,8 @@ dotnet test
 You should see:
 
 ```
-Passed!  - Failed:     0, Passed:     5, Skipped:     0, Total:     5
+Test summary: total: 5, failed: 0, succeeded: 5, skipped: 0, duration: 1.1s
+Build succeeded in 5.5s (or other)
 ```
 
 ### 5. Run the app (optional but fun)
@@ -93,7 +94,7 @@ You'll see the two seeded permits as JSON. Press `Ctrl+C` to stop the app.
 - [ ] `git`, `dotnet` (10.x), and `gh` all report versions.
 - [ ] `gh auth status` shows you're logged in.
 - [ ] You have a local clone of the repo.
-- [ ] `dotnet test` prints **Passed! … Passed: 5**.
+- [ ] `dotnet test` prints **Test summary: … succeeded: 5**.
 
 ## Troubleshooting
 
