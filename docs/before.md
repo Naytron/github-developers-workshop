@@ -63,11 +63,13 @@ gh auth status
 ## 5. Grab the code
 
 Your instructor will tell you whether to **fork** the workshop repo or clone a copy in a
-shared org. Once you have a URL:
+shared org. Everyone can't use the same repo name, so pick a personal one in the format
+**`<yourname>-gh-training`** (lowercase, hyphens, no spaces) — e.g. `alex-gh-training`.
+Once you have a URL:
 
 ```bash
-git clone https://github.com/<your-org>/github-developers-workshop.git
-cd github-developers-workshop
+git clone https://github.com/<your-org>/<yourname>-gh-training.git
+cd <yourname>-gh-training
 dotnet test
 ```
 

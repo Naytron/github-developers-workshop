@@ -39,21 +39,38 @@ operations.
 
 ### 3. Get the code
 
-Your instructor will tell you whether to **fork** or clone into a shared org. With `gh`:
+Your instructor will tell you whether to **fork** or clone into a shared org.
+
+> 🏷️ **Pick your repo name first.** Everyone in the room can't use the same repo name, so
+> choose a personal one in the format **`<yourname>-gh-training`** (lowercase, hyphens, no
+> spaces) — e.g. `alex-gh-training`. Use that **same name** everywhere below.
+
+With `gh` (replace `<yourname>` and `<src-org>` — the org you're forking **from**):
 
 ```bash
-# Option A — fork to your account and clone in one step
-gh repo fork <your-org>/github-developers-workshop --clone
+# Option A — fork to your account with a personal name, and clone in one step
+gh repo fork <src-org>/github-developers-workshop \
+  --fork-name <yourname>-gh-training --clone
 
-# Option B — clone a repo you already have access to
-gh repo clone <your-org>/github-developers-workshop
+# Option B — clone a repo already created for you in a shared org
+gh repo clone <src-org>/<yourname>-gh-training <yourname>-gh-training
 ```
 
-Then:
+Then move into the folder `gh` just created:
 
 ```bash
-cd github-developers-workshop
+cd <yourname>-gh-training
 ```
+
+Confirm your remotes are wired up correctly:
+
+```bash
+git remote -v
+```
+
+You should see **`origin`** pointing at *your* fork (`<yourname>-gh-training`). If you
+forked (Option A), `gh` also adds an **`upstream`** remote pointing at the original
+`<src-org>/github-developers-workshop` — that's how you'll pull in updates later.
 
 ### 4. Build and test
 
@@ -93,7 +110,7 @@ You'll see the two seeded permits as JSON. Press `Ctrl+C` to stop the app.
 
 - [ ] `git`, `dotnet` (10.x), and `gh` all report versions.
 - [ ] `gh auth status` shows you're logged in.
-- [ ] You have a local clone of the repo.
+- [ ] You have a local clone of the repo (`origin` points at your `<yourname>-gh-training`).
 - [ ] `dotnet test` prints **Test summary: … succeeded: 5**.
 
 ## Troubleshooting

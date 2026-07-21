@@ -33,12 +33,13 @@ delivery.
 
 | Model | How | Pros / cons |
 | ----- | --- | ----------- |
-| **Fork per attendee** (recommended) | Each attendee `gh repo fork --clone`. | Full admin on their fork → they can do branch protection & security labs. Must **enable Actions** on the fork (Lab 06 Step 0). |
-| **One repo per attendee in a training org** | Pre-create `attendee-XX` repos from this template. | No fork friction; you manage cleanup. |
+| **Fork per attendee** (recommended) | Each attendee `gh repo fork --fork-name <yourname>-gh-training --clone`. | Full admin on their fork → they can do branch protection & security labs. Must **enable Actions** on the fork (Lab 06 Step 0). |
+| **One repo per attendee in a training org** | Pre-create `<yourname>-gh-training` repos from this template. | No fork friction; you manage cleanup. |
 | **Shared repo, branch per attendee** | Everyone pushes branches to one repo. | Simplest to set up; but only admins can do Lab 07/09 — run those as demos. |
 
 > The labs are written for the **fork** model but call out where shared-repo attendees do a
-> lab as a demo instead.
+> lab as a demo instead. Have attendees name their fork/repo `<yourname>-gh-training` (e.g.
+> `alex-gh-training`) so names don't collide.
 
 ## Catch-up checkpoints (optional)
 
