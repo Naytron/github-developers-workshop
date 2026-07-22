@@ -40,9 +40,9 @@ app.MapPost("/permits", (CreatePermitRequest request, PermitStore store) =>
     return Results.Created($"/permits/{permit.Id}", permit);
 });
 
-// TODO (Lab 03): Add an endpoint to schedule an inspection for an existing permit.
+// Feature (#<issue-number>): schedule an inspection for an existing permit.
 //   POST /permits/{id}/inspections
-// This is the feature you will implement end-to-end during the workshop.
+// Endpoint and test are added in Lab 03.
 
 app.Run();
 
