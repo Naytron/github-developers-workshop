@@ -114,7 +114,6 @@ Ensure `bin/` and `obj/` are ignored — they are, via [.gitignore](../.gitignor
 ### `dotnet build` fails after editing the feature
 
 - Re-read the endpoint and model in [Lab 03](labs/lab-03-implement-endpoint-and-test.md).
-- Compare against the [Solution Key](instructor/solution-key.md).
 - Fast path: copy the reference files from [`solutions/`](../solutions/README.md) and re-test.
 
 ### Tests fail with a serialization or 415 error on POST

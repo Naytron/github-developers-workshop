@@ -27,8 +27,7 @@ lab that advances the **same** feature story.
 | 7:30–7:45 | Wrap-up & next steps | [Module 8](modules/08-wrap-up-and-next-steps.md) | — |
 
 > The teach-time total is ~6 hours; breaks and lunch bring the calendar day to ~7.75
-> hours. For a tighter 6-hour clock-to-clock delivery, see the compressed timing options
-> in the [Facilitation Guide](instructor/facilitation-guide.md).
+> hours.
 
 ## The story you'll build
 

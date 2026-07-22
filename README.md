@@ -98,7 +98,6 @@ The port is printed on startup (typically `http://localhost:5150`).
 │   ├── labs/                      # Hands-on labs (lab-00 … lab-09)
 │   ├── guides/                    # Setup and reference guides
 │   ├── cheatsheets/               # One-page command references
-│   ├── instructor/                # Facilitation guide, demo script, solution key
 │   └── troubleshooting.md
 ├── global.json                    # Pins the .NET SDK band
 ├── CivicPermit.sln
@@ -120,8 +119,6 @@ The port is printed on startup (typically `http://localhost:5150`).
 | 6 | [Releases](docs/modules/06-releases.md) | [Lab 08 — Cut a release](docs/labs/lab-08-cut-a-release.md) |
 | 7 | [Secure development](docs/modules/07-secure-development.md) | [Lab 09 — Secure the repo](docs/labs/lab-09-secure-development.md) |
 | 8 | [Wrap-up & next steps](docs/modules/08-wrap-up-and-next-steps.md) | — |
-
-Instructors: start with the [Facilitation Guide](docs/instructor/facilitation-guide.md).
 
 ---
 

@@ -22,7 +22,6 @@ request all the way from an idea to a shipped release — on a small, self-conta
 
 - 🧭 **Before the workshop:** [Prepare your machine](before.md)
 - 📅 **The plan:** [6-hour agenda](agenda.md)
-- 🧑‍🏫 **Instructors:** [Facilitation guide](instructor/facilitation-guide.md)
 
 ---
 

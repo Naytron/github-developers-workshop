@@ -39,6 +39,8 @@ operations.
 
 ### 3. Get the code
 
+The workshop repo lives at [Naytron/github-developers-workshop](https://github.com/Naytron/github-developers-workshop).
+
 Your instructor will tell you whether to **fork** or clone into a shared org.
 
 > 🏷️ **Pick your repo name first.** Everyone in the room can't use the same repo name, so
@@ -56,6 +58,10 @@ gh repo fork <src-org>/github-developers-workshop \
 gh repo clone <src-org>/<yourname>-gh-training <yourname>-gh-training
 ```
 
+> 💡 Prefer the web UI? You can also open
+> [Naytron/github-developers-workshop](https://github.com/Naytron/github-developers-workshop)
+> and click **Fork** to create your own copy, then clone it.
+
 Then move into the folder `gh` just created:
 
 ```bash
@@ -72,7 +78,32 @@ You should see **`origin`** pointing at *your* fork (`<yourname>-gh-training`). 
 forked (Option A), `gh` also adds an **`upstream`** remote pointing at the original
 `<src-org>/github-developers-workshop` — that's how you'll pull in updates later.
 
-### 4. Build and test
+### 4. Set your Git identity
+
+Git stamps every commit with a name and email, so set them before you commit anything.
+Use the **same email** that's on your GitHub account so your commits link back to your
+profile.
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+Confirm they're set:
+
+```bash
+git config --global user.name
+git config --global user.email
+```
+
+> 💡 The `--global` flag sets this for every repo on your machine. Drop it to configure
+> just the current repo (handy if you use a different identity per project).
+
+> ✍️ **Skip Vim.** By default Git opens commit messages in Vim. To use VS Code instead,
+> run `git config --global core.editor "code --wait"` — Git will open a tab and wait for
+> you to save and close it before continuing.
+
+### 5. Build and test
 
 ```bash
 dotnet test
@@ -85,7 +116,7 @@ Test summary: total: 5, failed: 0, succeeded: 5, skipped: 0, duration: 1.1s
 Build succeeded in 5.5s (or other)
 ```
 
-### 5. Run the app (optional but fun)
+### 6. Run the app (optional but fun)
 
 ```bash
 dotnet run --project src/CivicPermit.Api
@@ -111,6 +142,7 @@ You'll see the two seeded permits as JSON. Press `Ctrl+C` to stop the app.
 - [ ] `git`, `dotnet` (10.x), and `gh` all report versions.
 - [ ] `gh auth status` shows you're logged in.
 - [ ] You have a local clone of the repo (`origin` points at your `<yourname>-gh-training`).
+- [ ] `git config --global user.name` and `user.email` return your details.
 - [ ] `dotnet test` prints **Test summary: … succeeded: 5**.
 
 ## Troubleshooting
