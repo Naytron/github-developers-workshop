@@ -43,7 +43,13 @@ Other prefixes teams use: `fix/`, `chore/`, `docs/`. Consistency helps humans an
 
 ## Creating and switching branches
 
+Always start from an up-to-date `main`:
+
 ```bash
+# Get the latest main before branching
+git switch main
+git pull
+
 # Create a new branch from main and switch to it
 git switch -c feature/42-schedule-inspection
 
@@ -53,6 +59,20 @@ git branch --show-current
 
 `git switch` is the modern, purpose-built command for changing branches. (`git checkout`
 still works and you'll see it in older docs.)
+
+### Why `git pull` before you branch?
+
+A branch is just a pointer to the commit you're on when you create it. If your
+local `main` is behind the remote, your new branch inherits that stale starting
+point. That leads to three common problems:
+
+- **Stale base:** you build on old code and miss changes teammates already merged.
+- **Duplicated work:** you might re-implement something that's already done.
+- **Merge conflicts:** the further your branch drifts from the real `main`, the
+  harder it is to merge — and the noisier your pull request diff becomes.
+
+Pulling first guarantees your branch starts from the latest shared history, so
+your changes stay small, current, and easy to review.
 
 ## What makes a good commit?
 

@@ -19,6 +19,13 @@ git switch main
 git pull
 ```
 
+> **Why `git pull` first?** A new branch starts from wherever `main` currently
+> points on your machine. If your local `main` is stale, your branch is built on
+> old code — so you miss teammates' recent changes, risk redoing work already
+> done, and set yourself up for painful merge conflicts when you open your PR.
+> Pulling first gives you the latest `main`, keeping your branch (and its diff)
+> small, current, and easy to review.
+
 ### 2. Create your feature branch
 
 Use the issue number from Lab 01:
