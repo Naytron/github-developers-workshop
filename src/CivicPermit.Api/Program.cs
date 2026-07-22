@@ -43,6 +43,7 @@ app.MapPost("/permits", (CreatePermitRequest request, PermitStore store) =>
 // Feature (#<issue-number>): schedule an inspection for an existing permit.
 //   POST /permits/{id}/inspections
 // Endpoint and test are added in Lab 03.
+// Change for demo
 
 app.Run();
 
