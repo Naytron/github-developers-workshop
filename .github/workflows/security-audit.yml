@@ -72,8 +72,14 @@ jobs:
           fi
 
           # Vulnerability alerts enabled (204 = enabled, 404 = disabled)
-          va=$(gh api -i "repos/${repo}/vulnerability-alerts" 2>/dev/null | head -n1 || true)
-          check "Dependabot alerts enabled" "$va" true
+          va_code=$(gh api -i "repos/${repo}/vulnerability-alerts" 2>/dev/null | head -n1 | awk '{print $2}' || true)
+          if [ "$va_code" = "204" ]; then
+            check "Dependabot alerts enabled" "yes" false
+          elif [ "$va_code" = "404" ]; then
+            check "Dependabot alerts enabled" "⚠️ disabled" false
+          else
+            check "Dependabot alerts enabled" "⚠️ unknown / no access" false
+          fi
 
           # Code scanning alert count (needs security_events scope)
           cs=$(gh api "repos/${repo}/code-scanning/alerts" --jq 'length' 2>/dev/null || true)
