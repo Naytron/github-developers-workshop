@@ -40,4 +40,4 @@ Copy-Item solutions/tests/CivicPermit.Api.Tests/InspectionsEndpointsTests.cs -De
 dotnet test
 ```
 
-You should see the four original tests plus three new inspection tests, all green.
+You should see the five original tests plus three new inspection tests, all green.
