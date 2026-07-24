@@ -118,8 +118,8 @@ The port is printed on startup (typically `http://localhost:5150`).
 | - | ------ | --- |
 | 0 | [Welcome & Setup](docs/modules/00-welcome-and-setup.md) | [Lab 0 — Setup](docs/labs/lab-00-setup.md) |
 | 1 | [The GitHub workflow & Issues](docs/modules/01-github-workflow-and-issues.md) | [Lab 1 — Open the Issue](docs/labs/lab-01-open-the-issue.md) |
-| 2 | [Branching & Commits](docs/modules/02-branching-and-commits.md) | [Lab 2.1 — Branch & first commit](docs/labs/lab-02-1-branch-and-first-commit.md) |
-| 3 | [Pull Requests & Review](docs/modules/03-pull-requests-and-review.md) | [Lab 2.2](docs/labs/lab-02-2-implement-endpoint-and-test.md) · [Lab 3.1](docs/labs/lab-03-1-open-pull-request.md) · [Lab 3.2](docs/labs/lab-03-2-review-and-address-feedback.md) |
+| 2 | [Branching & Commits](docs/modules/02-branching-and-commits.md) | [Lab 2.1 — Branch & first commit](docs/labs/lab-02-1-branch-and-first-commit.md) · [Lab 2.2 — Implement the endpoint & test](docs/labs/lab-02-2-implement-endpoint-and-test.md) |
+| 3 | [Pull Requests & Review](docs/modules/03-pull-requests-and-review.md) | [Lab 3.1 — Open a pull request](docs/labs/lab-03-1-open-pull-request.md) · [Lab 3.2 — Review, feedback & roll back](docs/labs/lab-03-2-review-and-address-feedback.md) |
 | 4 | [GitHub Actions (CI)](docs/modules/04-github-actions-ci.md) | [Lab 4 — Author the CI workflow](docs/labs/lab-04-author-ci-workflow.md) |
 | 5 | [Branch protection & Merge](docs/modules/05-branch-protection-and-merge.md) | [Lab 5 — Protect & merge](docs/labs/lab-05-branch-protection-and-merge.md) |
 | 6 | [Releases](docs/modules/06-releases.md) | [Lab 6 — Cut a release](docs/labs/lab-06-cut-a-release.md) |
