@@ -81,6 +81,21 @@ dotnet run --project src/CivicPermit.Api
 curl http://localhost:5150/permits
 ```
 
+```powershell
+# 1. Clone your fork
+git clone https://github.com/<your-org>/github-developers-workshop.git
+cd github-developers-workshop
+
+# 2. Restore, build, and test
+dotnet test
+
+# 3. Run the API
+dotnet run --project src/CivicPermit.Api
+
+# 4. In another terminal, try it out
+Invoke-RestMethod http://localhost:5150/permits
+```
+
 The port is printed on startup (typically `http://localhost:5150`).
 
 ---

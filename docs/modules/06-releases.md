@@ -47,6 +47,14 @@ gh release create v1.1.0 \
   --generate-notes
 ```
 
+```powershell
+# Create tag v1.1.0 on the current commit, publish a release, and
+# auto-generate notes from merged PRs since the last release.
+gh release create v1.1.0 `
+  --title "CivicPermit v1.1.0" `
+  --generate-notes
+```
+
 `--generate-notes` reads merged PRs (like your inspection PR) to draft the changelog —
 another reason good PR titles pay off.
 
@@ -58,6 +66,15 @@ cd publish && zip -r ../CivicPermit.Api-v1.1.0.zip . && cd ..
 
 gh release create v1.1.0 CivicPermit.Api-v1.1.0.zip \
   --title "CivicPermit v1.1.0" \
+  --generate-notes
+```
+
+```powershell
+dotnet publish src/CivicPermit.Api -c Release -o ./publish
+Compress-Archive -Path ./publish/* -DestinationPath CivicPermit.Api-v1.1.0.zip -Force
+
+gh release create v1.1.0 CivicPermit.Api-v1.1.0.zip `
+  --title "CivicPermit v1.1.0" `
   --generate-notes
 ```
 

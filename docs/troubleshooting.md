@@ -136,6 +136,12 @@ curl -X POST http://localhost:5150/permits/1/inspections \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
 ```
 
+```powershell
+Invoke-RestMethod -Method Post -Uri http://localhost:5150/permits/1/inspections `
+  -ContentType "application/json" `
+  -Body '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
+```
+
 In tests, use `PostAsJsonAsync(...)` (it sets the header for you).
 
 ### The app starts on a different port

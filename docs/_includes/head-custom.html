@@ -173,3 +173,191 @@
     }
   })();
 </script>
+
+<!--
+  Bash / PowerShell shell selector for the Cayman theme.
+
+  Attendees run either Bash (macOS/Linux/WSL/Git Bash) or PowerShell (Windows).
+  Where a command differs between shells, the labs place a ```bash fence
+  immediately followed by a ```powershell fence. On the published Pages site the
+  script below detects each such adjacent pair and renders it as a single tabbed
+  widget with a "Bash | PowerShell" toggle; the choice is remembered and synced
+  across every widget on the page. No Jekyll plugin, no theme override, no
+  Marketplace action. On github.com (which strips <style>/<script>) the two
+  fences simply render stacked, so nothing is lost.
+-->
+<style>
+  .shell-tabs { margin: 0 0 1rem; }
+  .shell-tabs__nav { display: flex; gap: 0.25rem; }
+  .shell-tabs__btn {
+    font: inherit;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+    border: 1px solid #d0d7de;
+    border-bottom: none;
+    background: #f6f8fa;
+    color: #57606a;
+    border-radius: 6px 6px 0 0;
+  }
+  .shell-tabs__btn[aria-selected="true"] {
+    background: #fff;
+    color: #0969da;
+    font-weight: 600;
+  }
+  .shell-tabs__btn:focus-visible { outline: 2px solid #0969da; outline-offset: -2px; }
+  .shell-tabs__panes { border-top: 1px solid #d0d7de; }
+  .shell-tabs__pane { display: none; }
+  .shell-tabs__pane.is-active { display: block; }
+  .shell-tabs__pane > .highlighter-rouge { margin-top: 0.5rem; }
+
+  /* Dark-mode parity with the toggle above */
+  html[data-theme="dark"] .shell-tabs__btn {
+    background: #161b22;
+    color: #8b949e;
+    border-color: #30363d;
+  }
+  html[data-theme="dark"] .shell-tabs__btn[aria-selected="true"] {
+    background: #0d1117;
+    color: #58a6ff;
+  }
+  html[data-theme="dark"] .shell-tabs__panes { border-top-color: #30363d; }
+</style>
+
+<script>
+  (function () {
+    var BASH = { bash: 1, sh: 1, shell: 1, console: 1, 'shell-session': 1, terminal: 1 };
+    var PS = { powershell: 1, pwsh: 1, ps1: 1, posh: 1 };
+    var LABEL = { bash: 'Bash', powershell: 'PowerShell' };
+
+    function kindOf(el) {
+      if (!el || el.nodeType !== 1 || !el.classList || !el.classList.contains('highlighter-rouge')) return null;
+      var cls = el.className.split(/\s+/);
+      for (var i = 0; i < cls.length; i++) {
+        var m = /^language-(.+)$/.exec(cls[i]);
+        if (m) {
+          var l = m[1].toLowerCase();
+          if (BASH[l]) return 'bash';
+          if (PS[l]) return 'powershell';
+        }
+      }
+      return null;
+    }
+
+    function whitespaceBetween(a, b) {
+      var n = a.nextSibling;
+      while (n && n !== b) {
+        if (n.nodeType === 1) return false;
+        if (n.nodeType === 3 && n.textContent.trim() !== '') return false;
+        n = n.nextSibling;
+      }
+      return true;
+    }
+
+    function applyPref(pref) {
+      var groups = document.querySelectorAll('.shell-tabs');
+      for (var i = 0; i < groups.length; i++) {
+        var btns = groups[i].querySelectorAll('.shell-tabs__btn');
+        var panes = groups[i].querySelectorAll('.shell-tabs__pane');
+        var idx = -1;
+        for (var j = 0; j < btns.length; j++) {
+          if (btns[j].getAttribute('data-shell') === pref) { idx = j; break; }
+        }
+        if (idx === -1) continue; // group lacks that shell — leave its current tab
+        for (var k = 0; k < btns.length; k++) {
+          var on = (k === idx);
+          btns[k].setAttribute('aria-selected', on ? 'true' : 'false');
+          btns[k].tabIndex = on ? 0 : -1;
+          panes[k].classList.toggle('is-active', on);
+        }
+      }
+    }
+
+    function makeTabs(run) {
+      var order = ['bash', 'powershell'];
+      var chosen = [];
+      order.forEach(function (kind) {
+        for (var i = 0; i < run.length; i++) {
+          if (run[i].kind === kind) { chosen.push(run[i]); break; }
+        }
+      });
+      if (chosen.length < 2) return;
+
+      var wrap = document.createElement('div');
+      wrap.className = 'shell-tabs';
+      var nav = document.createElement('div');
+      nav.className = 'shell-tabs__nav';
+      nav.setAttribute('role', 'tablist');
+      var panes = document.createElement('div');
+      panes.className = 'shell-tabs__panes';
+
+      chosen[0].el.parentNode.insertBefore(wrap, chosen[0].el);
+
+      chosen.forEach(function (c, i) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'shell-tabs__btn';
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('data-shell', c.kind);
+        btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        btn.tabIndex = i === 0 ? 0 : -1;
+        btn.textContent = LABEL[c.kind];
+        btn.addEventListener('click', function () {
+          try { localStorage.setItem('shellPref', c.kind); } catch (e) {}
+          applyPref(c.kind);
+        });
+        nav.appendChild(btn);
+
+        var pane = document.createElement('div');
+        pane.className = 'shell-tabs__pane' + (i === 0 ? ' is-active' : '');
+        pane.setAttribute('role', 'tabpanel');
+        pane.appendChild(c.el);
+        panes.appendChild(pane);
+      });
+
+      // Drop any extra same-kind blocks in the run to avoid duplicates.
+      run.forEach(function (r) {
+        if (chosen.indexOf(r) === -1 && r.el.parentNode) r.el.parentNode.removeChild(r.el);
+      });
+
+      wrap.appendChild(nav);
+      wrap.appendChild(panes);
+    }
+
+    function build() {
+      var root = document.querySelector('.main-content') || document.body;
+      var el = root.firstElementChild;
+      while (el) {
+        var next = el.nextElementSibling;
+        if (kindOf(el)) {
+          var run = [{ el: el, kind: kindOf(el) }];
+          var cur = el, nx = el.nextElementSibling;
+          while (nx && kindOf(nx) && whitespaceBetween(cur, nx)) {
+            run.push({ el: nx, kind: kindOf(nx) });
+            cur = nx;
+            nx = nx.nextElementSibling;
+          }
+          next = nx;
+          var kinds = {};
+          run.forEach(function (r) { kinds[r.kind] = 1; });
+          if (kinds.bash && kinds.powershell) makeTabs(run);
+        }
+        el = next;
+      }
+    }
+
+    function init() {
+      build();
+      var pref = null;
+      try { pref = localStorage.getItem('shellPref'); } catch (e) {}
+      if (pref) applyPref(pref);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

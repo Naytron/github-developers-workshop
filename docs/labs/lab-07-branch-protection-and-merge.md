@@ -58,6 +58,16 @@ gh api -X PUT repos/{owner}/{repo}/branches/main/protection \
   -f "restrictions=null"
 ```
 
+```powershell
+gh api -X PUT repos/{owner}/{repo}/branches/main/protection `
+  -H "Accept: application/vnd.github+json" `
+  -f "required_status_checks[strict]=true" `
+  -f "required_status_checks[contexts][]=Build & Test (CivicPermit)" `
+  -f "enforce_admins=true" `
+  -f "required_pull_request_reviews[required_approving_review_count]=1" `
+  -f "restrictions=null"
+```
+
 > Replace `{owner}/{repo}` or run from inside the repo so `gh` fills them in. If your plan
 > doesn't expose an option, note it and move on — the concept is what matters.
 

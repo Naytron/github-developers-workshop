@@ -52,6 +52,17 @@ curl -X POST http://localhost:5150/permits/1/inspections \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
 ```
 
+```powershell
+Invoke-RestMethod http://localhost:5150/permits
+Invoke-RestMethod http://localhost:5150/permits/1
+Invoke-RestMethod -Method Post -Uri http://localhost:5150/permits `
+  -ContentType "application/json" `
+  -Body '{"applicantName":"A. Carpenter","address":"42 Oak Ave","permitType":"Deck"}'
+Invoke-RestMethod -Method Post -Uri http://localhost:5150/permits/1/inspections `
+  -ContentType "application/json" `
+  -Body '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
+```
+
 ## Publish (for releases)
 
 ```bash
@@ -63,6 +74,12 @@ dotnet publish src/CivicPermit.Api -c Release -o ./publish
 ```bash
 dotnet test --filter "FullyQualifiedName~Inspections"    # only inspection tests
 dotnet test --logger "trx;LogFileName=test-results.trx" \
+            --results-directory ./TestResults            # save results (as CI does)
+```
+
+```powershell
+dotnet test --filter "FullyQualifiedName~Inspections"    # only inspection tests
+dotnet test --logger "trx;LogFileName=test-results.trx" `
             --results-directory ./TestResults            # save results (as CI does)
 ```
 

@@ -52,9 +52,19 @@ git push origin :refs/tags/v1.1.1
 gh repo delete <your-org>/github-developers-workshop --yes
 ```
 
-> On Windows PowerShell, use `Remove-Item -Recurse -Force ./publish, ./CivicPermit.Api-*.zip`
-> in place of `rm -rf`. Deleting a repo needs the `delete_repo` scope — run
-> `gh auth refresh -s delete_repo` first.
+```powershell
+# Remove the local build artifacts from Lab 08
+Remove-Item -Recurse -Force ./publish, ./CivicPermit.Api-*.zip -ErrorAction SilentlyContinue
+
+# Delete the test tag you pushed in Lab 08 (local + remote)
+git tag -d v1.1.1
+git push origin :refs/tags/v1.1.1
+
+# If you no longer need your fork, delete it (irreversible)
+gh repo delete <your-org>/github-developers-workshop --yes
+```
+
+> Deleting a repo needs the `delete_repo` scope — run `gh auth refresh -s delete_repo` first.
 
 ## Keep learning
 

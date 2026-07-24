@@ -81,6 +81,10 @@ second terminal:
 curl http://localhost:5150/permits
 ```
 
+```powershell
+Invoke-RestMethod http://localhost:5150/permits
+```
+
 Press `Ctrl+C` to stop.
 
 ## VS Code integration (optional)

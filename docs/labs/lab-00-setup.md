@@ -58,6 +58,15 @@ gh repo fork <src-org>/github-developers-workshop \
 gh repo clone <src-org>/<yourname>-gh-training <yourname>-gh-training
 ```
 
+```powershell
+# Option A — fork to your account with a personal name, and clone in one step
+gh repo fork <src-org>/github-developers-workshop `
+  --fork-name <yourname>-gh-training --clone
+
+# Option B — clone a repo already created for you in a shared org
+gh repo clone <src-org>/<yourname>-gh-training <yourname>-gh-training
+```
+
 > 💡 Prefer the web UI? You can also open
 > [Naytron/github-developers-workshop](https://github.com/Naytron/github-developers-workshop)
 > and click **Fork** to create your own copy, then clone it.
@@ -126,6 +135,10 @@ Note the URL it prints (e.g., `http://localhost:5150`). In another terminal:
 
 ```bash
 curl http://localhost:5150/permits
+```
+
+```powershell
+Invoke-RestMethod http://localhost:5150/permits
 ```
 
 You'll see the two seeded permits as JSON. Press `Ctrl+C` to stop the app.
