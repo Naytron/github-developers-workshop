@@ -59,7 +59,7 @@ function Update-FilePlaceholders
 
     if ($updated -ne $original)
     {
-        Set-Content -Path $fullPath -Value $updated -NoNewline
+        Set-Content -Path $fullPath -Value $updated -Encoding utf8
         Write-Host "Updated: $RelativePath"
     }
 }
