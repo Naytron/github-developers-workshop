@@ -40,6 +40,16 @@ Repeat the loop with a second small feature (ideas on the
 [After the Workshop](../after.md) page). Repetition is what turns this from "a class you
 took" into "how you work."
 
+## Optional architect hardening track
+
+If your cohort needs deeper enterprise controls, continue with:
+
+1. [Environments & approvals](09-environments-and-approvals.md)
+2. [OIDC deployments](10-oidc-deployments.md)
+3. [Reusable workflows](11-reusable-workflows.md)
+4. [Rulesets as code](12-rulesets-as-code.md)
+5. [Security policy automation](13-security-policy-automation.md)
+
 ## Official documentation
 
 - **GitHub docs:** <https://docs.github.com>

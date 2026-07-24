@@ -54,6 +54,36 @@ EOF
 )"
 ```
 
+```powershell
+$prBody = @"
+## What & why
+Adds POST /permits/{id}/inspections so staff can schedule an inspection for an
+existing permit.
+
+Closes #<issue-number>
+
+## Changes
+- New Inspection model + ScheduleInspectionRequest
+- PermitStore.AddInspection(...)
+- POST /permits/{id}/inspections endpoint (201 / 400 / 404)
+- xUnit tests for the endpoint
+
+## How to test
+`dotnet test`
+
+## Checklist
+- [x] The change is focused and matches the linked issue
+- [x] dotnet build succeeds
+- [x] dotnet test passes locally
+- [x] New behavior is covered by an xUnit test
+"@
+
+gh pr create `
+  --base main `
+  --title "Add endpoint to schedule an inspection for a permit" `
+  --body $prBody
+```
+
 `gh` prints the PR URL. Note the **PR number** (e.g., `#2`).
 
 > 💡 **CLI tip:** `gh pr create --fill` drafts the title and body straight from your

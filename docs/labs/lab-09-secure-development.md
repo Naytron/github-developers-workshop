@@ -21,6 +21,10 @@ Actions). Confirm it's there:
 cat .github/dependabot.yml
 ```
 
+```powershell
+Get-Content .github/dependabot.yml
+```
+
 ## Step 2 — Enable Dependabot alerts & security updates
 
 ```bash
@@ -40,6 +44,15 @@ Check for any alerts from the CLI:
 
 ```bash
 gh api repos/{owner}/{repo}/dependabot/alerts --jq '.[].security_advisory.summary' 2>/dev/null || echo "No alerts (or Advanced Security not enabled)"
+```
+
+```powershell
+$alerts = gh api repos/{owner}/{repo}/dependabot/alerts --jq ".[].security_advisory.summary" 2>$null
+if ($LASTEXITCODE -ne 0 -or -not $alerts) {
+  "No alerts (or Advanced Security not enabled)"
+} else {
+  $alerts
+}
 ```
 
 ## Step 3 — Enable secret scanning + push protection
@@ -65,6 +78,15 @@ Still in **Code security**:
 
 ```bash
 gh api repos/{owner}/{repo}/code-scanning/alerts --jq 'length' 2>/dev/null || echo "Code scanning not enabled yet"
+```
+
+```powershell
+$codeScanningCount = gh api repos/{owner}/{repo}/code-scanning/alerts --jq "length" 2>$null
+if ($LASTEXITCODE -ne 0) {
+  "Code scanning not enabled yet"
+} else {
+  $codeScanningCount
+}
 ```
 
 ## Step 5 — Tour the Security tab
@@ -97,6 +119,26 @@ data, credentials, or services.
 To report a concern with the workshop materials, open an issue using the feature-request
 template, or contact your workshop instructor.
 EOF
+
+git switch -c chore/add-security-policy
+git add SECURITY.md
+git commit -m "docs: add SECURITY.md"
+git push -u origin chore/add-security-policy
+gh pr create --base main --title "Add SECURITY.md" --body "Adds a security policy for the workshop repo."
+```
+
+```powershell
+$securityPolicy = @"
+# Security Policy
+
+This is a training repository for a fictional app (CivicPermit). It contains no real
+data, credentials, or services.
+
+To report a concern with the workshop materials, open an issue using the feature-request
+template, or contact your workshop instructor.
+"@
+
+Set-Content -Path SECURITY.md -Value $securityPolicy -NoNewline -Encoding utf8
 
 git switch -c chore/add-security-policy
 git add SECURITY.md

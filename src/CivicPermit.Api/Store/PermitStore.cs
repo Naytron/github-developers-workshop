@@ -11,8 +11,6 @@ public class PermitStore
 {
     private readonly ConcurrentDictionary<int, Permit> _permits = new();
     private int _nextPermitId;
-    // Add next to _nextPermitId:
-    private int _nextInspectionId;
 
     public PermitStore()
     {
@@ -43,25 +41,5 @@ public class PermitStore
         permit.Id = id;
         _permits[id] = permit;
         return permit;
-    }
-
-    // Add as a new method on PermitStore:
-    public Inspection? AddInspection(int permitId, string inspectionType, DateOnly scheduledFor)
-    {
-        if (!_permits.TryGetValue(permitId, out var permit))
-        {
-            return null;
-        }
-
-        var inspection = new Inspection
-        {
-            Id = Interlocked.Increment(ref _nextInspectionId),
-            PermitId = permitId,
-            InspectionType = inspectionType,
-            ScheduledFor = scheduledFor
-        };
-
-        permit.Inspections.Add(inspection);
-        return inspection;
     }
 }
