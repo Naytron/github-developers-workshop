@@ -13,11 +13,11 @@ which labs are **hands-on** vs **instructor-demo**.
 
 | Lab | Needs | Free public repo | Free private repo | Team/Enterprise |
 |-----|-------|:---:|:---:|:---:|
-| [10 Environments & Approvals](../labs/lab-09-environments-and-approvals.md) | Repo admin | 🟢 | 🔴 rules ignored | 🟢 |
-| [11 OIDC Deployments (Azure)](../labs/lab-10-oidc-azure-deploy.md) | Azure tenant admin + subscription | 🟠 GitHub side only | 🟠 GitHub side only | 🟢 |
-| [12 Reusable Workflows](../labs/lab-11-reusable-workflows.md) | Repo write (same-repo) | 🟢 | 🟢 | 🟢 |
-| [13 Rulesets as Code](../labs/lab-12-rulesets-as-code.md) | Repo admin / org owner | 🟢 | 🟢 | 🟢 |
-| [14 Security Policy Automation](../labs/lab-13-security-policy-automation.md) | GHAS for full scan set | 🟢 code+secret free | 🟠 needs GHAS | 🟢 |
+| [9 Environments & Approvals](../labs/lab-09-environments-and-approvals.md) | Repo admin | 🟢 | 🔴 rules ignored | 🟢 |
+| [10 OIDC Deployments (Azure)](../labs/lab-10-oidc-azure-deploy.md) | Azure tenant admin + subscription | 🟠 GitHub side only | 🟠 GitHub side only | 🟢 |
+| [11 Reusable Workflows](../labs/lab-11-reusable-workflows.md) | Repo write (same-repo) | 🟢 | 🟢 | 🟢 |
+| [12 Rulesets as Code](../labs/lab-12-rulesets-as-code.md) | Repo admin / org owner | 🟢 | 🟢 | 🟢 |
+| [13 Security Policy Automation](../labs/lab-13-security-policy-automation.md) | GHAS for full scan set | 🟢 code+secret free | 🟠 needs GHAS | 🟢 |
 
 🟢 fully hands-on · 🟠 partial / needs external resource · 🔴 demo only on this tier
 
