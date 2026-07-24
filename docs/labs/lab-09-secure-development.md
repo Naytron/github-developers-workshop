@@ -127,24 +127,6 @@ git push -u origin chore/add-security-policy
 gh pr create --base main --title "Add SECURITY.md" --body "Adds a security policy for the workshop repo."
 ```
 
-```powershell
-New-Item -ItemType Directory -Force -Path .github | Out-Null
-@'
-# Security Policy
-
-This is a training repository for a fictional app (CivicPermit). It contains no real
-data, credentials, or services.
-
-To report a concern with the workshop materials, open an issue using the feature-request
-template, or contact your workshop instructor.
-'@ | Set-Content -Encoding utf8 SECURITY.md
-
-git switch -c chore/add-security-policy
-git add SECURITY.md
-git commit -m "docs: add SECURITY.md"
-git push -u origin chore/add-security-policy
-gh pr create --base main --title "Add SECURITY.md" --body "Adds a security policy for the workshop repo."
-```
 
 ```powershell
 $securityPolicy = @"
