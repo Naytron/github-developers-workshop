@@ -1,0 +1,27 @@
+name: CI (via reusable workflow)
+
+# The *caller*. Notice how thin it is: all build/test logic lives in the reusable
+# workflow. This is what you want application repos to look like — a few lines that
+# opt into a centrally maintained baseline.
+#
+# Triggered manually only (workflow_dispatch) so it does not compete with the
+# primary required check in ci.yml. In a real org you would point ci.yml itself at
+# a reusable workflow in a shared "platform-workflows" repo.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    # Same-repo call uses a relative path. Cross-repo would be:
+    #   uses: your-org/platform-workflows/.github/workflows/reusable-dotnet-ci.yml@main
+    uses: ./.github/workflows/reusable-dotnet-ci.yml
+    with:
+      dotnet-version: "10.0.x"
+      configuration: "Release"
+    # `secrets: inherit` forwards the caller's secrets to the callee. Swap to an
+    # explicit map (secrets: { NUGET_AUTH_TOKEN: ${{ secrets.NUGET_AUTH_TOKEN }} })
+    # when you want tight control over what the reusable workflow can see.
+    secrets: inherit

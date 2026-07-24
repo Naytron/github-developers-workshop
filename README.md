@@ -99,7 +99,7 @@ The port is printed on startup (typically `http://localhost:5150`).
 │       └── release.yml            # Optional: publishes a release on tag push
 ├── docs/                          # The GitHub Pages website + all workshop content
 │   ├── modules/                   # Core modules + optional architect hardening track
-│   ├── labs/                      # Hands-on labs (lab-00 … lab-09)
+│   ├── labs/                      # Hands-on labs (lab-00 … lab-09, + advanced lab-10 … lab-14)
 │   ├── guides/                    # Setup and reference guides
 │   ├── cheatsheets/               # One-page command references
 │   └── troubleshooting.md
@@ -127,15 +127,18 @@ The port is printed on startup (typically `http://localhost:5150`).
 
 ## Optional architect hardening track
 
-After the 6-hour core workshop, run this optional extension for cloud solution architects:
+After the 6-hour core workshop, run this optional extension for cloud solution architects.
+Each module has a companion hands-on lab; start with the
+[prerequisites & difficulty matrix](docs/guides/advanced-track-prerequisites.md) since some
+labs are plan- or cloud-gated.
 
-| Topic |
-| - |
-| [Environments & approvals](docs/modules/09-environments-and-approvals.md) |
-| [OIDC deployments](docs/modules/10-oidc-deployments.md) |
-| [Reusable workflows](docs/modules/11-reusable-workflows.md) |
-| [Rulesets as code](docs/modules/12-rulesets-as-code.md) |
-| [Security policy automation](docs/modules/13-security-policy-automation.md) |
+| Topic | Lab |
+| - | - |
+| [Environments & approvals](docs/modules/09-environments-and-approvals.md) | [Lab 10](docs/labs/lab-10-environments-and-approvals.md) |
+| [OIDC deployments](docs/modules/10-oidc-deployments.md) | [Lab 11](docs/labs/lab-11-oidc-azure-deploy.md) |
+| [Reusable workflows](docs/modules/11-reusable-workflows.md) | [Lab 12](docs/labs/lab-12-reusable-workflows.md) |
+| [Rulesets as code](docs/modules/12-rulesets-as-code.md) | [Lab 13](docs/labs/lab-13-rulesets-as-code.md) |
+| [Security policy automation](docs/modules/13-security-policy-automation.md) | [Lab 14](docs/labs/lab-14-security-policy-automation.md) |
 
 ---
 

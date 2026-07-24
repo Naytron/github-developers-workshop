@@ -26,6 +26,8 @@ an auditable gate between build success and production access.
 
 ## Exercise
 
+> ➡️ **Full hands-on lab:** [Lab 10 — Environments & Approvals](../labs/lab-10-environments-and-approvals.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
+
 1. Open **Settings → Environments**.
 2. Add `staging` and `production`.
 3. Add required reviewers to `production`.
