@@ -138,7 +138,7 @@ To report a concern with the workshop materials, open an issue using the feature
 template, or contact your workshop instructor.
 "@
 
-Set-Content -Path SECURITY.md -Value $securityPolicy -NoNewline
+Set-Content -Path SECURITY.md -Value $securityPolicy -NoNewline -Encoding utf8
 
 git switch -c chore/add-security-policy
 git add SECURITY.md
