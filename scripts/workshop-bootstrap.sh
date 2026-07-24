@@ -159,9 +159,12 @@ if [[ "$skip_remote_checks" == false ]]; then
         warnings+=("Could not check GitHub Actions permissions for ${name_with_owner}.")
       fi
 
-      ruleset_count="$(gh api "repos/${name_with_owner}/rulesets" --jq "length" 2>/dev/null || true)"
-      if [[ -n "$ruleset_count" && "$ruleset_count" == "0" ]]; then
-        warnings+=("No repository rulesets found. Add one before running Lab 07 at scale.")
+      if ruleset_count="$(gh api "repos/${name_with_owner}/rulesets" --jq "length" 2>/dev/null)"; then
+        if [[ "$ruleset_count" == "0" ]]; then
+          warnings+=("No repository rulesets found. Add one before running Lab 07 at scale.")
+        fi
+      else
+        warnings+=("Could not check repository rulesets for ${name_with_owner}.")
       fi
 
       if ! gh api "repos/${name_with_owner}/pages" >/dev/null 2>&1; then
