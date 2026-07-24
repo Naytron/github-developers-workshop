@@ -39,6 +39,18 @@ request all the way from an idea to a shipped release — on a small, self-conta
 | 7 | [Secure development](modules/07-secure-development.md) | 45 min |
 | 8 | [Wrap-up & next steps](modules/08-wrap-up-and-next-steps.md) | 15 min |
 
+## Optional architect hardening track
+
+These advanced modules are designed for architect-level cohorts after the core workshop:
+
+| Topic | Suggested Time |
+| ----- | -------------- |
+| [Environments & approvals](modules/09-environments-and-approvals.md) | 30 min |
+| [OIDC deployments](modules/10-oidc-deployments.md) | 30 min |
+| [Reusable workflows](modules/11-reusable-workflows.md) | 30 min |
+| [Rulesets as code](modules/12-rulesets-as-code.md) | 30 min |
+| [Security policy automation](modules/13-security-policy-automation.md) | 30 min |
+
 ## Labs
 
 | Lab | Advances the story to… |
@@ -57,7 +69,7 @@ request all the way from an idea to a shipped release — on a small, self-conta
 ## Reference
 
 - 📌 **Cheat sheets:** [Git](cheatsheets/git-commands.md) · [GitHub CLI](cheatsheets/gh-cli.md) · [dotnet CLI](cheatsheets/dotnet-cli.md) · [Markdown & PRs](cheatsheets/markdown-and-pr.md) · [Actions YAML](cheatsheets/actions-yaml.md)
-- 📚 **Guides:** [Git basics](guides/git-basics.md) · [.NET SDK setup](guides/dotnet-sdk-setup.md) · [GitHub CLI setup](guides/github-cli-setup.md) · [VS Code setup](guides/vscode-setup.md) · [Conventional Commits](guides/conventional-commits.md)
+- 📚 **Guides:** [Git basics](guides/git-basics.md) · [.NET SDK setup](guides/dotnet-sdk-setup.md) · [GitHub CLI setup](guides/github-cli-setup.md) · [VS Code setup](guides/vscode-setup.md) · [Conventional Commits](guides/conventional-commits.md) · [Workshop bootstrap + preflight](guides/workshop-bootstrap-preflight.md)
 - 🛠️ **[Troubleshooting](troubleshooting.md)**
 
 ---

@@ -75,6 +75,13 @@ dotnet test
 
 If you see **`Passed!`**, you're ready. If not, check [Troubleshooting](troubleshooting.md).
 
+## 6. Instructor-only: bootstrap your copy (recommended)
+
+If you're hosting the workshop from this template, run the bootstrap/preflight once before
+class to replace org placeholders and validate settings:
+
+- [Workshop bootstrap + preflight guide](guides/workshop-bootstrap-preflight.md)
+
 ---
 
 Having trouble? That's what [Troubleshooting](troubleshooting.md) is for — and your

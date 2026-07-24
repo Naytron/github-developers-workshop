@@ -10,6 +10,10 @@ This repository is two things at once:
 2. **A companion training repo** with the sample app, labs, guides, cheat sheets,
    instructor notes, and troubleshooting content.
 
+If you are running this workshop as an instructor, start with the
+[bootstrap + preflight guide](docs/guides/workshop-bootstrap-preflight.md) to replace org
+placeholders and validate repo settings before attendees join.
+
 ---
 
 ## The narrative spine
@@ -94,11 +98,12 @@ The port is printed on startup (typically `http://localhost:5150`).
 │       ├── pages.yml              # Builds and deploys the GitHub Pages site
 │       └── release.yml            # Optional: publishes a release on tag push
 ├── docs/                          # The GitHub Pages website + all workshop content
-│   ├── modules/                   # Instructor-led module content (the 6-hour agenda)
+│   ├── modules/                   # Core modules + optional architect hardening track
 │   ├── labs/                      # Hands-on labs (lab-00 … lab-09)
 │   ├── guides/                    # Setup and reference guides
 │   ├── cheatsheets/               # One-page command references
 │   └── troubleshooting.md
+├── scripts/                       # Instructor bootstrap + preflight automation
 ├── global.json                    # Pins the .NET SDK band
 ├── CivicPermit.sln
 └── README.md
@@ -119,6 +124,18 @@ The port is printed on startup (typically `http://localhost:5150`).
 | 6 | [Releases](docs/modules/06-releases.md) | [Lab 08 — Cut a release](docs/labs/lab-08-cut-a-release.md) |
 | 7 | [Secure development](docs/modules/07-secure-development.md) | [Lab 09 — Secure the repo](docs/labs/lab-09-secure-development.md) |
 | 8 | [Wrap-up & next steps](docs/modules/08-wrap-up-and-next-steps.md) | — |
+
+## Optional architect hardening track
+
+After the 6-hour core workshop, run this optional extension for cloud solution architects:
+
+| Topic |
+| - |
+| [Environments & approvals](docs/modules/09-environments-and-approvals.md) |
+| [OIDC deployments](docs/modules/10-oidc-deployments.md) |
+| [Reusable workflows](docs/modules/11-reusable-workflows.md) |
+| [Rulesets as code](docs/modules/12-rulesets-as-code.md) |
+| [Security policy automation](docs/modules/13-security-policy-automation.md) |
 
 ---
 

@@ -29,6 +29,16 @@ lab that advances the **same** feature story.
 > The teach-time total is ~6 hours; breaks and lunch bring the calendar day to ~7.75
 > hours.
 
+## Optional architect extension (~2.5 hours)
+
+For architect-focused cohorts, continue with these advanced hardening modules:
+
+1. [Environments & approvals](modules/09-environments-and-approvals.md)
+2. [OIDC deployments](modules/10-oidc-deployments.md)
+3. [Reusable workflows](modules/11-reusable-workflows.md)
+4. [Rulesets as code](modules/12-rulesets-as-code.md)
+5. [Security policy automation](modules/13-security-policy-automation.md)
+
 ## The story you'll build
 
 ```

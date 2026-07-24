@@ -40,6 +40,29 @@ EOF
 )"
 ```
 
+```powershell
+$issueBody = @"
+## What problem are we solving?
+Permit staff need to schedule an inspection once a permit is under review.
+
+## Proposed change
+Add POST /permits/{id}/inspections that records a scheduled inspection
+(type + date) for an existing permit and returns 201 Created.
+
+## Acceptance criteria
+- [ ] POST /permits/{id}/inspections creates an inspection for an existing permit
+- [ ] Returns 404 when the permit does not exist
+- [ ] Returns 400 when the request is missing required fields
+- [ ] Covered by an xUnit test
+- [ ] CI is green
+"@
+
+gh issue create `
+  --title "Add the ability to schedule an inspection for an existing permit" `
+  --label "enhancement" `
+  --body $issueBody
+```
+
 `gh` prints the new issue's URL and number — **write the number down** (e.g., `#1`). We'll
 call it **`<issue-number>`** for the rest of the workshop.
 

@@ -59,6 +59,7 @@ gh repo delete <your-org>/github-developers-workshop --yes
 ## Keep learning
 
 - [Wrap-up & next steps](modules/08-wrap-up-and-next-steps.md) — curated links to official docs.
+- [Optional architect hardening track](index.md#optional-architect-hardening-track) — deeper guidance on enterprise controls.
 - **GitHub Copilot workshop** — the natural next step. Watch for the *Copilot Connection*
   notes sprinkled through these materials; the follow-up workshop goes deep on each one.
 

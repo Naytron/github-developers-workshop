@@ -49,6 +49,16 @@ export HTTPS_PROXY=http://proxy.your-company.com:8080
 export HTTP_PROXY=http://proxy.your-company.com:8080
 ```
 
+```powershell
+# Point at the public feed explicitly (if allowed):
+dotnet nuget list source
+dotnet restore --source https://api.nuget.org/v3/index.json
+
+# Or set proxy env vars for the shell:
+$env:HTTPS_PROXY = "http://proxy.your-company.com:8080"
+$env:HTTP_PROXY = "http://proxy.your-company.com:8080"
+```
+
 If your org uses an internal feed, ask IT for the feed URL and add it to a `NuGet.config`.
 Still stuck? Flag your instructor — this is environment-specific.
 
