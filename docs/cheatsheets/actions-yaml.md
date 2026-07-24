@@ -31,7 +31,7 @@ jobs:
     name: My Job       # the check name shown on PRs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4     # an action (uses:)
+      - uses: actions/checkout@v7     # an action (uses:)
       - run: echo "hello"             # a shell command (run:)
 ```
 
@@ -52,7 +52,7 @@ on:
 
 | Action | Purpose |
 | ------ | ------- |
-| `actions/checkout@v4` | Check out the repository. |
+| `actions/checkout@v7` | Check out the repository. |
 | `actions/setup-dotnet@v4` | Install the .NET SDK. |
 | `actions/upload-artifact@v4` | Save build/test outputs. |
 | `actions/configure-pages@v5` | Configure GitHub Pages. |

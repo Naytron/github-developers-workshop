@@ -55,7 +55,7 @@ jobs:
     name: Build & Test (CivicPermit)
     runs-on: ubuntu-latest        # WHERE it runs
     steps:
-      - uses: actions/checkout@v4         # get the code
+      - uses: actions/checkout@v7         # get the code
       - uses: actions/setup-dotnet@v4     # install the .NET SDK
         with:
           dotnet-version: '10.0.x'
