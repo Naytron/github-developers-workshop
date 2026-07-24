@@ -31,13 +31,15 @@ lab that advances the **same** feature story.
 
 ## Optional architect extension (~2.5 hours)
 
-For architect-focused cohorts, continue with these advanced hardening modules:
+For architect-focused cohorts, continue with these advanced hardening modules — each has a
+companion lab. Review the [prerequisites & difficulty matrix](guides/advanced-track-prerequisites.md)
+first, as several labs are plan- or cloud-gated.
 
-1. [Environments & approvals](modules/09-environments-and-approvals.md)
-2. [OIDC deployments](modules/10-oidc-deployments.md)
-3. [Reusable workflows](modules/11-reusable-workflows.md)
-4. [Rulesets as code](modules/12-rulesets-as-code.md)
-5. [Security policy automation](modules/13-security-policy-automation.md)
+1. [Environments & approvals](modules/09-environments-and-approvals.md) → [Lab 10](labs/lab-10-environments-and-approvals.md)
+2. [OIDC deployments](modules/10-oidc-deployments.md) → [Lab 11](labs/lab-11-oidc-azure-deploy.md)
+3. [Reusable workflows](modules/11-reusable-workflows.md) → [Lab 12](labs/lab-12-reusable-workflows.md)
+4. [Rulesets as code](modules/12-rulesets-as-code.md) → [Lab 13](labs/lab-13-rulesets-as-code.md)
+5. [Security policy automation](modules/13-security-policy-automation.md) → [Lab 14](labs/lab-14-security-policy-automation.md)
 
 ## The story you'll build
 

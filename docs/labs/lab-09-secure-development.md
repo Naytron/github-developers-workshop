@@ -127,6 +127,7 @@ git push -u origin chore/add-security-policy
 gh pr create --base main --title "Add SECURITY.md" --body "Adds a security policy for the workshop repo."
 ```
 
+
 ```powershell
 $securityPolicy = @"
 # Security Policy

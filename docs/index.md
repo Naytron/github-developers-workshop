@@ -41,15 +41,16 @@ request all the way from an idea to a shipped release — on a small, self-conta
 
 ## Optional architect hardening track
 
-These advanced modules are designed for architect-level cohorts after the core workshop:
+These advanced modules are designed for architect-level cohorts after the core workshop.
+Each has a hands-on lab. **Read the [prerequisites & difficulty matrix](guides/advanced-track-prerequisites.md) first** — some labs are plan- or cloud-gated.
 
-| Topic | Suggested Time |
-| ----- | -------------- |
-| [Environments & approvals](modules/09-environments-and-approvals.md) | 30 min |
-| [OIDC deployments](modules/10-oidc-deployments.md) | 30 min |
-| [Reusable workflows](modules/11-reusable-workflows.md) | 30 min |
-| [Rulesets as code](modules/12-rulesets-as-code.md) | 30 min |
-| [Security policy automation](modules/13-security-policy-automation.md) | 30 min |
+| Topic | Lab | Suggested Time |
+| ----- | --- | -------------- |
+| [Environments & approvals](modules/09-environments-and-approvals.md) | [Lab 10](labs/lab-10-environments-and-approvals.md) | 30 min |
+| [OIDC deployments](modules/10-oidc-deployments.md) | [Lab 11](labs/lab-11-oidc-azure-deploy.md) | 40 min |
+| [Reusable workflows](modules/11-reusable-workflows.md) | [Lab 12](labs/lab-12-reusable-workflows.md) | 30 min |
+| [Rulesets as code](modules/12-rulesets-as-code.md) | [Lab 13](labs/lab-13-rulesets-as-code.md) | 30 min |
+| [Security policy automation](modules/13-security-policy-automation.md) | [Lab 14](labs/lab-14-security-policy-automation.md) | 30 min |
 
 ## Labs
 
@@ -66,10 +67,23 @@ These advanced modules are designed for architect-level cohorts after the core w
 | [Lab 08 — Cut a release](labs/lab-08-cut-a-release.md) | **Release** |
 | [Lab 09 — Secure the repository](labs/lab-09-secure-development.md) | Hardening the same repo |
 
+### Advanced-track labs (optional)
+
+Companion labs for the architect hardening modules. Check the
+[prerequisites & difficulty matrix](guides/advanced-track-prerequisites.md) before running them.
+
+| Lab | Focus |
+| --- | ----- |
+| [Lab 10 — Environments & approvals](labs/lab-10-environments-and-approvals.md) | Promotion gates & env-scoped secrets |
+| [Lab 11 — OIDC deployments (Azure)](labs/lab-11-oidc-azure-deploy.md) | Keyless deploy via federated identity |
+| [Lab 12 — Reusable workflows](labs/lab-12-reusable-workflows.md) | `workflow_call` + thin callers |
+| [Lab 13 — Rulesets as code](labs/lab-13-rulesets-as-code.md) | Governance as version-controlled JSON |
+| [Lab 14 — Security policy automation](labs/lab-14-security-policy-automation.md) | Scheduled audit + evidence artifact |
+
 ## Reference
 
 - 📌 **Cheat sheets:** [Git](cheatsheets/git-commands.md) · [GitHub CLI](cheatsheets/gh-cli.md) · [dotnet CLI](cheatsheets/dotnet-cli.md) · [Markdown & PRs](cheatsheets/markdown-and-pr.md) · [Actions YAML](cheatsheets/actions-yaml.md)
-- 📚 **Guides:** [Git basics](guides/git-basics.md) · [.NET SDK setup](guides/dotnet-sdk-setup.md) · [GitHub CLI setup](guides/github-cli-setup.md) · [VS Code setup](guides/vscode-setup.md) · [Conventional Commits](guides/conventional-commits.md) · [Workshop bootstrap + preflight](guides/workshop-bootstrap-preflight.md)
+- 📚 **Guides:** [Git basics](guides/git-basics.md) · [.NET SDK setup](guides/dotnet-sdk-setup.md) · [GitHub CLI setup](guides/github-cli-setup.md) · [VS Code setup](guides/vscode-setup.md) · [Conventional Commits](guides/conventional-commits.md) · [Workshop bootstrap + preflight](guides/workshop-bootstrap-preflight.md) · [Advanced-track prerequisites](guides/advanced-track-prerequisites.md)
 - 🛠️ **[Troubleshooting](troubleshooting.md)**
 
 ---

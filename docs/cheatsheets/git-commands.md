@@ -22,6 +22,12 @@ git switch -c feature/42-schedule-inspection # new branch
 git branch --show-current                    # which branch am I on?
 ```
 
+```powershell
+git switch main; git pull                    # latest main
+git switch -c feature/42-schedule-inspection # new branch
+git branch --show-current                    # which branch am I on?
+```
+
 ## The commit loop
 
 ```bash

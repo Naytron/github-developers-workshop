@@ -42,13 +42,15 @@ took" into "how you work."
 
 ## Optional architect hardening track
 
-If your cohort needs deeper enterprise controls, continue with:
+If your cohort needs deeper enterprise controls, continue with the advanced track (each module
+has a hands-on lab; see the
+[prerequisites & difficulty matrix](../guides/advanced-track-prerequisites.md)):
 
-1. [Environments & approvals](09-environments-and-approvals.md)
-2. [OIDC deployments](10-oidc-deployments.md)
-3. [Reusable workflows](11-reusable-workflows.md)
-4. [Rulesets as code](12-rulesets-as-code.md)
-5. [Security policy automation](13-security-policy-automation.md)
+1. [Environments & approvals](09-environments-and-approvals.md) → [Lab 10](../labs/lab-10-environments-and-approvals.md)
+2. [OIDC deployments](10-oidc-deployments.md) → [Lab 11](../labs/lab-11-oidc-azure-deploy.md)
+3. [Reusable workflows](11-reusable-workflows.md) → [Lab 12](../labs/lab-12-reusable-workflows.md)
+4. [Rulesets as code](12-rulesets-as-code.md) → [Lab 13](../labs/lab-13-rulesets-as-code.md)
+5. [Security policy automation](13-security-policy-automation.md) → [Lab 14](../labs/lab-14-security-policy-automation.md)
 
 ## Official documentation
 

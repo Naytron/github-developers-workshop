@@ -34,6 +34,8 @@ jobs:
 
 ## Exercise
 
+> ➡️ **Full hands-on lab:** [Lab 11 — OIDC Deployments (Azure)](../labs/lab-11-oidc-azure-deploy.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
+
 1. Create a cloud workload identity / federated credential for your repo.
 2. Scope the trust policy to branch and environment claims.
 3. Add `id-token: write` only in deploy jobs.

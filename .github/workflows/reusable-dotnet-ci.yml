@@ -1,0 +1,63 @@
+name: Reusable .NET CI
+
+# A *reusable* workflow. It does nothing on its own — another workflow "calls" it
+# with `uses:` (see ci-via-reusable.yml). This is the pattern from Advanced Module 11
+# and Lab 12: define the build/test baseline once, call it from many repos.
+on:
+  workflow_call:
+    inputs:
+      dotnet-version:
+        description: "The .NET SDK version to build and test with."
+        required: true
+        type: string
+      configuration:
+        description: "Build configuration (Debug or Release)."
+        required: false
+        default: "Release"
+        type: string
+    # Secrets are NOT inherited automatically. A caller must pass them explicitly
+    # or use `secrets: inherit`. This one is optional and unused by CivicPermit
+    # (no external services) — it exists to show the mechanism.
+    secrets:
+      NUGET_AUTH_TOKEN:
+        description: "Optional token for a private NuGet feed. Unused by CivicPermit."
+        required: false
+
+# Least privilege: the callee cannot exceed the permissions the caller grants.
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build & Test (reusable)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up the .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration ${{ inputs.configuration }} --no-restore
+
+      - name: Test
+        run: >
+          dotnet test
+          --configuration ${{ inputs.configuration }}
+          --no-build
+          --logger "trx;LogFileName=test-results.trx"
+          --results-directory ./TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-reusable
+          path: ./TestResults/*.trx
+          if-no-files-found: warn

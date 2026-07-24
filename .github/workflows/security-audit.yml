@@ -1,0 +1,103 @@
+name: Security Baseline Audit
+
+# Governance-as-code (Advanced Module 13 / Lab 14). Instead of enabling security
+# features once and hoping they stay on, this workflow *continuously checks* the
+# repo's security posture and publishes evidence you can hand to an auditor.
+#
+# Triggers:
+#   - workflow_dispatch: run it on demand during the lab.
+#   - schedule: weekly drift check. NOTE: GitHub auto-disables scheduled workflows
+#     after ~60 days of repository inactivity, and scheduled runs can be delayed
+#     under load. Do not mistake "nothing ran" for a broken workflow.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * 1" # Mondays 08:00 UTC
+
+# Reading security settings requires elevated scopes. The default GITHUB_TOKEN can
+# read basic repo data, but Dependabot/code-scanning/secret-scanning endpoints may
+# return 403 unless the token has security_events / admin. If your run shows all
+# "unknown", supply a PAT as the AUDIT_TOKEN secret (see Lab 14 — note the irony:
+# automating security can reintroduce a stored secret, which OIDC/env scoping aim
+# to avoid).
+permissions:
+  contents: read
+  security-events: read
+
+jobs:
+  audit:
+    name: Audit security baseline
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.AUDIT_TOKEN || secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Run baseline checks
+        shell: bash
+        run: |
+          set -uo pipefail
+          repo="${GITHUB_REPOSITORY}"
+          report="security-audit.md"
+          echo "# Security baseline audit — ${repo}" > "$report"
+          echo "" >> "$report"
+          echo "_Generated: $(date -u '+%Y-%m-%dT%H:%M:%SZ')_" >> "$report"
+          echo "" >> "$report"
+          echo "| Control | Status |" >> "$report"
+          echo "|---------|--------|" >> "$report"
+
+          check() { # $1 = label, $2 = value/empty, $3 = ok-when-nonempty(true/false)
+            local label="$1" value="$2" want_nonempty="$3" status
+            if [ "$want_nonempty" = "true" ]; then
+              [ -n "$value" ] && status="✅ $value" || status="⚠️ not found / no access"
+            else
+              status="$value"
+            fi
+            echo "| $label | $status |" >> "$report"
+          }
+
+          # SECURITY.md present in the repo tree
+          if [ -f "SECURITY.md" ] || [ -f ".github/SECURITY.md" ]; then
+            check "SECURITY.md present" "yes" false
+          else
+            check "SECURITY.md present" "⚠️ missing" false
+          fi
+
+          # dependabot config present
+          if [ -f ".github/dependabot.yml" ]; then
+            check "dependabot.yml present" "yes" false
+          else
+            check "dependabot.yml present" "⚠️ missing" false
+          fi
+
+          # Vulnerability alerts enabled (204 = enabled, 404 = disabled)
+          va_code=$(gh api -i "repos/${repo}/vulnerability-alerts" 2>/dev/null | head -n1 | awk '{print $2}' || true)
+          if [ "$va_code" = "204" ]; then
+            check "Dependabot alerts enabled" "yes" false
+          elif [ "$va_code" = "404" ]; then
+            check "Dependabot alerts enabled" "⚠️ disabled" false
+          else
+            check "Dependabot alerts enabled" "⚠️ unknown / no access" false
+          fi
+
+          # Code scanning alert count (needs security_events scope)
+          cs=$(gh api "repos/${repo}/code-scanning/alerts" --jq 'length' 2>/dev/null || true)
+          check "Code scanning alerts (count)" "$cs" true
+
+          # Secret scanning alert count (needs GHAS on private repos)
+          ss=$(gh api "repos/${repo}/secret-scanning/alerts" --jq 'length' 2>/dev/null || true)
+          check "Secret scanning alerts (count)" "$ss" true
+
+          echo "" >> "$report"
+          echo "> ⚠️ = control missing OR the token lacks scope to read it. See Lab 14." >> "$report"
+          echo "---- report ----"
+          cat "$report"
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-audit
+          path: security-audit.md
+          if-no-files-found: warn

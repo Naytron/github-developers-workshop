@@ -27,6 +27,8 @@ drift in features like Dependabot, code scanning, secret scanning, and policies.
 
 ## Exercise
 
+> ➡️ **Full hands-on lab:** [Lab 14 — Security Policy Automation](../labs/lab-14-security-policy-automation.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
+
 1. Add a scheduled governance workflow (`workflow_dispatch` + `schedule`).
 2. Query repository security settings via `gh api`.
 3. Fail or warn when required controls are missing.

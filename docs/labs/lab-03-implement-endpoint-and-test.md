@@ -187,6 +187,14 @@ curl -X POST http://localhost:5150/permits/1/inspections \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
 ```
 
+```powershell
+dotnet run --project src/CivicPermit.Api
+# In another terminal:
+Invoke-RestMethod -Method Post -Uri http://localhost:5150/permits/1/inspections `
+  -ContentType "application/json" `
+  -Body '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
+```
+
 You'll get a `201 Created` with the new inspection JSON.
 
 > ⌨️ **Hotkey:** Press **`Ctrl+C`** in the terminal running the API to stop it when you're

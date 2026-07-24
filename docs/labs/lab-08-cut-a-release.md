@@ -31,6 +31,12 @@ gh release create v1.1.0 \
   --generate-notes
 ```
 
+```powershell
+gh release create v1.1.0 `
+  --title "CivicPermit v1.1.0" `
+  --generate-notes
+```
+
 - This creates the **tag** `v1.1.0` on the current commit and publishes a **release**.
 - `--generate-notes` drafts the changelog from merged PRs — including your inspection PR.
 
@@ -45,14 +51,15 @@ cd publish && zip -r ../CivicPermit.Api-v1.1.0.zip . && cd ..
 gh release upload v1.1.0 CivicPermit.Api-v1.1.0.zip
 ```
 
-> **On Windows?** `zip` isn't installed by default. Use PowerShell's `Compress-Archive`
-> in place of the `zip` line:
->
-> ```powershell
-> dotnet publish src/CivicPermit.Api -c Release -o ./publish
-> Compress-Archive -Path ./publish/* -DestinationPath CivicPermit.Api-v1.1.0.zip
-> gh release upload v1.1.0 CivicPermit.Api-v1.1.0.zip
-> ```
+```powershell
+dotnet publish src/CivicPermit.Api -c Release -o ./publish
+Compress-Archive -Path ./publish/* -DestinationPath CivicPermit.Api-v1.1.0.zip -Force
+
+gh release upload v1.1.0 CivicPermit.Api-v1.1.0.zip
+```
+
+> 💡 `zip` isn't installed by default on Windows — the **PowerShell** tab uses
+> `Compress-Archive` instead.
 
 (Or attach it at creation time by adding the zip path to `gh release create`.)
 

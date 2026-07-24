@@ -22,6 +22,10 @@ gh repo fork <owner>/<repo> --clone     # fork + clone
 gh repo view --web                      # open the repo in a browser
 ```
 
+> 🧩 **Two placeholder styles, on purpose.** `<owner>/<repo>` means *type your real values*
+> (e.g. `contoso/civicpermit`). Further down, `gh api` commands use `{owner}/{repo}` — that
+> is a literal token `gh` **auto-fills from the current repo**, so leave those braces as-is.
+
 ## Issues
 
 ```bash
@@ -99,6 +103,19 @@ gh api -X PUT repos/{owner}/{repo}/branches/main/protection \
   -f "required_status_checks[contexts][]=Build & Test (CivicPermit)" \
   -f "enforce_admins=true" \
   -f "required_pull_request_reviews[required_approving_review_count]=1" \
+  -f "restrictions=null"
+
+# List Dependabot alerts (requires Advanced Security):
+gh api repos/{owner}/{repo}/dependabot/alerts
+```
+
+```powershell
+# Enable a required status check on main (classic protection):
+gh api -X PUT repos/{owner}/{repo}/branches/main/protection `
+  -f "required_status_checks[strict]=true" `
+  -f "required_status_checks[contexts][]=Build & Test (CivicPermit)" `
+  -f "enforce_admins=true" `
+  -f "required_pull_request_reviews[required_approving_review_count]=1" `
   -f "restrictions=null"
 
 # List Dependabot alerts (requires Advanced Security):
