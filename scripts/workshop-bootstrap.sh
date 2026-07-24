@@ -76,7 +76,8 @@ replace_in_file() {
     -e "s|<src-org>|${src_org_escaped}|g" \
     -e "s|@your-org/workshop-maintainers|${codeowners_escaped}|g" \
     "$file" > "$tmp_file"
-  mv "$tmp_file" "$file"
+  cat "$tmp_file" > "$file"
+  rm -f "$tmp_file"
   echo "Updated: $file"
 }
 
