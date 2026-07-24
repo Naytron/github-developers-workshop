@@ -59,7 +59,8 @@ function Update-FilePlaceholders
 
     if ($updated -ne $original)
     {
-        Set-Content -Path $fullPath -Value $updated -Encoding utf8
+        $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
+        [System.IO.File]::WriteAllText($fullPath, $updated, $utf8NoBom)
         Write-Host "Updated: $RelativePath"
     }
 }
