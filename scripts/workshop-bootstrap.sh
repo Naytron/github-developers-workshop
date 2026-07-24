@@ -65,10 +65,16 @@ replace_in_file() {
   local file="$1"
   local tmp_file
   tmp_file="$(mktemp)"
+
+  local org_escaped src_org_escaped codeowners_escaped
+  org_escaped="$(printf '%s' "$organization" | sed -e 's/[\/&|\\]/\\&/g')"
+  src_org_escaped="$(printf '%s' "$source_organization" | sed -e 's/[\/&|\\]/\\&/g')"
+  codeowners_escaped="$(printf '%s' "$codeowners_principal" | sed -e 's/[\/&|\\]/\\&/g')"
+
   sed \
-    -e "s|<your-org>|${organization}|g" \
-    -e "s|<src-org>|${source_organization}|g" \
-    -e "s|@your-org/workshop-maintainers|${codeowners_principal}|g" \
+    -e "s|<your-org>|${org_escaped}|g" \
+    -e "s|<src-org>|${src_org_escaped}|g" \
+    -e "s|@your-org/workshop-maintainers|${codeowners_escaped}|g" \
     "$file" > "$tmp_file"
   mv "$tmp_file" "$file"
   echo "Updated: $file"
