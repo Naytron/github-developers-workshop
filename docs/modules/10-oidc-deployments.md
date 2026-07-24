@@ -34,7 +34,7 @@ jobs:
 
 ## Exercise
 
-> ➡️ **Full hands-on lab:** [Lab 11 — OIDC Deployments (Azure)](../labs/lab-11-oidc-azure-deploy.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
+> ➡️ **Full hands-on lab:** [Lab 10 — OIDC Deployments (Azure)](../labs/lab-10-oidc-azure-deploy.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
 
 1. Create a cloud workload identity / federated credential for your repo.
 2. Scope the trust policy to branch and environment claims.

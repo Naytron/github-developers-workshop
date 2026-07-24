@@ -4,7 +4,7 @@ title: "Module 7 — Secure Development"
 
 # Module 7 — Secure Development
 
-⏱️ **45 minutes** · Paired lab: [Lab 09 — Secure the repository](../labs/lab-09-secure-development.md) · [← Home](../index.md)
+⏱️ **45 minutes** · Paired lab: [Lab 7 — Secure the repository](../labs/lab-07-secure-development.md) · [← Home](../index.md)
 
 ## Goals
 
@@ -85,4 +85,4 @@ the same skills as triaging issues.
 
 ## ➡️ Now do the lab
 
-[**Lab 09 — Secure the repository**](../labs/lab-09-secure-development.md)
+[**Lab 7 — Secure the repository**](../labs/lab-07-secure-development.md)

@@ -4,13 +4,13 @@ title: "Module 3 — Pull Requests & Review"
 
 # Module 3 — Pull Requests & Review
 
-⏱️ **45 minutes (+ review practice)** · Paired labs: [Lab 03](../labs/lab-03-implement-endpoint-and-test.md), [Lab 04](../labs/lab-04-open-pull-request.md), [Lab 05](../labs/lab-05-review-and-address-feedback.md) · [← Home](../index.md)
+⏱️ **45 minutes (+ review practice)** · Paired labs: [Lab 3.1](../labs/lab-03-1-open-pull-request.md), [Lab 3.2](../labs/lab-03-2-review-and-address-feedback.md) · [← Home](../index.md)
 
 ## Goals
 
-- Implement the feature and a test on your branch (Lab 03).
-- Open a **pull request (PR)** that clearly proposes the change (Lab 04).
-- Give and respond to a **code review** (Lab 05).
+- Recap: the feature and its test already landed on your branch in **Lab 2.2** (Module 2).
+- Open a **pull request (PR)** that clearly proposes the change (Lab 3.1).
+- Give and respond to a **code review** (Lab 3.2).
 
 ## What a pull request is
 
@@ -23,26 +23,12 @@ merging them into `main`."* It's where code, conversation, and automation meet:
 - **Status checks** (CI) that run automatically.
 - A **merge** button, gated by your team's rules.
 
-## Writing the change (Lab 03)
+## Recall the change (from Lab 2.2)
 
-You'll add the endpoint to `src/CivicPermit.Api/Program.cs`:
-
-```csharp
-app.MapPost("/permits/{id:int}/inspections", (int id, ScheduleInspectionRequest request, PermitStore store) =>
-{
-    if (store.GetById(id) is null)
-        return Results.NotFound();
-
-    if (string.IsNullOrWhiteSpace(request.InspectionType) || request.ScheduledFor == default)
-        return Results.BadRequest("InspectionType and ScheduledFor are required.");
-
-    var inspection = store.AddInspection(id, request.InspectionType, request.ScheduledFor);
-    return Results.Created($"/permits/{id}/inspections/{inspection!.Id}", inspection);
-});
-```
-
-…plus a small model and store method, and an **xUnit test** proving it works. Test first
-or test right after — either way, the PR ships with a test.
+The feature — `POST /permits/{id}/inspections` and its xUnit test — already landed on your
+branch back in **[Lab 2.2](../labs/lab-02-2-implement-endpoint-and-test.md)** (Module 2,
+Branching & Commits). This module is about *proposing and reviewing* that change, not
+writing it. If your branch isn't green yet, finish Lab 2.2 first.
 
 ## A good PR description
 
@@ -96,6 +82,5 @@ Review is not about catching typos (CI does that). It's about:
 
 ## ➡️ Now do the labs
 
-1. [**Lab 03 — Implement the endpoint & test**](../labs/lab-03-implement-endpoint-and-test.md)
-2. [**Lab 04 — Open a pull request**](../labs/lab-04-open-pull-request.md)
-3. [**Lab 05 — Review & address feedback**](../labs/lab-05-review-and-address-feedback.md)
+1. [**Lab 3.1 — Open a pull request**](../labs/lab-03-1-open-pull-request.md)
+2. [**Lab 3.2 — Review, feedback & roll back**](../labs/lab-03-2-review-and-address-feedback.md)

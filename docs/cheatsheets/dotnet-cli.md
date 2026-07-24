@@ -42,6 +42,7 @@ dotnet watch --project src/CivicPermit.Api run
 ## Try the endpoints
 
 ```bash
+# Bash
 curl http://localhost:5150/permits
 curl http://localhost:5150/permits/1
 curl -X POST http://localhost:5150/permits \
@@ -50,9 +51,8 @@ curl -X POST http://localhost:5150/permits \
 curl -X POST http://localhost:5150/permits/1/inspections \
   -H "Content-Type: application/json" \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
-```
 
-```powershell
+# PowerShell
 Invoke-RestMethod http://localhost:5150/permits
 Invoke-RestMethod http://localhost:5150/permits/1
 Invoke-RestMethod -Method Post -Uri http://localhost:5150/permits `
@@ -73,14 +73,14 @@ dotnet publish src/CivicPermit.Api -c Release -o ./publish
 
 ```bash
 dotnet test --filter "FullyQualifiedName~Inspections"    # only inspection tests
-dotnet test --logger "trx;LogFileName=test-results.trx" \
-            --results-directory ./TestResults            # save results (as CI does)
-```
 
-```powershell
-dotnet test --filter "FullyQualifiedName~Inspections"    # only inspection tests
+# Save results as CI does. Only the line-continuation differs: Bash uses \, PowerShell uses `
+# Bash
+dotnet test --logger "trx;LogFileName=test-results.trx" \
+            --results-directory ./TestResults
+# PowerShell
 dotnet test --logger "trx;LogFileName=test-results.trx" `
-            --results-directory ./TestResults            # save results (as CI does)
+            --results-directory ./TestResults
 ```
 
 ## Solution & project structure

@@ -33,7 +33,7 @@ jobs:
 
 ## Exercise
 
-> ➡️ **Full hands-on lab:** [Lab 12 — Reusable Workflows](../labs/lab-12-reusable-workflows.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
+> ➡️ **Full hands-on lab:** [Lab 11 — Reusable Workflows](../labs/lab-11-reusable-workflows.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
 
 1. Move your build+test logic into one reusable workflow.
 2. Call it from the workshop repo.

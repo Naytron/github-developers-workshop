@@ -28,16 +28,16 @@ You are implementing:
 
 ## Jump to a lab
 
-- [Lab 00 — Setup](labs/lab-00-setup.md)
-- [Lab 01 — Open the Issue](labs/lab-01-open-the-issue.md)
-- [Lab 02 — Branch & first commit](labs/lab-02-branch-and-first-commit.md)
-- [Lab 03 — Implement the endpoint & test](labs/lab-03-implement-endpoint-and-test.md)
-- [Lab 04 — Open a pull request](labs/lab-04-open-pull-request.md)
-- [Lab 05 — Review & address feedback](labs/lab-05-review-and-address-feedback.md)
-- [Lab 06 — Author the CI workflow](labs/lab-06-author-ci-workflow.md)
-- [Lab 07 — Branch protection & merge](labs/lab-07-branch-protection-and-merge.md)
-- [Lab 08 — Cut a release](labs/lab-08-cut-a-release.md)
-- [Lab 09 — Secure the repository](labs/lab-09-secure-development.md)
+- [Lab 0 — Setup](labs/lab-00-setup.md)
+- [Lab 1 — Open the Issue](labs/lab-01-open-the-issue.md)
+- [Lab 2.1 — Branch & first commit](labs/lab-02-1-branch-and-first-commit.md)
+- [Lab 2.2 — Implement the endpoint & test](labs/lab-02-2-implement-endpoint-and-test.md)
+- [Lab 3.1 — Open a pull request](labs/lab-03-1-open-pull-request.md)
+- [Lab 3.2 — Review, feedback & roll back](labs/lab-03-2-review-and-address-feedback.md)
+- [Lab 4 — Author the CI workflow](labs/lab-04-author-ci-workflow.md)
+- [Lab 5 — Branch protection & merge](labs/lab-05-branch-protection-and-merge.md)
+- [Lab 6 — Cut a release](labs/lab-06-cut-a-release.md)
+- [Lab 7 — Secure the repository](labs/lab-07-secure-development.md)
 
 ## Keep these handy
 

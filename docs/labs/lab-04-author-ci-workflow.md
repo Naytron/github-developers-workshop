@@ -1,10 +1,10 @@
 ---
-title: "Lab 06 — Author the CI Workflow"
+title: "Lab 4 — Author the CI Workflow"
 ---
 
-# Lab 06 — Author the CI Workflow
+# Lab 4 — Author the CI Workflow
 
-⏱️ ~35 min · Module: [GitHub Actions (CI)](../modules/04-github-actions-ci.md) · [← Home](../index.md)
+⏱️ ~40 min · Module: [GitHub Actions (CI)](../modules/04-github-actions-ci.md) · [← Home](../index.md)
 
 **Goal:** ensure a CI workflow builds and tests CivicPermit on every push and PR, and see
 a **status check** appear on your pull request.
@@ -39,6 +39,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:        # lets you start a run by hand — no push required
 
 permissions:
   contents: read
@@ -56,7 +57,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Set up the .NET SDK
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: '10.0.x'
 
@@ -76,14 +77,36 @@ jobs:
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-results
           path: ./TestResults/*.trx
           if-no-files-found: warn
 ```
 
-## Step 2 — Make a deliberate change and watch CI run
+> 💡 **Why `workflow_dispatch`?** The `push`/`pull_request` triggers cover normal work, but
+> `workflow_dispatch` adds a **Run workflow** button in the Actions tab (and a
+> `gh workflow run` command) so you can re-run CI on demand — handy for testing the workflow
+> itself without inventing a code change to push. You'll use it in Step 2.
+
+## Step 2 — Trigger CI by hand (workflow_dispatch)
+
+Because the workflow now has a `workflow_dispatch` trigger, you can start a run **without
+pushing anything**. Make sure the branch carrying the workflow is pushed, then:
+
+```bash
+gh workflow run CI --ref <your-branch>   # queue a manual run
+gh run watch                             # live-follow it (Ctrl+C to stop)
+```
+
+You can also click **Actions → CI → Run workflow** in the browser and pick your branch.
+This is the fastest way to exercise a workflow while you're still building it — no code
+change required.
+
+> 🖥️ `gh run watch` follows the most recent run. If several are queued, grab the id from
+> `gh run list --workflow CI --limit 5` and pass it: `gh run watch <run-id>`.
+
+## Step 3 — Make a deliberate change and watch CI run
 
 Let's make a small, safe change so we can watch a fresh run — we'll rename a **step**
 (not the job). Edit `.github/workflows/ci.yml` and change the test step's display name:
@@ -93,7 +116,7 @@ Let's make a small, safe change so we can watch a fresh run — we'll rename a *
 ```
 
 > ⚠️ **Don't rename the job.** The job's `name:` (`Build & Test (CivicPermit)`) is the
-> **status-check name** you'll require in Lab 07. Renaming the job creates a *new* check
+> **status-check name** you'll require in Lab 5. Renaming the job creates a *new* check
 > context and can strand the required check on every open PR. Renaming a **step** is safe.
 
 Commit and push on your feature branch:
@@ -106,7 +129,7 @@ Refs #<issue-number>"
 git push
 ```
 
-## Step 3 — See the check on your PR
+## Step 4 — See the check on your PR
 
 ```bash
 gh pr checks           # lists the checks and their status
@@ -120,7 +143,7 @@ Open the PR to see the ✅/❌ **Build & Test (CivicPermit)** check:
 gh pr view --web
 ```
 
-## Step 4 — (Optional) Break it on purpose, then fix it
+## Step 5 — (Optional) Break it on purpose, then fix it
 
 Great way to see CI earn its keep:
 
@@ -138,6 +161,7 @@ gh run view --log-failed   # jump straight to the failing log
 ## ✅ Checkpoint
 
 - [ ] Actions is enabled and `gh workflow list` shows the **CI** workflow.
+- [ ] You started a run **manually** with `gh workflow run CI` (or the **Run workflow** button).
 - [ ] Your push triggered a run (`gh run list`).
 - [ ] `gh pr checks` shows **Build & Test (CivicPermit)** with a status.
 - [ ] You can open the run and read a step's log.
@@ -155,4 +179,4 @@ gh run view --log-failed   # jump straight to the failing log
 
 ## ➡️ Next
 
-[**Lab 07 — Branch protection & merge**](lab-07-branch-protection-and-merge.md)
+[**Lab 5 — Branch protection & merge**](lab-05-branch-protection-and-merge.md)

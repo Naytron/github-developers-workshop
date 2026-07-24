@@ -1,8 +1,8 @@
 ---
-title: "Lab 14 — Security Policy Automation"
+title: "Lab 13 — Security Policy Automation"
 ---
 
-# Lab 14 — Security Policy Automation
+# Lab 13 — Security Policy Automation
 
 ⏱️ ~30 min · Optional architect extension · Module: [Security Policy Automation](../modules/13-security-policy-automation.md) · [← Home](../index.md)
 
@@ -19,10 +19,10 @@ an artifact for auditors, and fails/warns when a control is missing.
 The repo ships `.github/workflows/security-audit.yml`. Skim it:
 
 ```bash
+# Bash
 cat .github/workflows/security-audit.yml
-```
 
-```powershell
+# PowerShell
 Get-Content .github/workflows/security-audit.yml
 ```
 
@@ -36,20 +36,15 @@ gh workflow run security-audit.yml --ref <your-branch>
 gh run watch
 ```
 
-```powershell
-gh workflow run security-audit.yml --ref <your-branch>
-gh run watch
-```
-
 ## Step 3 — Read the evidence artifact
 
 ```bash
+# Bash
 run_id=$(gh run list --workflow security-audit.yml --limit 1 --json databaseId --jq '.[0].databaseId')
 gh run download "$run_id" --name security-audit
 cat security-audit.md
-```
 
-```powershell
+# PowerShell
 $run_id = gh run list --workflow security-audit.yml --limit 1 --json databaseId --jq ".[0].databaseId"
 gh run download $run_id --name security-audit
 Get-Content security-audit.md
@@ -68,12 +63,8 @@ To read them, provide a PAT as the `AUDIT_TOKEN` secret:
 gh secret set AUDIT_TOKEN --body "<your-fine-grained-PAT-with-security-read>"
 ```
 
-```powershell
-gh secret set AUDIT_TOKEN --body "<your-fine-grained-PAT-with-security-read>"
-```
-
 > 🧠 **Teaching moment / irony:** automating security here **reintroduces a stored secret** (the
-> PAT) — the exact thing OIDC (Lab 11) and environment scoping (Lab 10) work to eliminate. Scope
+> PAT) — the exact thing OIDC (Lab 10) and environment scoping (Lab 9) work to eliminate. Scope
 > the PAT tightly, set an expiry, and prefer read-only. This tension is the lesson.
 
 ## Step 5 — Make a missing control fail (optional)

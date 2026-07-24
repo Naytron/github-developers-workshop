@@ -17,14 +17,10 @@ git config --global init.defaultBranch main
 ## Start work
 
 ```bash
-git switch main && git pull                 # latest main
-git switch -c feature/42-schedule-inspection # new branch
-git branch --show-current                    # which branch am I on?
-```
-
-```powershell
-git switch main; git pull                    # latest main
-git switch -c feature/42-schedule-inspection # new branch
+# 'latest main' chains two commands — Bash uses &&, PowerShell uses ;
+git switch main && git pull                  # Bash
+git switch main;  git pull                   # PowerShell
+git switch -c feature/42-schedule-inspection # new branch (either shell)
 git branch --show-current                    # which branch am I on?
 ```
 

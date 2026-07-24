@@ -4,13 +4,14 @@ title: "Module 2 — Branching & Commits"
 
 # Module 2 — Branching & Commits
 
-⏱️ **45 minutes** · Paired lab: [Lab 02 — Branch & first commit](../labs/lab-02-branch-and-first-commit.md) · [← Home](../index.md)
+⏱️ **45 minutes** · Paired labs: [Lab 2.1 — Branch & first commit](../labs/lab-02-1-branch-and-first-commit.md), [Lab 2.2 — Implement the endpoint & test](../labs/lab-02-2-implement-endpoint-and-test.md) · [← Home](../index.md)
 
 ## Goals
 
 - Create a **branch** to isolate your work from `main`.
 - Make small, well-described **commits**.
 - Push your branch to GitHub and understand what "tracking" means.
+- Land the feature as a small, well-tested **commit** on your branch (Lab 2.2).
 
 ## Why branches?
 
@@ -127,6 +128,29 @@ you can just `git push` and `git pull`.
 This two-step design lets you craft a clean commit even when your working directory is
 messy.
 
+## Writing the feature commit (Lab 2.2)
+
+Branching and a throwaway first commit are the mechanics; **Lab 2.2** is where the real
+change lands. You'll add the endpoint to `src/CivicPermit.Api/Program.cs`:
+
+```csharp
+app.MapPost("/permits/{id:int}/inspections", (int id, ScheduleInspectionRequest request, PermitStore store) =>
+{
+    if (store.GetById(id) is null)
+        return Results.NotFound();
+
+    if (string.IsNullOrWhiteSpace(request.InspectionType) || request.ScheduledFor == default)
+        return Results.BadRequest("InspectionType and ScheduledFor are required.");
+
+    var inspection = store.AddInspection(id, request.InspectionType, request.ScheduledFor);
+    return Results.Created($"/permits/{id}/inspections/{inspection!.Id}", inspection);
+});
+```
+
+…plus a small model and store method, and an **xUnit test** proving it works. Test first
+or test right after — either way, the branch ships with a test, ready to propose as a PR in
+Module 3.
+
 ## Common pitfalls
 
 - **Committing on `main`.** Always branch first. If you did, see [Troubleshooting](../troubleshooting.md).
@@ -137,6 +161,7 @@ messy.
 > Handy — but you still own the *why*. We cover that in the Copilot workshop; today,
 > writing messages yourself builds the instinct for what a good one says.
 
-## ➡️ Now do the lab
+## ➡️ Now do the labs
 
-[**Lab 02 — Branch & first commit**](../labs/lab-02-branch-and-first-commit.md)
+1. [**Lab 2.1 — Branch & first commit**](../labs/lab-02-1-branch-and-first-commit.md)
+2. [**Lab 2.2 — Implement the endpoint & test**](../labs/lab-02-2-implement-endpoint-and-test.md)

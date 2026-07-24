@@ -1,5 +1,5 @@
 <!--
-  Thanks for opening a pull request! You'll fill this out in Lab 04.
+  Thanks for opening a pull request! You'll fill this out in Lab 3.1.
   A clear PR description makes review faster and safer.
 -->
 

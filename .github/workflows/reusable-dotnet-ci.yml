@@ -2,7 +2,7 @@ name: Reusable .NET CI
 
 # A *reusable* workflow. It does nothing on its own — another workflow "calls" it
 # with `uses:` (see ci-via-reusable.yml). This is the pattern from Advanced Module 11
-# and Lab 12: define the build/test baseline once, call it from many repos.
+# and Lab 11: define the build/test baseline once, call it from many repos.
 on:
   workflow_call:
     inputs:

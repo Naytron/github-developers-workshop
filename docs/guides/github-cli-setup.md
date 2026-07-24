@@ -60,11 +60,11 @@ gh auth login --hostname github.your-company.com
 ```bash
 gh repo clone <owner>/<repo>          # clone
 gh repo fork <owner>/<repo> --clone   # fork + clone
-gh issue create ...                   # open an issue (Lab 01)
-gh pr create ...                      # open a pull request (Lab 04)
-gh pr checks                          # see CI status on a PR (Lab 06)
-gh pr merge --squash --delete-branch  # merge (Lab 07)
-gh release create v1.1.0 --generate-notes   # release (Lab 08)
+gh issue create ...                   # open an issue (Lab 1)
+gh pr create ...                      # open a pull request (Lab 3.1)
+gh pr checks                          # see CI status on a PR (Lab 4)
+gh pr merge --squash --delete-branch  # merge (Lab 5)
+gh release create v1.1.0 --generate-notes   # release (Lab 6)
 ```
 
 Full list in the [GitHub CLI cheat sheet](../cheatsheets/gh-cli.md).

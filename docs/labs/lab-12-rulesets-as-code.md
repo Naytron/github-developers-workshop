@@ -1,8 +1,8 @@
 ---
-title: "Lab 13 — Rulesets as Code"
+title: "Lab 12 — Rulesets as Code"
 ---
 
-# Lab 13 — Rulesets as Code
+# Lab 12 — Rulesets as Code
 
 ⏱️ ~30 min · Optional architect extension · Module: [Rulesets as Code](../modules/12-rulesets-as-code.md) · [← Home](../index.md)
 
@@ -27,13 +27,13 @@ governance is repeatable across repositories.
 List and export via the API:
 
 ```bash
+# Bash
 # find the ruleset id
 gh api repos/{owner}/{repo}/rulesets --jq '.[] | "\(.id)\t\(.name)"'
 # export it (replace <ID>)
 gh api repos/{owner}/{repo}/rulesets/<ID> > docs/assets/rulesets/main-protection.exported.json
-```
 
-```powershell
+# PowerShell
 gh api repos/{owner}/{repo}/rulesets --jq '.[] | "\(.id)`t\(.name)"'
 gh api repos/{owner}/{repo}/rulesets/<ID> | Out-File -Encoding utf8 docs/assets/rulesets/main-protection.exported.json
 ```
@@ -45,10 +45,10 @@ The repo ships a portable definition at
 any repo's default branch without editing:
 
 ```bash
+# Bash
 cat docs/assets/rulesets/main-protection.ruleset.json
-```
 
-```powershell
+# PowerShell
 Get-Content docs/assets/rulesets/main-protection.ruleset.json
 ```
 
@@ -57,12 +57,8 @@ Get-Content docs/assets/rulesets/main-protection.ruleset.json
 Apply the template as a **new** ruleset (or in a second repo) straight from JSON:
 
 ```bash
+# PowerShell: swap the trailing \ for a backtick `
 gh api -X POST repos/{owner}/{repo}/rulesets \
-  --input docs/assets/rulesets/main-protection.ruleset.json
-```
-
-```powershell
-gh api -X POST repos/{owner}/{repo}/rulesets `
   --input docs/assets/rulesets/main-protection.ruleset.json
 ```
 
@@ -103,4 +99,4 @@ Add a **Require signed commits** rule to see enterprise-grade control — and it
 
 ## Next
 
-Continue to [Lab 14 — Security Policy Automation](lab-14-security-policy-automation.md).
+Continue to [Lab 13 — Security Policy Automation](lab-13-security-policy-automation.md).

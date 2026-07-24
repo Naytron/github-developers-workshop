@@ -50,16 +50,7 @@ Working directory  →  Staging area (index)  →  Local repo  →  Remote (GitH
 ## The everyday loop
 
 ```bash
-git switch main && git pull              # start from the latest
-git switch -c feature/123-my-change      # branch
-# ... edit files ...
-git add <files>                          # stage
-git commit -m "feat: do the thing"       # commit
-git push -u origin feature/123-my-change # publish
-```
-
-```powershell
-git switch main; git pull                # start from the latest
+git switch main && git pull              # start from the latest (PowerShell: git switch main; git pull)
 git switch -c feature/123-my-change      # branch
 # ... edit files ...
 git add <files>                          # stage

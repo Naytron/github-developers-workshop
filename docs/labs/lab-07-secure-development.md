@@ -1,8 +1,8 @@
 ---
-title: "Lab 09 — Secure the Repository"
+title: "Lab 7 — Secure the Repository"
 ---
 
-# Lab 09 — Secure the Repository
+# Lab 7 — Secure the Repository
 
 ⏱️ ~30 min · Module: [Secure Development](../modules/07-secure-development.md) · [← Home](../index.md)
 
@@ -18,10 +18,10 @@ The repo already includes `.github/dependabot.yml` for two ecosystems (NuGet and
 Actions). Confirm it's there:
 
 ```bash
+# Bash
 cat .github/dependabot.yml
-```
 
-```powershell
+# PowerShell
 Get-Content .github/dependabot.yml
 ```
 
@@ -37,16 +37,16 @@ gh repo view --web
 - Enable **Dependabot security updates** (auto-opens fix PRs).
 - **Dependabot version updates** is driven by the `dependabot.yml` you just saw.
 
-When Dependabot opens a PR, your **required CI check** from Lab 07 runs on it — an
+When Dependabot opens a PR, your **required CI check** from Lab 5 runs on it — an
 automated fix *plus* proof it still builds and tests.
 
 Check for any alerts from the CLI:
 
 ```bash
+# Bash
 gh api repos/{owner}/{repo}/dependabot/alerts --jq '.[].security_advisory.summary' 2>/dev/null || echo "No alerts (or Advanced Security not enabled)"
-```
 
-```powershell
+# PowerShell
 $alerts = gh api repos/{owner}/{repo}/dependabot/alerts --jq ".[].security_advisory.summary" 2>$null
 if ($LASTEXITCODE -ne 0 -or -not $alerts) {
   "No alerts (or Advanced Security not enabled)"
@@ -77,10 +77,10 @@ Still in **Code security**:
   annotations.
 
 ```bash
+# Bash
 gh api repos/{owner}/{repo}/code-scanning/alerts --jq 'length' 2>/dev/null || echo "Code scanning not enabled yet"
-```
 
-```powershell
+# PowerShell
 $codeScanningCount = gh api repos/{owner}/{repo}/code-scanning/alerts --jq "length" 2>$null
 if ($LASTEXITCODE -ne 0) {
   "Code scanning not enabled yet"
@@ -109,6 +109,8 @@ Triaging here uses the exact same skills as triaging issues and PRs.
 A `SECURITY.md` tells people how to report a vulnerability:
 
 ```bash
+# Create SECURITY.md:
+# Bash
 mkdir -p .github
 cat > SECURITY.md <<'EOF'
 # Security Policy
@@ -119,16 +121,7 @@ data, credentials, or services.
 To report a concern with the workshop materials, open an issue using the feature-request
 template, or contact your workshop instructor.
 EOF
-
-git switch -c chore/add-security-policy
-git add SECURITY.md
-git commit -m "docs: add SECURITY.md"
-git push -u origin chore/add-security-policy
-gh pr create --base main --title "Add SECURITY.md" --body "Adds a security policy for the workshop repo."
-```
-
-
-```powershell
+# PowerShell
 $securityPolicy = @"
 # Security Policy
 
@@ -138,9 +131,9 @@ data, credentials, or services.
 To report a concern with the workshop materials, open an issue using the feature-request
 template, or contact your workshop instructor.
 "@
-
 Set-Content -Path SECURITY.md -Value $securityPolicy -NoNewline -Encoding utf8
 
+# Then commit and open a PR (either shell):
 git switch -c chore/add-security-policy
 git add SECURITY.md
 git commit -m "docs: add SECURITY.md"

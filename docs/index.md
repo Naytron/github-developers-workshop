@@ -46,26 +46,26 @@ Each has a hands-on lab. **Read the [prerequisites & difficulty matrix](guides/a
 
 | Topic | Lab | Suggested Time |
 | ----- | --- | -------------- |
-| [Environments & approvals](modules/09-environments-and-approvals.md) | [Lab 10](labs/lab-10-environments-and-approvals.md) | 30 min |
-| [OIDC deployments](modules/10-oidc-deployments.md) | [Lab 11](labs/lab-11-oidc-azure-deploy.md) | 40 min |
-| [Reusable workflows](modules/11-reusable-workflows.md) | [Lab 12](labs/lab-12-reusable-workflows.md) | 30 min |
-| [Rulesets as code](modules/12-rulesets-as-code.md) | [Lab 13](labs/lab-13-rulesets-as-code.md) | 30 min |
-| [Security policy automation](modules/13-security-policy-automation.md) | [Lab 14](labs/lab-14-security-policy-automation.md) | 30 min |
+| [Environments & approvals](modules/09-environments-and-approvals.md) | [Lab 9](labs/lab-09-environments-and-approvals.md) | 30 min |
+| [OIDC deployments](modules/10-oidc-deployments.md) | [Lab 10](labs/lab-10-oidc-azure-deploy.md) | 40 min |
+| [Reusable workflows](modules/11-reusable-workflows.md) | [Lab 11](labs/lab-11-reusable-workflows.md) | 30 min |
+| [Rulesets as code](modules/12-rulesets-as-code.md) | [Lab 12](labs/lab-12-rulesets-as-code.md) | 30 min |
+| [Security policy automation](modules/13-security-policy-automation.md) | [Lab 13](labs/lab-13-security-policy-automation.md) | 30 min |
 
 ## Labs
 
 | Lab | Advances the story to… |
 | --- | ---------------------- |
-| [Lab 00 — Setup](labs/lab-00-setup.md) | A working local clone that builds and tests |
-| [Lab 01 — Open the Issue](labs/lab-01-open-the-issue.md) | **Issue** |
-| [Lab 02 — Branch & first commit](labs/lab-02-branch-and-first-commit.md) | **Branch → Commit** |
-| [Lab 03 — Implement the endpoint & test](labs/lab-03-implement-endpoint-and-test.md) | **Commit** (the feature) |
-| [Lab 04 — Open a pull request](labs/lab-04-open-pull-request.md) | **Pull Request** |
-| [Lab 05 — Review & address feedback](labs/lab-05-review-and-address-feedback.md) | **Review** |
-| [Lab 06 — Author the CI workflow](labs/lab-06-author-ci-workflow.md) | **Workflow** |
-| [Lab 07 — Branch protection & merge](labs/lab-07-branch-protection-and-merge.md) | **Merge** |
-| [Lab 08 — Cut a release](labs/lab-08-cut-a-release.md) | **Release** |
-| [Lab 09 — Secure the repository](labs/lab-09-secure-development.md) | Hardening the same repo |
+| [Lab 0 — Setup](labs/lab-00-setup.md) | A working local clone that builds and tests |
+| [Lab 1 — Open the Issue](labs/lab-01-open-the-issue.md) | **Issue** |
+| [Lab 2.1 — Branch & first commit](labs/lab-02-1-branch-and-first-commit.md) | **Branch → Commit** |
+| [Lab 2.2 — Implement the endpoint & test](labs/lab-02-2-implement-endpoint-and-test.md) | **Commit** (the feature) |
+| [Lab 3.1 — Open a pull request](labs/lab-03-1-open-pull-request.md) | **Pull Request** |
+| [Lab 3.2 — Review, feedback & roll back](labs/lab-03-2-review-and-address-feedback.md) | **Review** |
+| [Lab 4 — Author the CI workflow](labs/lab-04-author-ci-workflow.md) | **Workflow** |
+| [Lab 5 — Branch protection & merge](labs/lab-05-branch-protection-and-merge.md) | **Merge** |
+| [Lab 6 — Cut a release](labs/lab-06-cut-a-release.md) | **Release** |
+| [Lab 7 — Secure the repository](labs/lab-07-secure-development.md) | Hardening the same repo |
 
 ### Advanced-track labs (optional)
 
@@ -74,11 +74,11 @@ Companion labs for the architect hardening modules. Check the
 
 | Lab | Focus |
 | --- | ----- |
-| [Lab 10 — Environments & approvals](labs/lab-10-environments-and-approvals.md) | Promotion gates & env-scoped secrets |
-| [Lab 11 — OIDC deployments (Azure)](labs/lab-11-oidc-azure-deploy.md) | Keyless deploy via federated identity |
-| [Lab 12 — Reusable workflows](labs/lab-12-reusable-workflows.md) | `workflow_call` + thin callers |
-| [Lab 13 — Rulesets as code](labs/lab-13-rulesets-as-code.md) | Governance as version-controlled JSON |
-| [Lab 14 — Security policy automation](labs/lab-14-security-policy-automation.md) | Scheduled audit + evidence artifact |
+| [Lab 9 — Environments & approvals](labs/lab-09-environments-and-approvals.md) | Promotion gates & env-scoped secrets |
+| [Lab 10 — OIDC deployments (Azure)](labs/lab-10-oidc-azure-deploy.md) | Keyless deploy via federated identity |
+| [Lab 11 — Reusable workflows](labs/lab-11-reusable-workflows.md) | `workflow_call` + thin callers |
+| [Lab 12 — Rulesets as code](labs/lab-12-rulesets-as-code.md) | Governance as version-controlled JSON |
+| [Lab 13 — Security policy automation](labs/lab-13-security-policy-automation.md) | Scheduled audit + evidence artifact |
 
 ## Reference
 

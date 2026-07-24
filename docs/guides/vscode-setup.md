@@ -30,7 +30,7 @@ in VS Code, accept the prompt to install recommendations, or install these manua
 ## Open the project
 
 ```bash
-cd <yourname>-gh-training   # the folder you cloned in Lab 00
+cd <yourname>-gh-training   # the folder you cloned in Lab 0
 code .
 ```
 

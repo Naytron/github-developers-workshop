@@ -1,8 +1,8 @@
 ---
-title: "Lab 12 — Reusable Workflows"
+title: "Lab 11 — Reusable Workflows"
 ---
 
-# Lab 12 — Reusable Workflows
+# Lab 11 — Reusable Workflows
 
 ⏱️ ~30 min · Optional architect extension · Module: [Reusable Workflows](../modules/11-reusable-workflows.md) · [← Home](../index.md)
 
@@ -19,11 +19,11 @@ bite at org scale.
 The repo already contains the pattern:
 
 ```bash
+# Bash
 cat .github/workflows/reusable-dotnet-ci.yml    # the callee: on: workflow_call
 cat .github/workflows/ci-via-reusable.yml        # the caller: uses: ./...
-```
 
-```powershell
+# PowerShell
 Get-Content .github/workflows/reusable-dotnet-ci.yml
 Get-Content .github/workflows/ci-via-reusable.yml
 ```
@@ -34,11 +34,6 @@ and the **caller** is only a few lines.
 ## Step 2 — Run the caller
 
 ```bash
-gh workflow run ci-via-reusable.yml --ref <your-branch>
-gh run watch
-```
-
-```powershell
 gh workflow run ci-via-reusable.yml --ref <your-branch>
 gh run watch
 ```
@@ -112,4 +107,4 @@ In production the reusable workflow lives in a shared repo:
 
 ## Next
 
-Continue to [Lab 13 — Rulesets as Code](lab-13-rulesets-as-code.md).
+Continue to [Lab 12 — Rulesets as Code](lab-12-rulesets-as-code.md).
