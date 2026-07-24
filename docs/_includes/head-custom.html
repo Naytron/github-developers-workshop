@@ -295,11 +295,17 @@
       chosen[0].el.parentNode.insertBefore(wrap, chosen[0].el);
 
       chosen.forEach(function (c, i) {
+        var uid = Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
+        var tabId = 'shell-tab-' + c.kind + '-' + uid;
+        var panelId = 'shell-panel-' + c.kind + '-' + uid;
+
         var btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'shell-tabs__btn';
+        btn.id = tabId;
         btn.setAttribute('role', 'tab');
         btn.setAttribute('data-shell', c.kind);
+        btn.setAttribute('aria-controls', panelId);
         btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
         btn.tabIndex = i === 0 ? 0 : -1;
         btn.textContent = LABEL[c.kind];
@@ -311,7 +317,9 @@
 
         var pane = document.createElement('div');
         pane.className = 'shell-tabs__pane' + (i === 0 ? ' is-active' : '');
+        pane.id = panelId;
         pane.setAttribute('role', 'tabpanel');
+        pane.setAttribute('aria-labelledby', tabId);
         pane.appendChild(c.el);
         panes.appendChild(pane);
       });
