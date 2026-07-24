@@ -110,7 +110,7 @@ if [[ -f ".github/CODEOWNERS" ]]; then
     errors+=("CODEOWNERS still contains @your-org/workshop-maintainers")
   fi
 
-  owner_lines="$(grep -E '^\s*[^#[:space:]].*@[A-Za-z0-9_.-]+' ".github/CODEOWNERS" || true)"
+  owner_lines="$(grep -E '^[[:space:]]*[^#[:space:]].*@[A-Za-z0-9_.-]+' ".github/CODEOWNERS" || true)"
   if [[ -z "$owner_lines" ]]; then
     errors+=("CODEOWNERS has no active ownership rules")
   fi
