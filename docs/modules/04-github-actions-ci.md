@@ -4,13 +4,13 @@ title: "Module 4 — GitHub Actions (CI)"
 
 # Module 4 — GitHub Actions (CI)
 
-⏱️ **60 minutes** · Paired lab: [Lab 06 — Author the CI workflow](../labs/lab-06-author-ci-workflow.md) · [← Home](../index.md)
+⏱️ **60 minutes** · Paired lab: [Lab 4 — Author the CI workflow](../labs/lab-04-author-ci-workflow.md) · [← Home](../index.md)
 
 ## Goals
 
 - Understand what **GitHub Actions** is and the vocabulary of a workflow.
 - Read and author a **continuous integration (CI)** workflow that builds and tests
-  CivicPermit on every push and pull request.
+  CivicPermit on every push and pull request — and on demand via `workflow_dispatch`.
 - See a **status check** appear on your PR.
 
 ## What is CI, and why?
@@ -42,6 +42,7 @@ on:                       # WHEN it runs
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:      # ...and on demand (the "Run workflow" button)
 
 permissions:              # LEAST PRIVILEGE — only read the repo
   contents: read
@@ -107,4 +108,4 @@ we make that check **required** so nothing merges red.
 
 ## ➡️ Now do the lab
 
-[**Lab 06 — Author the CI workflow**](../labs/lab-06-author-ci-workflow.md)
+[**Lab 4 — Author the CI workflow**](../labs/lab-04-author-ci-workflow.md)

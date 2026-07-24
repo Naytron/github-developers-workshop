@@ -78,10 +78,10 @@ Watch the console for a line like `Now listening on: http://localhost:5150`. The
 second terminal:
 
 ```bash
+# Bash
 curl http://localhost:5150/permits
-```
 
-```powershell
+# PowerShell
 Invoke-RestMethod http://localhost:5150/permits
 ```
 

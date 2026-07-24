@@ -4,7 +4,7 @@ title: "Module 6 — Releases"
 
 # Module 6 — Releases
 
-⏱️ **30 minutes** · Paired lab: [Lab 08 — Cut a release](../labs/lab-08-cut-a-release.md) · [← Home](../index.md)
+⏱️ **30 minutes** · Paired lab: [Lab 6 — Cut a release](../labs/lab-06-cut-a-release.md) · [← Home](../index.md)
 
 ## Goals
 
@@ -42,16 +42,9 @@ on runners and available on your machine:
 ```bash
 # Create tag v1.1.0 on the current commit, publish a release, and
 # auto-generate notes from merged PRs since the last release.
+# (PowerShell: swap each trailing \ for a backtick `)
 gh release create v1.1.0 \
   --title "CivicPermit v1.1.0" \
-  --generate-notes
-```
-
-```powershell
-# Create tag v1.1.0 on the current commit, publish a release, and
-# auto-generate notes from merged PRs since the last release.
-gh release create v1.1.0 `
-  --title "CivicPermit v1.1.0" `
   --generate-notes
 ```
 
@@ -62,19 +55,16 @@ another reason good PR titles pay off.
 
 ```bash
 dotnet publish src/CivicPermit.Api -c Release -o ./publish
+
+# Zip the published output:
+# Bash
 cd publish && zip -r ../CivicPermit.Api-v1.1.0.zip . && cd ..
-
-gh release create v1.1.0 CivicPermit.Api-v1.1.0.zip \
-  --title "CivicPermit v1.1.0" \
-  --generate-notes
-```
-
-```powershell
-dotnet publish src/CivicPermit.Api -c Release -o ./publish
+# PowerShell
 Compress-Archive -Path ./publish/* -DestinationPath CivicPermit.Api-v1.1.0.zip -Force
 
-gh release create v1.1.0 CivicPermit.Api-v1.1.0.zip `
-  --title "CivicPermit v1.1.0" `
+# Attach the zip to the release (PowerShell: swap each trailing \ for a backtick `):
+gh release create v1.1.0 CivicPermit.Api-v1.1.0.zip \
+  --title "CivicPermit v1.1.0" \
   --generate-notes
 ```
 
@@ -108,4 +98,4 @@ the workflow do it. Both use only GitHub-owned tooling.
 
 ## ➡️ Now do the lab
 
-[**Lab 08 — Cut a release**](../labs/lab-08-cut-a-release.md)
+[**Lab 6 — Cut a release**](../labs/lab-06-cut-a-release.md)

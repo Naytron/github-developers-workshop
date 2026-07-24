@@ -1,15 +1,15 @@
 ---
-title: "Lab 03 — Implement the Endpoint & Test"
+title: "Lab 2.2 — Implement the Endpoint & Test"
 ---
 
-# Lab 03 — Implement the Endpoint & Test
+# Lab 2.2 — Implement the Endpoint & Test
 
-⏱️ ~30 min · Module: [Pull Requests & Review](../modules/03-pull-requests-and-review.md) · [← Home](../index.md)
+⏱️ ~30 min · Module: [Branching & Commits](../modules/02-branching-and-commits.md) · [← Home](../index.md)
 
 **Goal:** implement `POST /permits/{id}/inspections` and prove it works with an xUnit test.
 
 > This is the **Commit** step where the actual feature lands. Work on your
-> `feature/<issue-number>-schedule-inspection` branch from Lab 02.
+> `feature/<issue-number>-schedule-inspection` branch from Lab 2.1.
 
 Stuck? The full answer is in [`solutions/`](../../solutions/README.md) — but try it first.
 
@@ -81,7 +81,7 @@ public Inspection? AddInspection(int permitId, string inspectionType, DateOnly s
 
 ## Step 3 — Add the endpoint
 
-Open `src/CivicPermit.Api/Program.cs`. Replace the `// Feature (#…)` comment (from Lab 02)
+Open `src/CivicPermit.Api/Program.cs`. Replace the `// Feature (#…)` comment (from Lab 2.1)
 with the real endpoint, just above `app.Run();`:
 
 ```csharp
@@ -182,14 +182,11 @@ You should now see **8 passing tests** (the original 5 plus your 3).
 ```bash
 dotnet run --project src/CivicPermit.Api
 # In another terminal:
+# Bash
 curl -X POST http://localhost:5150/permits/1/inspections \
   -H "Content-Type: application/json" \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
-```
-
-```powershell
-dotnet run --project src/CivicPermit.Api
-# In another terminal:
+# PowerShell
 Invoke-RestMethod -Method Post -Uri http://localhost:5150/permits/1/inspections `
   -ContentType "application/json" `
   -Body '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
@@ -224,4 +221,4 @@ git push
 
 ## ➡️ Next
 
-[**Lab 04 — Open a pull request**](lab-04-open-pull-request.md)
+[**Lab 3.1 — Open a pull request**](lab-03-1-open-pull-request.md)

@@ -27,7 +27,7 @@ single control plane and consistent policy enforcement.
 
 ## Exercise
 
-> ➡️ **Full hands-on lab:** [Lab 13 — Rulesets as Code](../labs/lab-13-rulesets-as-code.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
+> ➡️ **Full hands-on lab:** [Lab 12 — Rulesets as Code](../labs/lab-12-rulesets-as-code.md) (check the [prerequisites matrix](../guides/advanced-track-prerequisites.md) first).
 
 1. Create a repository or org ruleset for `main`.
 2. Include at least required PR + required status check.

@@ -4,7 +4,7 @@ title: "Module 0 — Welcome & Setup"
 
 # Module 0 — Welcome & Setup
 
-⏱️ **30 minutes** · Paired lab: [Lab 00 — Setup](../labs/lab-00-setup.md) · [← Home](../index.md)
+⏱️ **30 minutes** · Paired lab: [Lab 0 — Setup](../labs/lab-00-setup.md) · [← Home](../index.md)
 
 ## Goals
 
@@ -72,4 +72,4 @@ day — not an encyclopedia of flags.
 
 ## ➡️ Now do the lab
 
-[**Lab 00 — Setup**](../labs/lab-00-setup.md)
+[**Lab 0 — Setup**](../labs/lab-00-setup.md)

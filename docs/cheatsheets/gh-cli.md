@@ -97,25 +97,13 @@ gh config set editor "code --wait"         # use VS Code for gh drafts
 ## Raw API (for settings not yet in gh subcommands)
 
 ```bash
+# Flags span lines with a trailing \ in Bash — in PowerShell swap each \ for a backtick (`).
 # Enable a required status check on main (classic protection):
 gh api -X PUT repos/{owner}/{repo}/branches/main/protection \
   -f "required_status_checks[strict]=true" \
   -f "required_status_checks[contexts][]=Build & Test (CivicPermit)" \
   -f "enforce_admins=true" \
   -f "required_pull_request_reviews[required_approving_review_count]=1" \
-  -f "restrictions=null"
-
-# List Dependabot alerts (requires Advanced Security):
-gh api repos/{owner}/{repo}/dependabot/alerts
-```
-
-```powershell
-# Enable a required status check on main (classic protection):
-gh api -X PUT repos/{owner}/{repo}/branches/main/protection `
-  -f "required_status_checks[strict]=true" `
-  -f "required_status_checks[contexts][]=Build & Test (CivicPermit)" `
-  -f "enforce_admins=true" `
-  -f "required_pull_request_reviews[required_approving_review_count]=1" `
   -f "restrictions=null"
 
 # List Dependabot alerts (requires Advanced Security):

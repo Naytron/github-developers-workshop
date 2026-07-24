@@ -40,7 +40,7 @@ app.MapPost("/permits", (CreatePermitRequest request, PermitStore store) =>
     return Results.Created($"/permits/{permit.Id}", permit);
 });
 
-// TODO (Lab 03): add POST /permits/{id}/inspections.
+// TODO (Lab 2.2): add POST /permits/{id}/inspections.
 
 app.Run();
 

@@ -4,7 +4,7 @@ title: "Module 5 — Branch Protection & Merge"
 
 # Module 5 — Branch Protection & Merge
 
-⏱️ **45 minutes** · Paired lab: [Lab 07 — Branch protection & merge](../labs/lab-07-branch-protection-and-merge.md) · [← Home](../index.md)
+⏱️ **45 minutes** · Paired lab: [Lab 5 — Branch protection & merge](../labs/lab-05-branch-protection-and-merge.md) · [← Home](../index.md)
 
 ## Goals
 
@@ -84,4 +84,4 @@ material.
 
 ## ➡️ Now do the lab
 
-[**Lab 07 — Branch protection & merge**](../labs/lab-07-branch-protection-and-merge.md)
+[**Lab 5 — Branch protection & merge**](../labs/lab-05-branch-protection-and-merge.md)

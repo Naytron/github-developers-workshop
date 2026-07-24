@@ -1,8 +1,8 @@
 ---
-title: "Lab 10 — Environments & Approvals"
+title: "Lab 9 — Environments & Approvals"
 ---
 
-# Lab 10 — Environments & Approvals
+# Lab 9 — Environments & Approvals
 
 ⏱️ ~30 min · Optional architect extension · Module: [Environments & Approvals](../modules/09-environments-and-approvals.md) · [← Home](../index.md)
 
@@ -23,11 +23,11 @@ deploys to `main`.
 Or from the CLI:
 
 ```bash
+# Bash
 gh api -X PUT repos/{owner}/{repo}/environments/staging >/dev/null && echo "staging created"
 gh api -X PUT repos/{owner}/{repo}/environments/production >/dev/null && echo "production created"
-```
 
-```powershell
+# PowerShell
 gh api -X PUT repos/{owner}/{repo}/environments/staging | Out-Null; "staging created"
 gh api -X PUT repos/{owner}/{repo}/environments/production | Out-Null; "production created"
 ```
@@ -54,10 +54,6 @@ a job that declares `environment: <name>`. Put deployment secrets where they bel
 gh secret set DEPLOY_TARGET --env production --body "civicpermit-prod"
 ```
 
-```powershell
-gh secret set DEPLOY_TARGET --env production --body "civicpermit-prod"
-```
-
 ## Step 5 — Gate a job on the environment
 
 The repo ships a deploy workflow at `.github/workflows/deploy-oidc-azure.yml`. The key lines
@@ -74,11 +70,6 @@ jobs:
 Trigger it:
 
 ```bash
-gh workflow run deploy-oidc-azure.yml --ref main
-gh run watch
-```
-
-```powershell
 gh workflow run deploy-oidc-azure.yml --ref main
 gh run watch
 ```
@@ -108,4 +99,4 @@ The run should **pause** on "Waiting for review." Approve it from the Actions ru
 
 ## Next
 
-Continue to [Lab 11 — OIDC Deployments (Azure)](lab-11-oidc-azure-deploy.md).
+Continue to [Lab 10 — OIDC Deployments (Azure)](lab-10-oidc-azure-deploy.md).

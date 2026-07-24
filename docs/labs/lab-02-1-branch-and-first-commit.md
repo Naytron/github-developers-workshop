@@ -1,8 +1,8 @@
 ---
-title: "Lab 02 — Branch & First Commit"
+title: "Lab 2.1 — Branch & First Commit"
 ---
 
-# Lab 02 — Branch & First Commit
+# Lab 2.1 — Branch & First Commit
 
 ⏱️ ~20 min · Module: [Branching & Commits](../modules/02-branching-and-commits.md) · [← Home](../index.md)
 
@@ -28,7 +28,7 @@ git pull
 
 ### 2. Create your feature branch
 
-Use the issue number from Lab 01:
+Use the issue number from Lab 1:
 
 ```bash
 git switch -c feature/<issue-number>-schedule-inspection
@@ -38,13 +38,13 @@ git branch --show-current
 ### 3. Make a small, meaningful first change
 
 We'll leave a clear marker for the feature so the branch has a real commit. Open
-`src/CivicPermit.Api/Program.cs` and find the `TODO (Lab 03)` comment near the bottom.
+`src/CivicPermit.Api/Program.cs` and find the `TODO (Lab 2.2)` comment near the bottom.
 Update it to record that work has started:
 
 ```csharp
 // Feature (#<issue-number>): schedule an inspection for an existing permit.
 //   POST /permits/{id}/inspections
-// Endpoint and test are added in Lab 03.
+// Endpoint and test are added in Lab 2.2.
 ```
 
 Save the file, then confirm it still builds:
@@ -73,7 +73,7 @@ git push -u origin feature/<issue-number>-schedule-inspection
 ```
 
 The `-u` links your local branch to the remote so future `git push`/`git pull` need no
-arguments. `gh` prints a URL to open a PR — we'll do that in Lab 04.
+arguments. `gh` prints a URL to open a PR — we'll do that in Lab 3.1.
 
 > 💡 **CLI tip:** `gh issue develop <issue-number> --checkout` creates a branch **already
 > linked to the issue** and switches to it — the one-command version of steps 1–2 above.
@@ -98,4 +98,4 @@ arguments. `gh` prints a URL to open a PR — we'll do that in Lab 04.
 
 ## ➡️ Next
 
-[**Lab 03 — Implement the endpoint & test**](lab-03-implement-endpoint-and-test.md)
+[**Lab 2.2 — Implement the endpoint & test**](lab-02-2-implement-endpoint-and-test.md)

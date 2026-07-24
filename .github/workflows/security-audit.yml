@@ -1,6 +1,6 @@
 name: Security Baseline Audit
 
-# Governance-as-code (Advanced Module 13 / Lab 14). Instead of enabling security
+# Governance-as-code (Advanced Module 13 / Lab 13). Instead of enabling security
 # features once and hoping they stay on, this workflow *continuously checks* the
 # repo's security posture and publishes evidence you can hand to an auditor.
 #
@@ -17,7 +17,7 @@ on:
 # Reading security settings requires elevated scopes. The default GITHUB_TOKEN can
 # read basic repo data, but Dependabot/code-scanning/secret-scanning endpoints may
 # return 403 unless the token has security_events / admin. If your run shows all
-# "unknown", supply a PAT as the AUDIT_TOKEN secret (see Lab 14 — note the irony:
+# "unknown", supply a PAT as the AUDIT_TOKEN secret (see Lab 13 — note the irony:
 # automating security can reintroduce a stored secret, which OIDC/env scoping aim
 # to avoid).
 permissions:
@@ -90,7 +90,7 @@ jobs:
           check "Secret scanning alerts (count)" "$ss" true
 
           echo "" >> "$report"
-          echo "> ⚠️ = control missing OR the token lacks scope to read it. See Lab 14." >> "$report"
+          echo "> ⚠️ = control missing OR the token lacks scope to read it. See Lab 13." >> "$report"
           echo "---- report ----"
           cat "$report"
 

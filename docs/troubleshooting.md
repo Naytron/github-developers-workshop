@@ -45,18 +45,12 @@ dotnet nuget list source
 dotnet restore --source https://api.nuget.org/v3/index.json
 
 # Or set proxy env vars for the shell:
+# Bash
 export HTTPS_PROXY=http://proxy.your-company.com:8080
 export HTTP_PROXY=http://proxy.your-company.com:8080
-```
-
-```powershell
-# Point at the public feed explicitly (if allowed):
-dotnet nuget list source
-dotnet restore --source https://api.nuget.org/v3/index.json
-
-# Or set proxy env vars for the shell:
+# PowerShell
 $env:HTTPS_PROXY = "http://proxy.your-company.com:8080"
-$env:HTTP_PROXY = "http://proxy.your-company.com:8080"
+$env:HTTP_PROXY  = "http://proxy.your-company.com:8080"
 ```
 
 If your org uses an internal feed, ask IT for the feed URL and add it to a `NuGet.config`.
@@ -123,7 +117,7 @@ Ensure `bin/` and `obj/` are ignored — they are, via [.gitignore](../.gitignor
 
 ### `dotnet build` fails after editing the feature
 
-- Re-read the endpoint and model in [Lab 03](labs/lab-03-implement-endpoint-and-test.md).
+- Re-read the endpoint and model in [Lab 2.2](labs/lab-02-2-implement-endpoint-and-test.md).
 - Fast path: copy the reference files from [`solutions/`](../solutions/README.md) and re-test.
 
 ### Tests fail with a serialization or 415 error on POST
@@ -131,12 +125,12 @@ Ensure `bin/` and `obj/` are ignored — they are, via [.gitignore](../.gitignor
 Send JSON with the right content type:
 
 ```bash
+# Bash
 curl -X POST http://localhost:5150/permits/1/inspections \
   -H "Content-Type: application/json" \
   -d '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
-```
 
-```powershell
+# PowerShell
 Invoke-RestMethod -Method Post -Uri http://localhost:5150/permits/1/inspections `
   -ContentType "application/json" `
   -Body '{"inspectionType":"Framing","scheduledFor":"2026-08-15"}'
@@ -154,7 +148,7 @@ port in your `curl` commands.
 ### No workflow runs appear
 
 - **Forks disable Actions by default.** Enable: repo **Settings → Actions → General →
-  Allow all actions → Save** (Lab 06 Step 0).
+  Allow all actions → Save** (Lab 4 Step 0).
 - Confirm the workflow is on the branch you pushed: `git log --oneline -- .github/workflows`.
 
 ### `setup-dotnet` fails on the runner

@@ -78,22 +78,8 @@ dotnet test
 dotnet run --project src/CivicPermit.Api
 
 # 4. In another terminal, try it out
-curl http://localhost:5150/permits
-```
-
-```powershell
-# 1. Clone your fork
-git clone https://github.com/<your-org>/github-developers-workshop.git
-cd github-developers-workshop
-
-# 2. Restore, build, and test
-dotnet test
-
-# 3. Run the API
-dotnet run --project src/CivicPermit.Api
-
-# 4. In another terminal, try it out
-Invoke-RestMethod http://localhost:5150/permits
+curl http://localhost:5150/permits                # Bash
+Invoke-RestMethod http://localhost:5150/permits   # PowerShell
 ```
 
 The port is printed on startup (typically `http://localhost:5150`).
@@ -114,7 +100,7 @@ The port is printed on startup (typically `http://localhost:5150`).
 │       └── release.yml            # Optional: publishes a release on tag push
 ├── docs/                          # The GitHub Pages website + all workshop content
 │   ├── modules/                   # Core modules + optional architect hardening track
-│   ├── labs/                      # Hands-on labs (lab-00 … lab-09, + advanced lab-10 … lab-14)
+│   ├── labs/                      # Hands-on labs (lab-00 … lab-07 core, + advanced lab-09 … lab-13)
 │   ├── guides/                    # Setup and reference guides
 │   ├── cheatsheets/               # One-page command references
 │   └── troubleshooting.md
@@ -130,14 +116,14 @@ The port is printed on startup (typically `http://localhost:5150`).
 
 | # | Module | Lab |
 | - | ------ | --- |
-| 0 | [Welcome & Setup](docs/modules/00-welcome-and-setup.md) | [Lab 00 — Setup](docs/labs/lab-00-setup.md) |
-| 1 | [The GitHub workflow & Issues](docs/modules/01-github-workflow-and-issues.md) | [Lab 01 — Open the Issue](docs/labs/lab-01-open-the-issue.md) |
-| 2 | [Branching & Commits](docs/modules/02-branching-and-commits.md) | [Lab 02 — Branch & first commit](docs/labs/lab-02-branch-and-first-commit.md) |
-| 3 | [Pull Requests & Review](docs/modules/03-pull-requests-and-review.md) | [Lab 03](docs/labs/lab-03-implement-endpoint-and-test.md) · [Lab 04](docs/labs/lab-04-open-pull-request.md) · [Lab 05](docs/labs/lab-05-review-and-address-feedback.md) |
-| 4 | [GitHub Actions (CI)](docs/modules/04-github-actions-ci.md) | [Lab 06 — Author the CI workflow](docs/labs/lab-06-author-ci-workflow.md) |
-| 5 | [Branch protection & Merge](docs/modules/05-branch-protection-and-merge.md) | [Lab 07 — Protect & merge](docs/labs/lab-07-branch-protection-and-merge.md) |
-| 6 | [Releases](docs/modules/06-releases.md) | [Lab 08 — Cut a release](docs/labs/lab-08-cut-a-release.md) |
-| 7 | [Secure development](docs/modules/07-secure-development.md) | [Lab 09 — Secure the repo](docs/labs/lab-09-secure-development.md) |
+| 0 | [Welcome & Setup](docs/modules/00-welcome-and-setup.md) | [Lab 0 — Setup](docs/labs/lab-00-setup.md) |
+| 1 | [The GitHub workflow & Issues](docs/modules/01-github-workflow-and-issues.md) | [Lab 1 — Open the Issue](docs/labs/lab-01-open-the-issue.md) |
+| 2 | [Branching & Commits](docs/modules/02-branching-and-commits.md) | [Lab 2.1 — Branch & first commit](docs/labs/lab-02-1-branch-and-first-commit.md) |
+| 3 | [Pull Requests & Review](docs/modules/03-pull-requests-and-review.md) | [Lab 2.2](docs/labs/lab-02-2-implement-endpoint-and-test.md) · [Lab 3.1](docs/labs/lab-03-1-open-pull-request.md) · [Lab 3.2](docs/labs/lab-03-2-review-and-address-feedback.md) |
+| 4 | [GitHub Actions (CI)](docs/modules/04-github-actions-ci.md) | [Lab 4 — Author the CI workflow](docs/labs/lab-04-author-ci-workflow.md) |
+| 5 | [Branch protection & Merge](docs/modules/05-branch-protection-and-merge.md) | [Lab 5 — Protect & merge](docs/labs/lab-05-branch-protection-and-merge.md) |
+| 6 | [Releases](docs/modules/06-releases.md) | [Lab 6 — Cut a release](docs/labs/lab-06-cut-a-release.md) |
+| 7 | [Secure development](docs/modules/07-secure-development.md) | [Lab 7 — Secure the repo](docs/labs/lab-07-secure-development.md) |
 | 8 | [Wrap-up & next steps](docs/modules/08-wrap-up-and-next-steps.md) | — |
 
 ## Optional architect hardening track
@@ -149,11 +135,11 @@ labs are plan- or cloud-gated.
 
 | Topic | Lab |
 | - | - |
-| [Environments & approvals](docs/modules/09-environments-and-approvals.md) | [Lab 10](docs/labs/lab-10-environments-and-approvals.md) |
-| [OIDC deployments](docs/modules/10-oidc-deployments.md) | [Lab 11](docs/labs/lab-11-oidc-azure-deploy.md) |
-| [Reusable workflows](docs/modules/11-reusable-workflows.md) | [Lab 12](docs/labs/lab-12-reusable-workflows.md) |
-| [Rulesets as code](docs/modules/12-rulesets-as-code.md) | [Lab 13](docs/labs/lab-13-rulesets-as-code.md) |
-| [Security policy automation](docs/modules/13-security-policy-automation.md) | [Lab 14](docs/labs/lab-14-security-policy-automation.md) |
+| [Environments & approvals](docs/modules/09-environments-and-approvals.md) | [Lab 9](docs/labs/lab-09-environments-and-approvals.md) |
+| [OIDC deployments](docs/modules/10-oidc-deployments.md) | [Lab 10](docs/labs/lab-10-oidc-azure-deploy.md) |
+| [Reusable workflows](docs/modules/11-reusable-workflows.md) | [Lab 11](docs/labs/lab-11-reusable-workflows.md) |
+| [Rulesets as code](docs/modules/12-rulesets-as-code.md) | [Lab 12](docs/labs/lab-12-rulesets-as-code.md) |
+| [Security policy automation](docs/modules/13-security-policy-automation.md) | [Lab 13](docs/labs/lab-13-security-policy-automation.md) |
 
 ---
 

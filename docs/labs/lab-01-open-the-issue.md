@@ -1,8 +1,8 @@
 ---
-title: "Lab 01 — Open the Issue"
+title: "Lab 1 — Open the Issue"
 ---
 
-# Lab 01 — Open the Issue
+# Lab 1 — Open the Issue
 
 ⏱️ ~15 min · Module: [The GitHub Workflow & Issues](../modules/01-github-workflow-and-issues.md) · [← Home](../index.md)
 
@@ -19,6 +19,7 @@ The repo ships a feature-request template at
 `.github/ISSUE_TEMPLATE/feature_request.yml`. Create the issue directly:
 
 ```bash
+# Bash
 gh issue create \
   --title "Add the ability to schedule an inspection for an existing permit" \
   --label "enhancement" \
@@ -38,9 +39,8 @@ Add POST /permits/{id}/inspections that records a scheduled inspection
 - [ ] CI is green
 EOF
 )"
-```
 
-```powershell
+# PowerShell
 $issueBody = @"
 ## What problem are we solving?
 Permit staff need to schedule an inspection once a permit is under review.
@@ -98,4 +98,4 @@ checklist.
 
 ## ➡️ Next
 
-[**Lab 02 — Branch & first commit**](lab-02-branch-and-first-commit.md)
+[**Lab 2.1 — Branch & first commit**](lab-02-1-branch-and-first-commit.md)

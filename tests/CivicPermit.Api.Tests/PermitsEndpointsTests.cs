@@ -7,7 +7,7 @@ namespace CivicPermit.Api.Tests;
 
 /// <summary>
 /// Integration tests for the existing permit endpoints. These ship green so
-/// learners start from a passing build. Lab 03 adds a test for the new
+/// learners start from a passing build. Lab 2.2 adds a test for the new
 /// "schedule an inspection" endpoint.
 /// </summary>
 public class PermitsEndpointsTests : IClassFixture<WebApplicationFactory<Program>>

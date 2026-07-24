@@ -1,12 +1,14 @@
 name: CI
 
-# Runs on every push to main and every pull request that targets main.
-# This is the workflow you configure as a *required status check* in Lab 07.
+# Runs on every push to main, every pull request that targets main, and on demand
+# (the "Run workflow" button / `gh workflow run CI`).
+# This is the workflow you configure as a *required status check* in Lab 5.
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 # Least privilege: this workflow only needs to read the repository.
 permissions:

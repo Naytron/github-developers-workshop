@@ -4,7 +4,7 @@ title: "Module 1 — The GitHub Workflow & Issues"
 
 # Module 1 — The GitHub Workflow & Issues
 
-⏱️ **45 minutes** · Paired lab: [Lab 01 — Open the Issue](../labs/lab-01-open-the-issue.md) · [← Home](../index.md)
+⏱️ **45 minutes** · Paired lab: [Lab 1 — Open the Issue](../labs/lab-01-open-the-issue.md) · [← Home](../index.md)
 
 ## Goals
 
@@ -82,4 +82,4 @@ Everything else today references this issue number.
 
 ## ➡️ Now do the lab
 
-[**Lab 01 — Open the Issue**](../labs/lab-01-open-the-issue.md)
+[**Lab 1 — Open the Issue**](../labs/lab-01-open-the-issue.md)

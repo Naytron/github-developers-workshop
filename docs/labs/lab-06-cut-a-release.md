@@ -1,8 +1,8 @@
 ---
-title: "Lab 08 — Cut a Release"
+title: "Lab 6 — Cut a Release"
 ---
 
-# Lab 08 — Cut a Release
+# Lab 6 — Cut a Release
 
 ⏱️ ~20 min · Module: [Releases](../modules/06-releases.md) · [← Home](../index.md)
 
@@ -26,14 +26,9 @@ Our baseline app is `v1.0.0`; adding a backward-compatible feature makes this **
 (see SemVer in [Module 6](../modules/06-releases.md)).
 
 ```bash
+# PowerShell: swap each trailing \ for a backtick `
 gh release create v1.1.0 \
   --title "CivicPermit v1.1.0" \
-  --generate-notes
-```
-
-```powershell
-gh release create v1.1.0 `
-  --title "CivicPermit v1.1.0" `
   --generate-notes
 ```
 
@@ -46,13 +41,11 @@ Ship a runnable build alongside the notes:
 
 ```bash
 dotnet publish src/CivicPermit.Api -c Release -o ./publish
+
+# Zip the published output:
+# Bash
 cd publish && zip -r ../CivicPermit.Api-v1.1.0.zip . && cd ..
-
-gh release upload v1.1.0 CivicPermit.Api-v1.1.0.zip
-```
-
-```powershell
-dotnet publish src/CivicPermit.Api -c Release -o ./publish
+# PowerShell
 Compress-Archive -Path ./publish/* -DestinationPath CivicPermit.Api-v1.1.0.zip -Force
 
 gh release upload v1.1.0 CivicPermit.Api-v1.1.0.zip
@@ -123,4 +116,4 @@ Issue → Branch → Commit → Pull Request → Review → Workflow → Merge �
 
 ## ➡️ Next
 
-[**Lab 09 — Secure the repository**](lab-09-secure-development.md)
+[**Lab 7 — Secure the repository**](lab-07-secure-development.md)

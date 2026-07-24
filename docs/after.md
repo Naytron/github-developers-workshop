@@ -25,7 +25,7 @@ release. The muscle memory is the point.
 - **Turn on branch protection** with a required status check on your default branch —
   see [Module 5](modules/05-branch-protection-and-merge.md).
 - **Add a CI workflow** to every repo — start from [`ci.yml`](modules/04-github-actions-ci.md).
-- **Enable the security features** you tried in [Lab 09](labs/lab-09-secure-development.md):
+- **Enable the security features** you tried in [Lab 7](labs/lab-07-secure-development.md):
   Dependabot, secret scanning, and code scanning.
 
 ## Reference you can keep
@@ -41,26 +41,17 @@ release. The muscle memory is the point.
 If you worked in a throwaway fork or training repo, leave your account tidy:
 
 ```bash
-# Remove the local build artifacts from Lab 08
+# Remove the local build artifacts from Lab 6:
+# Bash
 rm -rf ./publish ./CivicPermit.Api-*.zip
-
-# Delete the test tag you pushed in Lab 08 (local + remote)
-git tag -d v1.1.1
-git push origin :refs/tags/v1.1.1
-
-# If you no longer need your fork, delete it (irreversible)
-gh repo delete <your-org>/github-developers-workshop --yes
-```
-
-```powershell
-# Remove the local build artifacts from Lab 08
+# PowerShell
 Remove-Item -Recurse -Force ./publish, ./CivicPermit.Api-*.zip -ErrorAction SilentlyContinue
 
-# Delete the test tag you pushed in Lab 08 (local + remote)
+# Delete the test tag you pushed in Lab 6 (local + remote) — same in both shells:
 git tag -d v1.1.1
 git push origin :refs/tags/v1.1.1
 
-# If you no longer need your fork, delete it (irreversible)
+# If you no longer need your fork, delete it (irreversible):
 gh repo delete <your-org>/github-developers-workshop --yes
 ```
 

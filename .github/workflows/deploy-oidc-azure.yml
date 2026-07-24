@@ -1,11 +1,11 @@
 name: Deploy (Azure OIDC)
 
-# Keyless deployment to Azure using OpenID Connect (Advanced Module 10 / Lab 11).
+# Keyless deployment to Azure using OpenID Connect (Advanced Module 10 / Lab 10).
 # There are NO Azure credentials stored in GitHub. At run time GitHub mints a
 # short-lived OIDC token; Azure trades it for an access token via a *federated
 # credential* on an app registration.
 #
-# Before this runs you must (see Lab 11):
+# Before this runs you must (see Lab 10):
 #   1. Create an Entra app registration + service principal.
 #   2. Add a FEDERATED CREDENTIAL whose subject matches this workflow's trigger,
 #      e.g. repo:<ORG>/<REPO>:environment:production
@@ -14,7 +14,7 @@ name: Deploy (Azure OIDC)
 on:
   workflow_dispatch:
 
-# Deploy through an environment so the approval gate + branch limits from Lab 10
+# Deploy through an environment so the approval gate + branch limits from Lab 9
 # apply here too. Defense in depth: gate (env) + keyless identity (OIDC).
 jobs:
   deploy:

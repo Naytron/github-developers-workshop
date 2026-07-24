@@ -1,8 +1,8 @@
 ---
-title: "Lab 04 — Open a Pull Request"
+title: "Lab 3.1 — Open a Pull Request"
 ---
 
-# Lab 04 — Open a Pull Request
+# Lab 3.1 — Open a Pull Request
 
 ⏱️ ~15 min · Module: [Pull Requests & Review](../modules/03-pull-requests-and-review.md) · [← Home](../index.md)
 
@@ -24,6 +24,7 @@ If not: `git push`.
 ### 2. Create the PR with the GitHub CLI
 
 ```bash
+# Bash
 gh pr create \
   --base main \
   --title "Add endpoint to schedule an inspection for a permit" \
@@ -41,9 +42,7 @@ Closes #<issue-number>
 - xUnit tests for the endpoint
 
 ## How to test
-```
-dotnet test
-```
+Run: dotnet test
 
 ## Checklist
 - [x] The change is focused and matches the linked issue
@@ -52,9 +51,8 @@ dotnet test
 - [x] New behavior is covered by an xUnit test
 EOF
 )"
-```
 
-```powershell
+# PowerShell
 $prBody = @"
 ## What & why
 Adds POST /permits/{id}/inspections so staff can schedule an inspection for an
@@ -69,7 +67,7 @@ Closes #<issue-number>
 - xUnit tests for the endpoint
 
 ## How to test
-`dotnet test`
+Run: dotnet test
 
 ## Checklist
 - [x] The change is focused and matches the linked issue
@@ -91,7 +89,7 @@ gh pr create `
 > your open PRs.
 
 > The `Closes #<issue-number>` line means merging this PR will **automatically close** your issue
-> from Lab 01.
+> from Lab 1.
 
 ### 3. Look at your PR
 
@@ -109,7 +107,7 @@ diff first; it's the fastest way to catch a stray change.
 
 This repo **ships the CI workflow pre-built** ([.github/workflows/ci.yml](../../.github/workflows/ci.yml)),
 so you'll see a **Build & Test (CivicPermit)** check start right away. You'll read and
-modify that workflow yourself in [Lab 06](lab-06-author-ci-workflow.md). If your repo
+modify that workflow yourself in [Lab 4](lab-04-author-ci-workflow.md). If your repo
 doesn't have it yet, the check appears once you add it there.
 
 ```bash
@@ -143,4 +141,4 @@ Build & Test (CivicPermit)   pass   1m23s   https://github.com/.../actions/runs/
 
 ## ➡️ Next
 
-[**Lab 05 — Review & address feedback**](lab-05-review-and-address-feedback.md)
+[**Lab 3.2 — Review, feedback & roll back**](lab-03-2-review-and-address-feedback.md)

@@ -5,7 +5,7 @@ title: "Advanced-Track Prerequisites & Difficulty Matrix"
 # Advanced-Track Prerequisites & Difficulty Matrix
 
 The optional architect labs (10–14) go beyond the core workflow into **enterprise controls**.
-Unlike labs 00–09, several depend on your **plan tier**, **admin/owner rights**, a **cloud
+Unlike the core labs (0–7), several depend on your **plan tier**, **admin/owner rights**, a **cloud
 subscription**, or **GitHub Advanced Security (GHAS)**. Use this page to decide, per cohort,
 which labs are **hands-on** vs **instructor-demo**.
 
@@ -13,17 +13,17 @@ which labs are **hands-on** vs **instructor-demo**.
 
 | Lab | Needs | Free public repo | Free private repo | Team/Enterprise |
 |-----|-------|:---:|:---:|:---:|
-| [10 Environments & Approvals](../labs/lab-10-environments-and-approvals.md) | Repo admin | 🟢 | 🔴 rules ignored | 🟢 |
-| [11 OIDC Deployments (Azure)](../labs/lab-11-oidc-azure-deploy.md) | Azure tenant admin + subscription | 🟠 GitHub side only | 🟠 GitHub side only | 🟢 |
-| [12 Reusable Workflows](../labs/lab-12-reusable-workflows.md) | Repo write (same-repo) | 🟢 | 🟢 | 🟢 |
-| [13 Rulesets as Code](../labs/lab-13-rulesets-as-code.md) | Repo admin / org owner | 🟢 | 🟢 | 🟢 |
-| [14 Security Policy Automation](../labs/lab-14-security-policy-automation.md) | GHAS for full scan set | 🟢 code+secret free | 🟠 needs GHAS | 🟢 |
+| [10 Environments & Approvals](../labs/lab-09-environments-and-approvals.md) | Repo admin | 🟢 | 🔴 rules ignored | 🟢 |
+| [11 OIDC Deployments (Azure)](../labs/lab-10-oidc-azure-deploy.md) | Azure tenant admin + subscription | 🟠 GitHub side only | 🟠 GitHub side only | 🟢 |
+| [12 Reusable Workflows](../labs/lab-11-reusable-workflows.md) | Repo write (same-repo) | 🟢 | 🟢 | 🟢 |
+| [13 Rulesets as Code](../labs/lab-12-rulesets-as-code.md) | Repo admin / org owner | 🟢 | 🟢 | 🟢 |
+| [14 Security Policy Automation](../labs/lab-13-security-policy-automation.md) | GHAS for full scan set | 🟢 code+secret free | 🟠 needs GHAS | 🟢 |
 
 🟢 fully hands-on · 🟠 partial / needs external resource · 🔴 demo only on this tier
 
 ## Constraints that add difficulty (know these before you teach)
 
-### Lab 10 — Environments & Approvals
+### Lab 9 — Environments & Approvals
 - **Protection rules are plan-gated.** Required reviewers, wait timers, and deployment-branch
   restrictions are **only enforced on public repos or private repos on Team/Enterprise**. A
   free-private repo can *create* environments, but the gates are silently ignored.
@@ -32,7 +32,7 @@ which labs are **hands-on** vs **instructor-demo**.
 - **Environment secrets require the binding.** Only a job that declares `environment: <name>` can
   read that environment's secrets.
 
-### Lab 11 — OIDC Deployments (Azure)
+### Lab 10 — OIDC Deployments (Azure)
 - **Cloud access is the real gate.** You need rights to create an **Entra app registration**, a
   **federated credential**, and an Azure **role assignment**. Most attendees lack this → demo in
   a sandbox subscription.
@@ -47,7 +47,7 @@ which labs are **hands-on** vs **instructor-demo**.
   there's a per-app-registration limit on the number of federated credentials.
 - **GHES differs.** The OIDC issuer URL is different on GitHub Enterprise Server.
 
-### Lab 12 — Reusable Workflows
+### Lab 11 — Reusable Workflows
 - **Nesting limit: 4 levels.** A chain of reusable workflows can nest at most four deep.
 - **Private sharing is opt-in.** A private reusable workflow must be shared via **Settings →
   Actions → General → Access** before another repo can call it.
@@ -56,7 +56,7 @@ which labs are **hands-on** vs **instructor-demo**.
 - **Cross-repo reuse needs a second repo** — provide a same-repo `uses: ./...` fallback if
   attendees only have one.
 
-### Lab 13 — Rulesets as Code
+### Lab 12 — Rulesets as Code
 - **Admin/owner required.** Repo rulesets need repo **admin**; org rulesets need **org owner**.
 - **Signed commits are high-friction.** "Require signed commits" forces every contributor to set
   up **GPG/SSH/gitsign** or their pushes are rejected — a common blocker.
@@ -65,7 +65,7 @@ which labs are **hands-on** vs **instructor-demo**.
   remapping them.
 - **Rulesets vs classic protection** can coexist and both apply — watch for confusing overlaps.
 
-### Lab 14 — Security Policy Automation
+### Lab 13 — Security Policy Automation
 - **GHAS gating.** On private repos, secret scanning, push protection, and code scanning need
   **GitHub Advanced Security**. Public repos get code + secret scanning free.
 - **Token scope trap.** Security-read endpoints often need `security_events`/admin scope; the
@@ -78,10 +78,10 @@ which labs are **hands-on** vs **instructor-demo**.
 ## Instructor prep checklist
 
 - [ ] Decide per lab: **hands-on** or **demo** based on your cohort's tier and rights.
-- [ ] For Lab 11, pre-create a **sandbox Azure subscription** + app registration you can screen-share.
-- [ ] For Lab 12 cross-repo, pre-create a **platform-workflows** repo (or use the same-repo path).
-- [ ] For Lab 13, decide whether to demo **signed commits** (skip if attendees aren't set up).
-- [ ] For Lab 14, prepare a scoped **`AUDIT_TOKEN`** PAT if you want the full security read.
+- [ ] For Lab 10, pre-create a **sandbox Azure subscription** + app registration you can screen-share.
+- [ ] For Lab 11 cross-repo, pre-create a **platform-workflows** repo (or use the same-repo path).
+- [ ] For Lab 12, decide whether to demo **signed commits** (skip if attendees aren't set up).
+- [ ] For Lab 13, prepare a scoped **`AUDIT_TOKEN`** PAT if you want the full security read.
 - [ ] Run `scripts/workshop-bootstrap.ps1`/`.sh` to replace placeholders before the session.
 
 ## See also

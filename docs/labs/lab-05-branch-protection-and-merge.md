@@ -1,8 +1,8 @@
 ---
-title: "Lab 07 — Branch Protection & Merge"
+title: "Lab 5 — Branch Protection & Merge"
 ---
 
-# Lab 07 — Branch Protection & Merge
+# Lab 5 — Branch Protection & Merge
 
 ⏱️ ~30 min · Module: [Branch Protection & Merge](../modules/05-branch-protection-and-merge.md) · [← Home](../index.md)
 
@@ -35,7 +35,7 @@ Go to **Settings → Rules → Rulesets → New branch ruleset**:
 
 > ⚠️ **The check name must match exactly.** The required check is the workflow **job
 > name** — `Build & Test (CivicPermit)`. It only appears in the picker after that job has
-> reported on at least one PR, so open your PR (Lab 04) and let CI run first. If you ever
+> reported on at least one PR, so open your PR (Lab 3.1) and let CI run first. If you ever
 > rename the job, update the required check to match or every PR will wait forever.
 
 > **Solo, or on a personal fork?** You can't approve your own PR, and the `@your-org/...`
@@ -49,22 +49,13 @@ Go to **Settings → Rules → Rulesets → New branch ruleset**:
 You can enable a required status check with the API through `gh`:
 
 ```bash
+# PowerShell: swap each trailing \ for a backtick `
 gh api -X PUT repos/{owner}/{repo}/branches/main/protection \
   -H "Accept: application/vnd.github+json" \
   -f "required_status_checks[strict]=true" \
   -f "required_status_checks[contexts][]=Build & Test (CivicPermit)" \
   -f "enforce_admins=true" \
   -f "required_pull_request_reviews[required_approving_review_count]=1" \
-  -f "restrictions=null"
-```
-
-```powershell
-gh api -X PUT repos/{owner}/{repo}/branches/main/protection `
-  -H "Accept: application/vnd.github+json" `
-  -f "required_status_checks[strict]=true" `
-  -f "required_status_checks[contexts][]=Build & Test (CivicPermit)" `
-  -f "enforce_admins=true" `
-  -f "required_pull_request_reviews[required_approving_review_count]=1" `
   -f "restrictions=null"
 ```
 
@@ -106,7 +97,7 @@ gh pr merge --squash --delete-branch
 ```
 
 `gh` opens the squash commit message — make it meaningful (it feeds release notes in
-Lab 08). Confirm.
+Lab 6). Confirm.
 
 > 💡 **CLI tip:** `gh pr merge --auto --squash --delete-branch` turns on **auto-merge** —
 > the PR merges itself the moment required checks pass, so you don't have to babysit it.
@@ -146,4 +137,4 @@ git pull
 
 ## ➡️ Next
 
-[**Lab 08 — Cut a release**](lab-08-cut-a-release.md)
+[**Lab 6 — Cut a release**](lab-06-cut-a-release.md)
