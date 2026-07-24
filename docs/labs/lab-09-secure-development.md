@@ -48,7 +48,7 @@ gh api repos/{owner}/{repo}/dependabot/alerts --jq '.[].security_advisory.summar
 
 ```powershell
 $alerts = gh api repos/{owner}/{repo}/dependabot/alerts --jq ".[].security_advisory.summary" 2>$null
-if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($alerts)) {
+if ($LASTEXITCODE -ne 0 -or -not $alerts) {
   "No alerts (or Advanced Security not enabled)"
 } else {
   $alerts
