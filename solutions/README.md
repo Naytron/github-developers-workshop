@@ -41,3 +41,8 @@ dotnet test
 ```
 
 You should see the five original tests plus three new inspection tests, all green.
+
+> 💡 If the first `dotnet test` fails with
+> `CS0246: type or namespace ... could not be found`
+> immediately after bulk-copying these files, it's a stale incremental build, not a
+> real error. Run `dotnet clean` once, then `dotnet test` again.
