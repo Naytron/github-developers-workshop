@@ -151,9 +151,12 @@ if [[ "$skip_remote_checks" == false ]]; then
         warnings+=("Default branch is '$default_branch' (expected 'main' for workshop docs).")
       fi
 
-      actions_enabled="$(gh api "repos/${name_with_owner}/actions/permissions" --jq .enabled 2>/dev/null || true)"
-      if [[ -n "$actions_enabled" && "$actions_enabled" != "true" ]]; then
-        warnings+=("GitHub Actions appears disabled for ${name_with_owner}.")
+      if actions_enabled="$(gh api "repos/${name_with_owner}/actions/permissions" --jq .enabled 2>/dev/null)"; then
+        if [[ "$actions_enabled" != "true" ]]; then
+          warnings+=("GitHub Actions appears disabled for ${name_with_owner}.")
+        fi
+      else
+        warnings+=("Could not check GitHub Actions permissions for ${name_with_owner}.")
       fi
 
       ruleset_count="$(gh api "repos/${name_with_owner}/rulesets" --jq "length" 2>/dev/null || true)"
