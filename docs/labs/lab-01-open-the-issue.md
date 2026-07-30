@@ -44,8 +44,8 @@ of the workshop — it's the thread that ties your branch, commits, and PR toget
 <summary>⚙️ <strong>Automate it (scripting / CI)</strong> — create the same issue from the command line</summary>
 
 Hand-typing an issue body isn't something you'd normally do — but when you need to open issues
-*in bulk or from a pipeline*, `gh issue create` with an inline body is the right tool. Same
-result, no browser:
+*in bulk or from a pipeline*, `gh issue create` with an inline body is the right tool. This
+creates the same core content as the template, but it won't populate template-only fields like **Area**.
 
 ```bash
 # Bash
