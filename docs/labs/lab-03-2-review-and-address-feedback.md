@@ -63,6 +63,13 @@ Click **Review changes** (top-right of **Files changed**) and choose:
 > # or: gh pr review <their-PR#> --comment --body "A couple of nits, nothing blocking."
 > ```
 
+> 🤖 **Optional — add Copilot as a reviewer:** on the PR, open **Reviewers** and request a
+> review from **Copilot** (where enabled). It posts an automated review — summarizing the diff
+> and flagging likely issues — within a minute or two. Treat it as a *fast first pass*, not the
+> verdict: **you** still decide what's blocking, what's a nit, and what's a false positive.
+> That adjudication is the reviewer skill you just practiced, and it's exactly what makes an
+> auto-reviewer (or an AI-authored PR) safe to rely on.
+
 ## Part B — Address feedback on your PR
 
 Back on your own branch:
@@ -140,9 +147,9 @@ could merge — same rules as any other PR.
 - Separate blocking issues from nits.
 - Approve when it's good enough to ship — not when it's perfect.
 
-> 💡 **Copilot Connection:** In the Copilot workshop you'll try Copilot-assisted review,
-> which can flag issues and summarize diffs. Today you build the judgment that tells you
-> when to accept such suggestions.
+> 💡 **Copilot Connection:** Copilot code review can act as an automated reviewer on every PR —
+> flagging issues and summarizing the diff before a human looks. The judgment you built here is
+> what tells you when to accept those suggestions and when to push back.
 
 ## ➡️ Next
 

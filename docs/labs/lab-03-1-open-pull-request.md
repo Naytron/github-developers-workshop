@@ -21,7 +21,34 @@ git status         # should be "up to date with origin/feature/<issue-number>-sc
 
 If not: `git push`.
 
-### 2. Create the PR with the GitHub CLI
+### 2. Create the pull request
+
+Open the PR from your branch into `main`. The repo ships a PR template
+([.github/PULL_REQUEST_TEMPLATE.md](../../.github/PULL_REQUEST_TEMPLATE.md)) that pre-fills the
+structure — you fill in the specifics and link the issue.
+
+```bash
+gh pr create --web
+```
+
+`--web` opens the browser compose form with the template loaded. Set the **base** to `main`,
+give it a title like *"Add endpoint to schedule an inspection for a permit"*, and in the body:
+
+- Summarize **what & why** and the key changes.
+- Add **`Closes #<issue-number>`** — this links the PR to your Lab 1 issue and **auto-closes**
+  it on merge.
+- Tick the checklist items you've completed.
+
+Then click **Create pull request** and note the **PR number** (e.g., `#2`).
+
+> 💡 **CLI tip:** in a hurry? `gh pr create --fill` drafts the title and body straight from
+> your commits (add the `Closes #<issue-number>` line yourself so the issue still links).
+> `gh pr checks --watch` live-follows the checks, and `gh pr status` lists your open PRs.
+
+<details>
+<summary>⚙️ <strong>Automate it (scripting / CI)</strong> — create the PR with a full body from the command line</summary>
+
+When you need to open a PR non-interactively (say, from a script), pass the whole body inline:
 
 ```bash
 # Bash
@@ -82,14 +109,7 @@ gh pr create `
   --body $prBody
 ```
 
-`gh` prints the PR URL. Note the **PR number** (e.g., `#2`).
-
-> 💡 **CLI tip:** `gh pr create --fill` drafts the title and body straight from your
-> commits. `gh pr checks --watch` live-follows the checks, and `gh pr status` lists all
-> your open PRs.
-
-> The `Closes #<issue-number>` line means merging this PR will **automatically close** your issue
-> from Lab 1.
+</details>
 
 ### 3. Look at your PR
 
@@ -135,9 +155,9 @@ Build & Test (CivicPermit)   pass   1m23s   https://github.com/.../actions/runs/
 - **PR shows unexpected files** → you committed build output or unrelated edits; see
   [Troubleshooting](../troubleshooting.md).
 
-> 💡 **Copilot Connection:** Copilot can draft this PR description from your commits and
-> diff. We try that in the Copilot workshop; writing it here teaches you what a reviewer
-> actually needs.
+> 💡 **Copilot Connection:** Copilot can draft this PR description from your commits and diff.
+> Writing it yourself here teaches you what a reviewer actually needs — the judgment that lets
+> you trust (or fix) an AI-drafted PR later.
 
 ## ➡️ Next
 

@@ -62,10 +62,11 @@ has a hands-on lab; see the
 
 ## Your next workshop: GitHub Copilot
 
-Throughout today you saw **💡 Copilot Connection** notes at each place Copilot naturally
-helps — commit messages, PR descriptions, code review, writing tests, and authoring
-workflow YAML. The follow-up **GitHub Copilot** workshop goes deep on each. You now have
-the fundamentals that make Copilot's suggestions easy to evaluate and trust.
+Throughout today you saw **💡 Copilot Connection** notes at each place Copilot plugs into the
+workflow — drafting issues and acceptance criteria, generating commit messages and PR
+descriptions, reviewing code (and even opening PRs as a coding agent), writing tests, and
+authoring workflow YAML. A follow-up **GitHub Copilot** workshop goes deep on each. You now
+have the fundamentals that make Copilot's output easy to evaluate, direct, and trust.
 
 ---
 
