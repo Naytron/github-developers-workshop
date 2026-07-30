@@ -41,14 +41,17 @@ An issue is the **shared record of intent**. It gives the team:
 - A number (`#42`) that links commits, branches, and PRs together.
 - A trail an auditor or a future teammate can follow.
 
-In enterprise settings this traceability matters: the issue is *why* the code changed.
+In enterprise settings this traceability matters: the issue is *why* the code changed. And a
+well-specified issue is increasingly the **starting point for the work itself** — clear enough
+to hand to a teammate *or* delegate to the Copilot coding agent.
 
 ## Anatomy of a good issue
 
 - **Title:** short and specific — *"Add endpoint to schedule an inspection"*.
 - **Problem:** the user need in a sentence or two.
 - **Proposal:** what should change.
-- **Acceptance criteria:** a checklist that defines "done."
+- **Acceptance criteria:** a checklist that defines "done" — and doubles as the *spec* a
+  teammate, or the Copilot coding agent, builds from.
 - **Labels:** `enhancement`, area, priority — for triage and filtering.
 
 ## Issue templates
@@ -76,9 +79,9 @@ Everything else today references this issue number.
 - **No acceptance criteria**, so "done" is a matter of opinion.
 - **Skipping the issue** and going straight to code — you lose the *why*.
 
-> 💡 **Copilot Connection:** Copilot can help draft an issue's acceptance criteria from a
-> one-line description. We'll practice that in the Copilot workshop; today, writing them
-> by hand builds the habit of defining "done" up front.
+> 💡 **Copilot Connection:** Copilot can draft an issue's acceptance criteria from a one-line
+> description — and a well-scoped issue is exactly what it needs to *act* on next. Writing
+> "done" clearly yourself is the habit that makes AI output easy to direct and trust.
 
 ## ➡️ Now do the lab
 

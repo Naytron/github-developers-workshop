@@ -98,6 +98,8 @@ external services, no PII**. The recurring feature you'll build is:
 
 ---
 
-> 💡 **Copilot Connection:** A separate follow-up workshop covers **GitHub Copilot** in
-> depth. You'll spot short *Copilot Connection* notes throughout these materials — but no
-> lab depends on Copilot, so everything works whether or not it's enabled.
+> 💡 **Copilot Connection:** Copilot shows up throughout GitHub today — drafting issues,
+> reviewing PRs, even opening PRs as a coding agent — and you'll see short *Copilot Connection*
+> notes marking where it plugs into each step. A deeper **GitHub Copilot** workshop follows.
+> No lab *requires* Copilot, so everything works whether or not it's enabled — the fundamentals
+> here are exactly what let you direct and trust it.
