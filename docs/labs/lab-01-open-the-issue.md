@@ -13,7 +13,24 @@ template.
 
 ## Steps
 
-### 1. Open the issue from the feature-request template
+### 1. Enable Issues on your fork
+
+If you **forked** the workshop repo, GitHub turns **Issues off** on the new fork by default —
+so the **Issues** tab won't be there yet, and `gh issue create` will fail. Turn it on before
+you file anything:
+
+```bash
+# CLI — enable Issues on your fork (use your own repo)
+gh repo edit <owner>/<your-repo> --enable-issues
+```
+
+> 💡 Prefer the web UI? Open your repo → **Settings → General → Features** and tick
+> **Issues**, then come back here.
+
+(Working in a **shared org repo** instead of a fork? Issues is usually already on — skip
+straight to the next step.)
+
+### 2. Open the issue from the feature-request template
 
 The repo ships a feature-request form at `.github/ISSUE_TEMPLATE/feature_request.yml`. Filing
 from the template is how issues get created in real life — it prompts for exactly the fields a
@@ -94,7 +111,7 @@ gh issue create `
 
 </details>
 
-### 2. Confirm it exists
+### 3. Confirm it exists
 
 ```bash
 gh issue list
@@ -124,9 +141,16 @@ straight to it in the browser.)
 
 ## ✅ Checkpoint
 
+- [ ] The **Issues** tab is enabled on your repo (forkers: Step 1).
 - [ ] `gh issue view <issue-number>` shows your issue.
 - [ ] It has the `enhancement` label and the acceptance-criteria checklist.
 - [ ] You've noted the issue number.
+
+## Troubleshooting
+
+- **No Issues tab, or `gh issue create` says issues are disabled** → Issues is off on your
+  fork. Enable it (Step 1): `gh repo edit <owner>/<your-repo> --enable-issues`, or
+  **Settings → General → Features → Issues** in the browser.
 
 > 💡 **Copilot Connection:** a one-line request is all Copilot needs to draft full acceptance
 > criteria — and a sharp issue is what it needs to *act*. Writing "done" clearly yourself is

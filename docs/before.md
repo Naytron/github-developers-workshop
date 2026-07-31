@@ -28,6 +28,7 @@ You need three tools. All are free and enterprise-approved in most environments.
 Recommended (optional):
 
 - **Visual Studio Code** with the **C# Dev Kit** extension — see [VS Code setup](guides/vscode-setup.md).
+- Or, on Windows, full **Visual Studio 2022** — see [Visual Studio setup](guides/visual-studio-setup.md).
 
 ## 3. Verify your setup
 
@@ -74,6 +75,12 @@ dotnet test
 ```
 
 If you see **`Passed!`**, you're ready. If not, check [Troubleshooting](troubleshooting.md).
+
+> 🍴 **Forking the repo?** A brand-new fork starts with **Issues and Actions turned off**, and
+> its pull requests default to targeting the **upstream** repo rather than your fork. You'll
+> enable each when you first need it (Labs 1 and 4) and aim your PR at your own fork (Lab 3.1) —
+> [Lab 0](labs/lab-00-setup.md) walks through it. *(Running an org-hosted clone instead of a
+> fork? These are usually already set.)*
 
 ## 6. Instructor-only: bootstrap your copy (recommended)
 
