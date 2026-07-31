@@ -82,7 +82,7 @@ Companion labs for the architect hardening modules. Check the
 ## Reference
 
 - 📌 **Cheat sheets:** [Git](cheatsheets/git-commands.md) · [GitHub CLI](cheatsheets/gh-cli.md) · [dotnet CLI](cheatsheets/dotnet-cli.md) · [Markdown & PRs](cheatsheets/markdown-and-pr.md) · [Actions YAML](cheatsheets/actions-yaml.md)
-- 📚 **Guides:** [Git basics](guides/git-basics.md) · [.NET SDK setup](guides/dotnet-sdk-setup.md) · [GitHub CLI setup](guides/github-cli-setup.md) · [VS Code setup](guides/vscode-setup.md) · [Conventional Commits](guides/conventional-commits.md) · [Workshop bootstrap + preflight](guides/workshop-bootstrap-preflight.md) · [Advanced-track prerequisites](guides/advanced-track-prerequisites.md)
+- 📚 **Guides:** [Git basics](guides/git-basics.md) · [.NET SDK setup](guides/dotnet-sdk-setup.md) · [GitHub CLI setup](guides/github-cli-setup.md) · [VS Code setup](guides/vscode-setup.md) · [Visual Studio setup](guides/visual-studio-setup.md) · [Conventional Commits](guides/conventional-commits.md) · [Workshop bootstrap + preflight](guides/workshop-bootstrap-preflight.md) · [Advanced-track prerequisites](guides/advanced-track-prerequisites.md)
 - 🛠️ **[Troubleshooting](troubleshooting.md)**
 
 ---
