@@ -12,16 +12,15 @@ request all the way from an idea to a shipped release — on a small, self-conta
 > **One story, start to finish:**
 > **Issue → Branch → Commit → Pull Request → Review → Workflow → Merge → Release**
 
-> ⏱️ **On timing:** "6-hour" is the **teaching time** (modules + labs). With two breaks
-> and lunch, plan a **~7.75-hour calendar day**. See the [agenda](agenda.md) for the full
-> schedule and compressed-timing options.
+> ⏱️ **On timing:** the workshop runs as **2 days × 3 hours** (6 hours of teaching total).
+> See the [agenda](agenda.md) for the full schedule, pre-work, and facilitation notes.
 
 ---
 
 ## Start here
 
 - 🧭 **Before the workshop:** [Prepare your machine](before.md)
-- 📅 **The plan:** [6-hour agenda](agenda.md)
+- 📅 **The plan:** [NJ DHS 2-day agenda](agenda.md)
 
 ---
 

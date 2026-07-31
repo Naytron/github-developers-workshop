@@ -4,7 +4,7 @@ title: "NJ DHS — Attendee Quickstart (Fork Setup)"
 
 # NJ DHS — Attendee Quickstart
 
-[← Home](index.md) · [NJ DHS 2-day agenda](agenda-njdhs.md) · [Full Lab 0 setup](labs/lab-00-setup.md)
+[← Home](index.md) · [NJ DHS 2-day agenda](agenda.md) · [Full Lab 0 setup](labs/lab-00-setup.md)
 
 This is the **NJ DHS-specific** version of setup. It maps the generic lab placeholders to the
 real names for our run and calls out the **fork defaults** you have to flip. Do the first three
