@@ -76,6 +76,12 @@ dotnet test
 
 If you see **`Passed!`**, you're ready. If not, check [Troubleshooting](troubleshooting.md).
 
+> 🍴 **Forking the repo?** A brand-new fork starts with **Issues and Actions turned off**, and
+> its pull requests default to targeting the **upstream** repo rather than your fork. You'll
+> enable each when you first need it (Labs 1 and 4) and aim your PR at your own fork (Lab 3.1) —
+> [Lab 0](labs/lab-00-setup.md) walks through it. *(Running an org-hosted clone instead of a
+> fork? These are usually already set.)*
+
 ## 6. Instructor-only: bootstrap your copy (recommended)
 
 If you're hosting the workshop from this template, run the bootstrap/preflight once before

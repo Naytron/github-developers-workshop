@@ -41,6 +41,16 @@ give it a title like *"Add endpoint to schedule an inspection for a permit"*, an
 
 Then click **Create pull request** and note the **PR number** (e.g., `#2`).
 
+> ⚠️ **Forked the repo?** Because your clone has an `upstream` remote, both `gh pr create` and
+> the web compose form default the **base _repository_** to the upstream
+> (`<src-org>/github-developers-workshop`) — **not your fork**. Point the PR at your **own**
+> fork so the PR, its CI check (Lab 4), and the merge (Lab 5) all happen in *your* repo. In the
+> browser, use the left **base repository** dropdown; from the CLI, pass `--repo`:
+>
+> ```bash
+> gh pr create --repo <owner>/<your-repo> --base main --web
+> ```
+
 > 💡 **CLI tip:** in a hurry? `gh pr create --fill` drafts the title and body straight from
 > your commits (add the `Closes #<issue-number>` line yourself so the issue still links).
 > `gh pr checks --watch` live-follows the checks, and `gh pr status` lists your open PRs.
@@ -167,6 +177,9 @@ Build & Test (CivicPermit)   pass   1m23s   https://github.com/.../actions/runs/
 
 ## Troubleshooting
 
+- **Your PR is targeting the shared/upstream repo** → you forked; switch the **base
+  repository** to your own fork (`gh pr create --repo <owner>/<your-repo> --base main`, or the
+  base-repository dropdown in the browser). See the note in Step 2.
 - **`gh pr create` says no commits between branches** → you haven't pushed, or you branched
   from the wrong place. Push, or rebase onto `main`.
 - **PR shows unexpected files** → you committed build output or unrelated edits; see

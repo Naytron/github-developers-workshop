@@ -84,6 +84,13 @@ You should see **`origin`** pointing at *your* repo (`<yourname>-gh-training`). 
 forked, `gh` also adds an **`upstream`** remote pointing at the original
 `<src-org>/github-developers-workshop` — that's how you'll pull in updates later.
 
+> 🍴 **Forked the repo? Three fork defaults to know.** A brand-new fork starts with **Issues
+> and Actions turned off**, and its pull requests default to targeting the **upstream** repo
+> rather than your fork. You'll flip Issues on in [Lab 1](lab-01-open-the-issue.md) and Actions
+> on in [Lab 4](lab-04-author-ci-workflow.md), and [Lab 3.1](lab-03-1-open-pull-request.md)
+> shows how to aim your PR at your **own** fork. (Shared org repo? These are usually already
+> set — carry on.)
+
 ### 4. Set your Git identity
 
 Git stamps every commit with a name and email, so set them before you commit anything.

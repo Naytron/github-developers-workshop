@@ -4,7 +4,7 @@ title: NJ DHS — 2-Day Agenda
 
 # NJ DHS — 2-Day Agenda (2 × 3 hours)
 
-[← Home](index.md) · [Standard 6-hour agenda](agenda.md)
+[← Home](index.md) · [Standard 6-hour agenda](agenda.md) · [Attendee fork-setup quickstart](njdhs-attendee-quickstart.md)
 
 A delivery plan for **NJ DHS**: **2 days × 3 hours (6 hours total)** for **~50 attendees of
 mixed experience**. The standard workshop is a single ~6.5-hour core teach (Modules 0–8)
@@ -33,6 +33,12 @@ Send every attendee the **[Before the Workshop](before.md)** page 2–3 days pri
 - Install **Git**, **.NET 10 SDK**, **GitHub CLI (`gh`)**; verify each prints a version.
 - `gh auth login` to GitHub Enterprise and confirm `gh auth status`.
 - Clone their personal training repo and run `dotnet test` until they see **`Passed!`**.
+
+> 🍴 **DHS delivery uses a fork model.** Attendees authenticate to the **`dhs-learning`** org
+> (EMU), fork **`github-labs`** to **`<initials>-github-labs`** (internal), and must **enable
+> Issues and Actions** on the fork. Send them the
+> **[Attendee fork-setup quickstart](njdhs-attendee-quickstart.md)** — it hardcodes our org and
+> naming and flags the fork gotchas (PRs default to the upstream repo; you can't self-approve).
 
 > With 50 people, unresolved setup is the biggest schedule killer. Treat a green
 > `dotnet test` as the entry ticket. Offer a **30-minute setup office hour** the afternoon
