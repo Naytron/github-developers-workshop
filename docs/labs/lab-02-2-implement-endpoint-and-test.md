@@ -210,6 +210,25 @@ Refs #<issue-number>"
 git push
 ```
 
+<details>
+<summary>🖱️ <strong>In Visual Studio</strong> — build, test, run & commit in the IDE instead of the terminal</summary>
+
+Add the model, store method, endpoint, and test file exactly as above in the editor, then
+use the IDE for the build/test/run/commit steps (see
+[Visual Studio setup](../guides/visual-studio-setup.md)):
+
+- **Build** (Step 3): **Build → Build Solution** (`Ctrl+Shift+B`) — the equivalent of
+  `dotnet build`.
+- **Run the tests** (Step 5): **Test → Run All Tests**, then read results in **Test
+  Explorer**. You should see **8 passing**. Right-click the `Inspections` tests to run just
+  those — the IDE equivalent of `dotnet test --filter`.
+- **Try it live** (Step 6, optional): press **F5** to launch the API with the debugger; the
+  browser opens on the startup URL.
+- **Commit & push** (Step 7): stage `src/` and `tests/` in the **Git Changes** window, enter
+  the commit message, **Commit All**, then **Git → Push**.
+
+</details>
+
 ## ✅ Checkpoint
 
 - [ ] `dotnet test` prints **Passed: 8**.

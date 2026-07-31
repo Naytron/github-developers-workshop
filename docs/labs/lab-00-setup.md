@@ -14,6 +14,9 @@ signed-in GitHub CLI.
 - Git, the .NET 10 SDK, and the GitHub CLI installed
   ([Before the Workshop](../before.md)).
 - Access to your organization's GitHub Enterprise.
+- Optional editor: VS Code, or — on Windows — full
+  [Visual Studio 2022](../guides/visual-studio-setup.md), which can run the branch, commit,
+  build, test, and PR steps from the IDE.
 
 ## Steps
 

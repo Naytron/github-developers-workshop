@@ -9,6 +9,9 @@ title: "Guide — VS Code Setup (Optional)"
 VS Code is **optional** — every lab works with a plain terminal — but it makes editing,
 building, debugging, and reviewing more comfortable.
 
+> 🖱️ Prefer the full **Visual Studio** IDE (Windows only)? See
+> [Visual Studio setup](visual-studio-setup.md) instead.
+
 ## Install VS Code
 
 - Download: <https://code.visualstudio.com/> (or your org's software portal).

@@ -28,6 +28,7 @@ You need three tools. All are free and enterprise-approved in most environments.
 Recommended (optional):
 
 - **Visual Studio Code** with the **C# Dev Kit** extension — see [VS Code setup](guides/vscode-setup.md).
+- Or, on Windows, full **Visual Studio 2022** — see [Visual Studio setup](guides/visual-studio-setup.md).
 
 ## 3. Verify your setup
 

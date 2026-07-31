@@ -75,6 +75,24 @@ git push -u origin feature/<issue-number>-schedule-inspection
 The `-u` links your local branch to the remote so future `git push`/`git pull` need no
 arguments. `gh` prints a URL to open a PR — we'll do that in Lab 3.1.
 
+<details>
+<summary>🖱️ <strong>In Visual Studio</strong> — do this whole lab in the IDE instead of the terminal</summary>
+
+Prefer the full IDE? See [Visual Studio setup](../guides/visual-studio-setup.md) first, then
+map the steps above to the **Git** menu and **Git Changes** window:
+
+1. **Up-to-date `main`:** branch picker (bottom-right status bar) → check out **main** →
+   **Git → Pull**.
+2. **New branch:** **Git → New Branch…**, name it
+   `feature/<issue-number>-schedule-inspection`, base it on `main`, **Create**.
+3. **First change:** edit `src/CivicPermit.Api/Program.cs` in the editor, then
+   **Build → Build Solution** (`Ctrl+Shift+B`) to confirm it compiles.
+4. **Commit:** open the **Git Changes** window, type the summary + body message, and
+   **Commit All**.
+5. **Push:** **Git → Push** (the first push publishes the branch to the remote).
+
+</details>
+
 > 💡 **CLI tip:** `gh issue develop <issue-number> --checkout` creates a branch **already
 > linked to the issue** and switches to it — the one-command version of steps 1–2 above.
 > `gh browse` opens the repo at your current branch, and `git switch -` toggles back to the

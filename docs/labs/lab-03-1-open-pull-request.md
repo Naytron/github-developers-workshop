@@ -46,6 +46,23 @@ Then click **Create pull request** and note the **PR number** (e.g., `#2`).
 > `gh pr checks --watch` live-follows the checks, and `gh pr status` lists your open PRs.
 
 <details>
+<summary>🖱️ <strong>In Visual Studio</strong> — create the PR from the IDE instead of the terminal</summary>
+
+Recent **Visual Studio 2022** can open the PR without leaving the IDE (see
+[Visual Studio setup](../guides/visual-studio-setup.md)):
+
+1. Make sure your branch is pushed (**Git → Push**).
+2. **Git → GitHub → Create Pull Request**.
+3. Set the **base** to `main`, add a title, and write the body.
+
+> ⚠️ Visual Studio's compose form does **not** load the repo's `PULL_REQUEST_TEMPLATE.md` or
+> apply labels the way the web form does. To get the full template — and to add
+> **`Closes #<issue-number>`** so the issue auto-closes — use **`gh pr create --web`** or open
+> the PR on GitHub.com instead.
+
+</details>
+
+<details>
 <summary>⚙️ <strong>Automate it (scripting / CI)</strong> — create the PR with a full body from the command line</summary>
 
 When you need to open a PR non-interactively (say, from a script), pass the whole body inline:

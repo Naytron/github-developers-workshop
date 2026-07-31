@@ -98,6 +98,23 @@ git push
 
 Your PR updates automatically, CI re-runs, and reviewers can re-review.
 
+<details>
+<summary>🖱️ <strong>In Visual Studio</strong> — address feedback in the IDE instead of the terminal</summary>
+
+The **address-feedback** loop maps cleanly to the IDE (see
+[Visual Studio setup](../guides/visual-studio-setup.md)):
+
+1. Make the improvement in the editor.
+2. **Test → Run All Tests** (Test Explorer) — the equivalent of `dotnet test`.
+3. Stage the file in the **Git Changes** window, commit with your message, then **Git →
+   Push**. The PR updates and CI re-runs automatically.
+
+> **Reviewing a PR (Part A) has no good Visual Studio equivalent** — its in-IDE review is
+> limited, so do the inline comments and the **Approve / Request changes** verdict on
+> **GitHub.com** (or with the `gh pr review` commands above).
+
+</details>
+
 ### 3. Reply and resolve
 
 In the browser PR view, reply to each comment (e.g., *"Done in <commit sha>"*) and resolve
