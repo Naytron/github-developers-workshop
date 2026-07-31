@@ -32,7 +32,7 @@ jobs:
       GH_TOKEN: ${{ secrets.AUDIT_TOKEN || secrets.GITHUB_TOKEN }}
     steps:
       - name: Check out the code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Run baseline checks
         shell: bash

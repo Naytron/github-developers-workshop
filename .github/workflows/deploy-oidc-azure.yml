@@ -29,7 +29,7 @@ jobs:
       id-token: write
     steps:
       - name: Check out the code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # These are IDENTIFIERS, not secrets. They are safe to store as repo/env
       # *variables*; secrets are used here only to keep the template uniform.
