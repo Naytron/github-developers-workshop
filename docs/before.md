@@ -74,7 +74,8 @@ cd <yourname>-gh-training
 dotnet test
 ```
 
-If you see **`Passed!`**, you're ready. If not, check [Troubleshooting](troubleshooting.md).
+If the summary shows **`failed: 0, succeeded: 5`** (older SDKs print `Passed!` instead —
+either means green), you're ready. If not, check [Troubleshooting](troubleshooting.md).
 
 > 🍴 **Forking the repo?** A brand-new fork starts with **Issues and Actions turned off**, and
 > its pull requests default to targeting the **upstream** repo rather than your fork. You'll

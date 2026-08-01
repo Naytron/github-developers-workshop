@@ -231,7 +231,7 @@ use the IDE for the build/test/run/commit steps (see
 
 ## ✅ Checkpoint
 
-- [ ] `dotnet test` prints **Passed: 8**.
+- [ ] `dotnet test` prints **Test summary: … succeeded: 8**.
 - [ ] Your changes are committed and pushed to your feature branch.
 
 > 💡 **Copilot Connection:** Writing xUnit tests is a sweet spot for Copilot — it can

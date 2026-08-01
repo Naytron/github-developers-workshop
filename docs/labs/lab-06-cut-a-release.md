@@ -17,7 +17,7 @@ title: "Lab 6 — Cut a Release"
 git switch main
 git pull
 git log --oneline -3   # you should see your squashed feature commit
-dotnet test            # sanity check: Passed: 8
+dotnet test            # sanity check: succeeded: 8
 ```
 
 ## Step 2 — Cut the release
