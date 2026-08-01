@@ -32,7 +32,8 @@ Send every attendee the **[Before the Workshop](before.md)** page 2–3 days pri
 
 - Install **Git**, **.NET 10 SDK**, **GitHub CLI (`gh`)**; verify each prints a version.
 - `gh auth login` to GitHub Enterprise and confirm `gh auth status`.
-- Clone their personal training repo and run `dotnet test` until they see **`Passed!`**.
+- Clone their personal training repo and run `dotnet test` until the summary shows
+  **`failed: 0, succeeded: 5`**.
 
 > 🍴 **DHS delivery uses a fork model.** Attendees authenticate to the **`dhs-learning`** org
 > (EMU), fork **`github-labs`** to **`<initials>-github-labs`** (internal), and must **enable
