@@ -35,7 +35,7 @@ Send every attendee the **[Before the Workshop](before.md)** page 2–3 days pri
 - Clone their personal training repo and run `dotnet test` until the summary shows
   **`failed: 0, succeeded: 5`**.
 
-> 🍴 **DHS delivery uses a fork model.** Attendees authenticate to the **`dhs-learning`** org
+> 🍴 **DHS delivery uses a fork model.** Attendees authenticate to the **`org-njdhs-learning`** org
 > (EMU), fork **`github-labs`** to **`<initials>-github-labs`** (internal), and must **enable
 > Issues and Actions** on the fork. Send them the
 > **[Attendee fork-setup quickstart](njdhs-attendee-quickstart.md)** — it hardcodes our org and
