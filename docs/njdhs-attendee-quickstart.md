@@ -16,7 +16,7 @@ steps **before Day 1** if you can — that's what keeps Day 1 about GitHub, not 
 
 | Placeholder in the labs | Your real value |
 | --- | --- |
-| `<src-org>` | **`dhs-learning`** |
+| `<src-org>` | **`org-njdhs-learning`** |
 | upstream repo (`github-developers-workshop`) | **`github-labs`** |
 | `<yourname>-gh-training` | **`<initials>-github-labs`** (e.g. `jsd-github-labs`) |
 | `<your-username>` | your EMU username (what you signed in as) |
@@ -38,22 +38,22 @@ gh auth status
 
 ## 2. Fork the staged repo → `<initials>-github-labs`
 
-Fork **`dhs-learning/github-labs`** into your own account, give it your initials-based name, and
+Fork **`org-njdhs-learning/github-labs`** into your own account, give it your initials-based name, and
 clone it — all in one command:
 
 ```bash
-gh repo fork dhs-learning/github-labs --fork-name <initials>-github-labs --clone
+gh repo fork org-njdhs-learning/github-labs --fork-name <initials>-github-labs --clone
 cd <initials>-github-labs
 ```
 
 This creates your fork (owned by you, **internal** visibility), wires an **`upstream`** remote
-back to `dhs-learning/github-labs`, and clones it locally. Confirm your remotes:
+back to `org-njdhs-learning/github-labs`, and clones it locally. Confirm your remotes:
 
 ```bash
-git remote -v   # origin = your fork; upstream = dhs-learning/github-labs
+git remote -v   # origin = your fork; upstream = org-njdhs-learning/github-labs
 ```
 
-> 💡 Prefer the browser? Open **`dhs-learning/github-labs` → Fork**, set the repository name to
+> 💡 Prefer the browser? Open **`org-njdhs-learning/github-labs` → Fork**, set the repository name to
 > **`<initials>-github-labs`**, create it, then `gh repo clone <your-username>/<initials>-github-labs`.
 
 ## 3. Turn on Issues (forks start with it OFF)
@@ -89,9 +89,9 @@ dotnet test   # expect: succeeded: 5
 
 ## Two fork gotchas to remember during the labs
 
-**① Open every PR against YOUR fork — not `dhs-learning/github-labs`.**
+**① Open every PR against YOUR fork — not `org-njdhs-learning/github-labs`.**
 Because your clone has an `upstream` remote, `gh pr create` and the browser compose form both
-default the **base _repository_** to `dhs-learning/github-labs`. If you leave it there, your PR
+default the **base _repository_** to `org-njdhs-learning/github-labs`. If you leave it there, your PR
 lands on the shared staged repo and your CI, branch protection, and release labs won't behave.
 Point it at your own fork:
 
