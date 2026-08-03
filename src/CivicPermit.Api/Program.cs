@@ -40,7 +40,25 @@ app.MapPost("/permits", (CreatePermitRequest request, PermitStore store) =>
     return Results.Created($"/permits/{permit.Id}", permit);
 });
 
-// TODO (Lab 2.2): add POST /permits/{id}/inspections.
+// Feature (#<issue-number>): schedule an inspection for an existing permit.
+//   POST /permits/{id}/inspections
+// Endpoint and test are added in Lab 2.2.
+// Schedule an inspection for an existing permit.
+app.MapPost("/permits/{id:int}/inspections", (int id, ScheduleInspectionRequest request, PermitStore store) =>
+{
+    if (store.GetById(id) is null)
+    {
+        return Results.NotFound();
+    }
+
+    if (string.IsNullOrWhiteSpace(request.InspectionType) || request.ScheduledFor == default)
+    {
+        return Results.BadRequest("InspectionType and ScheduledFor are required.");
+    }
+
+    var inspection = store.AddInspection(id, request.InspectionType, request.ScheduledFor);
+    return Results.Created($"/permits/{id}/inspections/{inspection!.Id}", inspection);
+});
 
 app.Run();
 
