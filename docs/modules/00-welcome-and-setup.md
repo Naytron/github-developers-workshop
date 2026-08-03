@@ -2,6 +2,7 @@
 title: "Module 0 — Welcome & Setup"
 ---
 
+
 # Module 0 — Welcome & Setup
 
 ⏱️ **30 minutes** · Paired lab: [Lab 0 — Setup](../labs/lab-00-setup.md) · [← Home](../index.md)
